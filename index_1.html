@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网络评估</title>
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="css/handsontable.full.min.css" rel="stylesheet">
+    <!--<link type="text/css" href="css/main.css" rel="stylesheet">-->
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/handsontable.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body style="background-color: #ebebeb;line-height: 1.5;">
+<nav style="text-align: center;border-top:2px solid #e1e1e1;border-bottom: 2px solid #e1e1e1; margin:0 0 20px 0;background-color: #ffffff;">
+    <h3>网络评估图表类型和评估数据表格</h3>
+</nav>
+<div class="container-fluid" style="margin: 0 auto;">
+    <div class="row">
+        <!--侧边栏-->
+        <div class="col-md-2" style="margin:10px 0 0 0; ">
+            <div style="background-color:#ffffff;padding: 18px 18px 10px 18px;border-radius: 5px;">
+                <h4 class="title" style="text-align: left;margin-bottom:15px;font-weight: bold;">图形选择</h4>
+                <div class="list-group" >
+                    <button id="bar" type="button" class="list-group-item active" style="text-align: center;">柱状图</button>
+                    <button id="line" type="button" class="list-group-item" style="text-align: center;">折线图</button>
+                    <button id="pie" type="button" class="list-group-item " style="text-align: center;">饼图</button>
+                </div>
+            </div>
+            <div style="background-color:#ffffff;border-radius: 5px; margin-top: 30px;padding:18px;">
+                <div style="border: 1px solid #DCDCDC ;text-align: center;">
+                    <span>是否横向显示</span>
+                    <label>
+                        <input type="checkbox" id="changeCheckbox" value="option1" style="margin-top: 0.7em;" >
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--右侧评估图形和excel表格显示部分-->
+        <div  class="col-md-10" style="margin:10px 0 0 0; ">
+            <div class="container-fluid">
+                <!--图形-->
+                <div class="col-md-6">
+                    <div style="background-color: #ffffff;padding: 18px 18px 10px 18px;">
+                        <div id="main" style="width: 100%;height: 600px;margin: 0 auto;"></div>
+                    </div>
+                </div>
+                <!--表格-->
+                <div id="example" class="col-md-6" style="background-color: #ffffff;margin-top: 0px;padding: 18px 18px 10px 18px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

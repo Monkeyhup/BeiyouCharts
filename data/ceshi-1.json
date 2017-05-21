@@ -1,0 +1,8 @@
+{
+  "traPortPercent": 0.5,
+  "linkPortPercent": 0.5,
+  "freePercent": 0.25,
+  "throughPercent": 0.25,
+  "upPercent": 0.25,
+  "downPercent": 0.25
+}
