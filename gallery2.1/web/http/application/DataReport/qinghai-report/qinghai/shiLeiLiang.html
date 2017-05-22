@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>河北省工业企业研发投入产出绩效分析</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+    <link href="lib/semantic/css/semantic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="lib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="lib/json2.js"></script>
+    <script type="text/javascript"
+            src="lib/Echarts/echarts-2.1.8/echarts-all.js"></script>
+    <script type="text/javascript" src="lib/d3/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/common/SGIS.Base.js"></script>
+</head>
+<body>
+<!--.circular ui button  -->
+<div class="ui button circular" data-value=hide
+     style="margin-top:20px;">显示数据</div>
+<div class="table" align="center" style="display:none; width: 870px">
+    <!--表头-->
+    <div class="table_title">表1-2 河北省生产性服务业结构状况</div>
+    <!--单位-->
+    <div class="table_unit" style="width: 550px" align="right" ><b>单位：%</b></div>
+    <!--表格-->
+    <div align=center>
+    <table class="MsoNormalTable" style="border-collapse:collapse; width:415.3000pt; margin-left:5.4000pt; mso-table-layout-alt:fixed; mso-padding-alt:0.0000pt 0.0000pt 0.0000pt 0.0000pt ; ">
+        <tbody>
+        <tr style="height:28.3500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+            </td>
+            <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style="font-family: 宋体;">营业收入占比</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>企业法人单位数占比</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:none windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>从业人员数占比</span>
+                </p>
+            </td>
+
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>批发和零售业</span>
+
+                </p>
+
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>79.13</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>70.38</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>53.75</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>交通运输、仓储和邮政业</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>8.29</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>5.64</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>13.81</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="250" valign="center"
+                style='border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>信息传输、软件和信息技术服务业</span>
+
+                </p>
+
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>3.08</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>2.58</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>4.51</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>金融业</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>0.03</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>0.75</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>3.26</span>
+                </p>
+            </td>
+
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>租赁和商务服务业</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>6.19</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>13.71</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>13.75</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                                            style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>科学研究和技术服务业</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>2.95</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>5.60</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>8.96</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>水利、环境和公共设施管理业</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>0.33</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>1.35</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>1.97</span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:14.1500pt; ">
+            <td width="230" valign="center"
+                style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-bottom:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>生产性服务业总计</span>
+
+                </p>
+            </td>
+            <td width="110" style='border:none;border-right:solid black 1.0pt;border-bottom:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>100.00</span>
+
+                </p>
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;border-bottom:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>100.00</span>
+                </p>
+
+            </td>
+            <td width="110" style='width:77.95pt;border:none;border-bottom:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                <p class=MsoNormal align=center
+                   style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                    <span style='font-family:宋体;color:#333333'>100.00</span>
+                </p>
+            </td>
+        </tr>
+
+
+
+
+    </table>
+
+
+</div>
+    <!--注释-->
+    <div class="table_unit" style="width: 550px" align="left" ><b>数据来源：第三次经济普查数据。</b></div>
+</div>
+
+<div id="g_2" style='position:relative;height:500px;width: 870px'>
+    <div class="pull-right" id="g_2_btn" style="margin-top:20px;">
+        <button type="button" class="btn btn-default btn-success" data-value="1">营业收入</button>
+        <button type="button" class="btn btn-default" data-value="2">企业法人单位数</button>
+        <button type="button" class="btn btn-default" data-value="3">从业人员数</button>
+    </div>
+    <div class="clearfix"></div>
+    <div id="g_2_1" style="position:absolute;">
+    </div>
+</div>
+
+<div class="ui button circular" data-value=hide
+     style="margin-top:20px;">显示数据</div>
+<div class="table" align="center" style="display:block; width: 870px">
+    <!--表头-->
+    <div class="table_title">表1-1 河北省生产性服务业企业法人单位基本情况</div>
+    <!--表格-->
+    <div align=center>
+        <table class="MsoNormalTable" style="border-collapse:collapse; width:415.3000pt; margin-left:5.4000pt; mso-table-layout-alt:fixed; mso-padding-alt:0.0000pt 0.0000pt 0.0000pt 0.0000pt ; ">
+            <tbody>
+            <tr style="height:28.3500pt; ">
+                <td width="230" valign="center"
+                    style='width:155.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+                </td>
+                <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style="font-family: 宋体;">法人单位数（个）</span>
+
+                    </p>
+                </td>
+                <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>从业人员数（人）</span>
+                    </p>
+
+                </td>
+                <td width="110" style='width:77.95pt;border-top:solid black 1.5pt;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:none windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:1.0cm'>
+
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>营业收入额(亿)</span>
+                    </p>
+                </td>
+
+            </tr>
+            <tr style="height:14.1500pt; ">
+                <td width="230" valign="center"
+                    style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>生产性服务业</span>
+
+                    </p>
+
+                </td>
+                <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>157943</span>
+
+                    </p>
+                </td>
+                <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>2395161</span>
+                    </p>
+
+                </td>
+                <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>2395161</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:14.1500pt; ">
+                <td width="230" valign="center"
+                    style='width:155.95pt;border:none;border-right:solid black 1.0pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>服务业</span>
+
+                    </p>
+                </td>
+                <td width="110" style='border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>187537</span>
+
+                    </p>
+                </td>
+                <td width="110" style='width:77.95pt;border:none;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>3025988</span>
+                    </p>
+
+                </td>
+                <td width="110" style='width:77.95pt;border:none;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>24568</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:14.1500pt; ">
+                <td width="250" valign="center"
+                    style='border:none;border-right:solid black 1.0pt;border-bottom:solid 1pt;border-up:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>全省总计</span>
+
+                    </p>
+
+                </td>
+                <td width="110" style='border:none;border-bottom:solid 1pt;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>307309</span>
+
+                    </p>
+                </td>
+                <td width="110" style='width:77.95pt;border:none;border-bottom:solid 1pt;border-right:solid black 1.0pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>10202630</span>
+                    </p>
+
+                </td>
+                <td width="110" style='width:77.95pt;border:none;border-bottom:solid 1pt;padding:0cm 0cm 0cm 0cm;height:14.15pt'>
+
+                    <p class=MsoNormal align=center
+                       style='margin-top:0cm;margin-right:2.85pt;
+  margin-bottom:0cm;margin-left:2.85pt;margin-bottom:.0001pt;text-align:center;
+  line-height:12.0pt'>
+                        <span style='font-family:宋体;color:#333333'>10202630</span>
+                    </p>
+                </td>
+            </tr>
+
+
+
+
+
+        </table>
+
+
+    </div>
+    <!--注释-->
+    <div class="table_unit" style="width: 550px" align="left" ><b>数据来源：第三次经济普查数据。</b></div>
+</div>
+<div id="g_1" align="center"; style='position:relative;height:410px;width: 1100px'>
+    <div class="pull-right" id="g_1_btn" style="margin-top:20px; margin-right: 100px">
+        <button type="button" class="btn btn-default btn-success" data-value="1">法人单位数</button>
+        <button type="button" class="btn btn-default" data-value="2">从业人员数</button>
+        <button type="button" class="btn btn-default" data-value="3">营业收入额</button>
+    </div>
+    <div class="clearfix"></div>
+        <div id="g_1_1" style="position:absolute;"></div>
+        <div id="g_1_2" style="position:absolute;margin-left:448px;"></div>
+</div>
+<div id="g_1_1_title" style="position:absolute;width: 528px" align="center">生产性服务业与服务业比例</div>
+<div id="g_1_2_title" style="position:absolute;margin-left:462px;width: 528px" align="center" >服务业与全行业比例</div><br/><br/>
+<div class="table_title" style="width:1100px;">图1-1  河北省生产性服务业企业法人单位基本情况</div>
+
+<br/><br/><br/>
+<div id="g_10" align="center"; style='position:relative;height:410px;width: 870px'>
+    <div class="pull-right" id="g_10_btn" style=" margin-right: 50px">
+        <button type="button" class="btn btn-default btn-success" data-value="1">批发和零售业</button>
+        <button type="button" class="btn btn-default" data-value="2">交通运输、仓储和邮政业</button>
+        <button type="button" class="btn btn-default" data-value="3">信息传输、软件和信息技术服务业</button>
+        <button type="button" class="btn btn-default" data-value="4">金融业</button>
+        <button type="button" class="btn btn-default" data-value="5">租赁和商务服务业</button>
+        <button type="button" class="btn btn-default" data-value="6">租赁和商务服务业</button>
+        <button type="button" class="btn btn-default" data-value="7">水利、环境和公共设施管理业</button>
+    </div>
+    <div class="clearfix"></div>
+    <div id="g_10_1" style="position:absolute;"></div>
+</div><br/><br/>
+<div class="table_title" style="width:870px;">图3-2  河北省生产性服务业各行业与制造业各行业相关系数</div>
+<br/><br/><br/>
+<div id="g_11" align="center"; style='position:relative;height:410px;width: 870px'>
+    <div class="pull-right" id="g_11_btn" style=" margin-right: 50px">
+        <button type="button" class="btn btn-default btn-success" data-value="1">批发和零售业</button>
+        <button type="button" class="btn btn-default" data-value="2">交通运输、仓储和邮政业</button>
+        <button type="button" class="btn btn-default" data-value="3">信息传输、软件和信息技术服务业</button>
+        <button type="button" class="btn btn-default" data-value="4">金融业</button>
+        <button type="button" class="btn btn-default" data-value="5">租赁和商务服务业</button>
+        <button type="button" class="btn btn-default" data-value="6">租赁和商务服务业</button>
+        <button type="button" class="btn btn-default" data-value="7">水利、环境和公共设施管理业</button>
+    </div>
+    <div class="clearfix"></div>
+    <div id="g_11_1" style="position:absolute;"></div>
+</div><br/><br/>
+<div class="table_title" style="width:870px;">图3-3  河北省生产性服务业各行业与制造业各行业弹性系数</div>
+</body>
+
+<script type="text/javascript" src="lib/semantic/js/semantic.js"></script>
+<script type="text/javascript" src="lib/seajs/sea.js"></script>
+<script type="text/javascript" src="lib/seajs/seajs-text.js"></script>
+<script>
+    seajs.config({
+        base : SGIS.Util.getLocalPath(),
+        map : [ [ '.json', '.json?t=' + new Date().getTime() ],
+            [ '.js', '.js?t=' + new Date().getTime() ],
+            [ '.css', '.css?t=' + new Date().getTime() ] ]
+    });
+    seajs.use('shiLeiLiang');
+</script>
+
+</html>

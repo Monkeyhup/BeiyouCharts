@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>各省的科技、著作、专利、所有权转让及许可数以收入等关系图</title>
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+
+	<link href="../../css/style.css" rel="stylesheet">
+
+	<link href="lib/chord-diagram.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/semantic/js/semantic.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/imageEffects/modernizr.custom.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/json2.js"></script>
+	<script type="text/javascript" src="lib/d3.min.js"></script>
+	<script type="text/javascript" src="lib/queue.min.js"></script>
+
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+	<style>
+
+		@import url(./lib/chord-diagram.css?aea6f0a);
+
+		#circle circle {
+			fill: none;
+			pointer-events: all;
+		}
+
+		.group path {
+			fill-opacity: .5;
+		}
+
+		path.chord {
+			stroke: #000;
+			stroke-width: .25px;
+		}
+
+		#circle:hover path.chord-fade {
+			display: none;
+		}
+
+	</style>
+</head>
+<body style="padding-top:0px;">
+	<div class="IEindecl" style="display:none;">
+		<p style="padding-top:5px;padding-left:10px;float:left;">
+			您正在使用的浏览器版本较低，本页部分动态内容不能正常显示，建议您安装 <a
+				href="http://rj.baidu.com/soft/detail/14744.html?ald"
+				style="text-decoration: none;">谷歌浏览器(Chrome)</a> / <a
+				href="http://ie.sogou.com/" style="text-decoration: none;">搜狗浏览器</a>
+			/ <a href="http://se.360.cn/" style="text-decoration: none;">IE9(for
+				win7)</a>版本。
+		</p>
+		<i id="remove_cion" class="remove icon" style="float:right;padding-top:3px;cursor: pointer;"></i>
+	</div>
+	<div class="container" style="max-width:1024px;">
+		<ul>
+			<li style="float:left;list-style-type: none;">
+				<i class="leaf icon" style="font-size: 1.8em;margin: 10px 0px 0px -34px;"></i>
+			</li>
+			<li style="list-style-type: none;">
+				<h3 class="h3c" id="iden-name" style="padding-top:7px;">
+					各省的科技、著作、专利、所有权转让及许可数以收入等关系图
+				</h3>
+			</li>
+			<!-- <li style="list-style-type: none;padding: 5px 0;">
+				<h4 class="h3c1" id="made-time" style="color:rgb(127, 127, 127);"></h4>
+			</li> -->
+		</ul>
+		<div class="explain" id="iden-info">
+			<ul class="qupoint" id="imageintroduce">
+				<li id="interpretation" style="text-indent: 2em;">
+					各省的发表科技论文(篇)、出版科技著作(种)、专利申请数(件)、有效发明专利(件)、专利所有权转让及许可数(件)、专利所有权转让及许收入(万元)以及形成国家或行业标准数(项)之间的关系。
+				</li>
+			</ul>
+		</div><!-- #iden-info -->
+		
+		<div id="show_icon">
+			<i id="left_icon" class="arrow left icon"></i>
+			<i id="right_icon" class="arrow right icon"></i>
+
+			<div class="pull-right" id="btn" style='display:none;'></div>
+			<div class="clearfix" style="border:0;background:0;"></div>
+
+			<div id="content" style="width:970px;margin:auto;height: 730px;">
+				<div id="contant" style="margin: auto;">
+					<div id="chart" style="margin-left: 120px;"></div>
+				</div><!--end#contant-->
+			</div><!--end#content-->
+
+		</div><!-- #show_icon -->
+
+	</div>
+
+</body>
+<script type="text/javascript" src="lib/chord-diagram.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+<script>
+	seajs.config({
+		base : SGIS.Config.GALLERY_MODULE_URL,		//基础路径
+		paths:{
+			base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+			tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+			gallery:SGIS.Config.GALLERY_MODULE_URL	//跨目录的gallery路径
+		},
+		map : [
+			[ '.json', '.json?t=' + new Date().getTime() ],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+			[ '.css', '.css?t=' + new Date().getTime() ]
+		]});
+	seajs.use('third-charts/js/index');
+</script>
+</html>

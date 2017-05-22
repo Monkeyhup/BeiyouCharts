@@ -1,0 +1,156 @@
+{
+    "id": "edcdd4ba-20e4-4110-969c-c4578ac79d79",
+    "chartName": "文化创意产业九大领域收入合计",
+    "chartMome": "软件网络及计算机服务、广告会展、艺术品交易、其他辅助服务领域的收入合计分别为5380.0亿元、1834.9亿元、1094.5亿元、1737.5亿元，分别占文化创意产业收入的38.5%、13.1%、7.8%、12.4%",
+    "chartType": 1,
+    "chartParam": {
+        "style": {
+            "colors": [
+                "#b6a2de",
+                "#c6e579",
+                "#26c0c0",
+                "#fe8463",
+                "#9bca63",
+                "#60c0dd",
+                "#f0805a",
+                "#deb714",
+                "#fad860"
+            ]
+        },
+        "container": {
+            "height": 620
+        }
+    },
+    "chartJson": {
+        "chartData": {
+            "data1_title": "收入合计（亿元）",
+            "data1_unit": "亿元",
+            "data1_data": {
+                "name": "收入合计（亿元）:合计(13982.0)",
+                "size": 13982,
+                "children": [
+                    {
+                        "name": "文化艺术(410.1亿元)",
+                        "size": 410.1
+                    },
+                    {
+                        "name": "新闻出版(1034.8亿元)",
+                        "size": 1034.8
+                    },
+                    {
+                        "name": "广播、电视、电影(859.4亿元)",
+                        "size": 859.4
+                    },
+                    {
+                        "name": "软件、网络及计算机服务(5380.0亿元)",
+                        "size": 5380
+                    },
+                    {
+                        "name": "广告会展(1834.9亿元)",
+                        "size": 1834.9
+                    },
+                    {
+                        "name": "艺术品交易(1094.5亿元)",
+                        "size": 1094.5
+                    },
+                    {
+                        "name": "设计服务(576.1亿元)",
+                        "size": 576.1
+                    },
+                    {
+                        "name": "旅游、休闲娱乐(1054.7亿元)",
+                        "size": 1054.7
+                    },
+                    {
+                        "name": "其他辅助服务(1737.5亿元)",
+                        "size": 1737.5
+                    }
+                ]
+            }
+        },
+        "excelData": [
+            [
+                "九大领域",
+                "收入合计（亿元）",
+                "分类等级"
+            ],
+            [
+                "合计",
+                "13982.0 ",
+                "1"
+            ],
+            [
+                "文化艺术",
+                "410.1 ",
+                "2"
+            ],
+            [
+                "新闻出版",
+                "1034.8 ",
+                "2"
+            ],
+            [
+                "广播、电视、电影",
+                "859.4 ",
+                "2"
+            ],
+            [
+                "软件、网络及计算机服务",
+                "5380.0 ",
+                "2"
+            ],
+            [
+                "广告会展",
+                "1834.9 ",
+                "2"
+            ],
+            [
+                "艺术品交易",
+                "1094.5 ",
+                "2"
+            ],
+            [
+                "设计服务",
+                "576.1 ",
+                "2"
+            ],
+            [
+                "旅游、休闲娱乐",
+                "1054.7 ",
+                "2"
+            ],
+            [
+                "其他辅助服务",
+                "1737.5 ",
+                "2"
+            ]
+        ]
+    },
+    "chartImage": "data:image/png;base64,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",
+    "createTime": 1449930752901,
+    "modifyTime": 1449932371913,
+    "chartShareCount": 0,
+    "chartTypeChart": "d3.rect",
+    "chartIsfromSgis": 0,
+    "tgalleryUser": {
+        "id": "3cbfa5a8-0692-4eae-9b4e-c4d4c7b4d897",
+        "userName": "北邮学生用户1",
+        "userLogin": "BUPT1",
+        "userPassword": "123456",
+        "userMome": "北邮学生用户备注",
+        "userType": 0,
+        "userStatus": 1,
+        "userAdmin": 0,
+        "createTime": 1446455030739,
+        "modifyTime": 1446455030739,
+        "lastestTime": 0
+    },
+    "tgalleryCatalog": {
+        "id": 4,
+        "catalogName": "私人图例",
+        "createTime": 1439882766003,
+        "modifyTime": 1439882766003,
+        "parentId": 0,
+        "catalogPrivate": 1
+    }
+}

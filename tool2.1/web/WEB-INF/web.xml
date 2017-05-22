@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name></display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- 授权管理 -->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>com.supermap.servlet.AuthServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/http/AuthServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 定期清理临时上传的excel文件 -->
+    <servlet>
+        <servlet-name>deteleFileServlet</servlet-name>
+        <servlet-class>com.supermap.servlet.DeteleFileServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deteleFileServlet</servlet-name>
+        <url-pattern>/http/deteleFileServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 上传操作 -->
+    <servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>com.supermap.servlet.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/http/upload</url-pattern>
+    </servlet-mapping>
+
+    <!-- echarts图新增页面转发操作 -->
+    <servlet>
+        <servlet-name>addEcharts</servlet-name>
+        <servlet-class>com.supermap.servlet.EchartsAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addEcharts</servlet-name>
+        <url-pattern>/http/addecharts</url-pattern>
+    </servlet-mapping>
+
+    <!-- echarts图编辑页面转发操作 -->
+    <servlet>
+        <servlet-name>editEcharts</servlet-name>
+        <servlet-class>com.supermap.servlet.EchartsEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editEcharts</servlet-name>
+        <url-pattern>/http/editecharts</url-pattern>
+    </servlet-mapping>
+
+    <!-- d3图新增页面转发操作 -->
+    <servlet>
+        <servlet-name>addD3</servlet-name>
+        <servlet-class>com.supermap.servlet.D3AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addD3</servlet-name>
+        <url-pattern>/http/addd3</url-pattern>
+    </servlet-mapping>
+
+    <!-- d3图编辑页面转发操作 -->
+    <servlet>
+        <servlet-name>editD3</servlet-name>
+        <servlet-class>com.supermap.servlet.D3EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editD3</servlet-name>
+        <url-pattern>/http/editd3</url-pattern>
+    </servlet-mapping>
+    <!-- Highcharts图新增页面转发操作 -->
+    <servlet>
+        <servlet-name>addHighcharts</servlet-name>
+        <servlet-class>com.supermap.servlet.HighchartsAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addHighcharts</servlet-name>
+        <url-pattern>/http/addhighcharts</url-pattern>
+    </servlet-mapping>
+
+    <!-- Highcharts图编辑页面转发操作 -->
+    <servlet>
+        <servlet-name>editHighcharts</servlet-name>
+        <servlet-class>com.supermap.servlet.HighchartsEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editHighcharts</servlet-name>
+        <url-pattern>/http/edithighcharts</url-pattern>
+    </servlet-mapping>
+    <!-- Fusioncharts图新增页面转发操作 -->
+    <servlet>
+        <servlet-name>addFusioncharts</servlet-name>
+        <servlet-class>com.supermap.servlet.FusionchartsAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addFusioncharts</servlet-name>
+        <url-pattern>/http/addfusioncharts</url-pattern>
+    </servlet-mapping>
+    <!-- Fusioncharts图编辑页面转发操作 -->
+    <servlet>
+        <servlet-name>editFusioncharts</servlet-name>
+        <servlet-class>com.supermap.servlet.FusionchartsEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editFusioncharts</servlet-name>
+        <url-pattern>/http/editfusioncharts</url-pattern>
+    </servlet-mapping>
+    <!-- 下载json文件 -->
+    <servlet>
+        <servlet-name>download</servlet-name>
+        <servlet-class>com.supermap.servlet.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>download</servlet-name>
+        <url-pattern>/http/download</url-pattern>
+    </servlet-mapping>
+
+    <!-- excel数据格式化文件 -->
+    <servlet>
+        <servlet-name>excelformat</servlet-name>
+        <servlet-class>com.supermap.servlet.ExcelDataToJsonDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>excelformat</servlet-name>
+        <url-pattern>/http/excelformat</url-pattern>
+    </servlet-mapping>
+</web-app>

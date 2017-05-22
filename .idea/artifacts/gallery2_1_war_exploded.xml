@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gallery2.1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/gallery2.1</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gallery2.1" />
+          <element id="module-output" name="tool2.1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="gallery2.1-lib" />
+          <element id="library" level="project" name="tool2.1-lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="gallery2.1/web/Web" />
+      <element id="javaee-facet-resources" facet="tool2.1/web/Web" />
+    </root>
+  </artifact>
+</component>

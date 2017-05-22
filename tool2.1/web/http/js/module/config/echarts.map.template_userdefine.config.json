@@ -1,0 +1,11 @@
+[
+    {
+        "id":"map_china",
+        "name": "全国及各省地图",
+        "url":""
+    },{
+        "id":"map_beijing",
+        "name": "北京地图",
+        "url":"js/module/map/map.geo.beijing.config.json"
+    }
+]

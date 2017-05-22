@@ -1,0 +1,78 @@
+/**
+ *
+ * d3鐨�鏌辩姸鍥�鍙帓搴�
+ *
+ * Created by Linhao on 2014/12/22.
+ */
+svg.category-compare-bar path {
+	stroke: #fff;
+}
+svg.category-compare-bar path:hover {
+	opacity: 0.9;
+}
+
+svg.category-compare-bar .axis {
+	font: 10px sans-serif;
+}
+
+svg.category-compare-bar .axis path,.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+svg.category-compare-bar .x.axis path {
+	display: none;
+}
+
+svg.category-compare-bar rect:hover {
+	fill: blue;
+}
+
+svg.category-compare-bar text {
+	font-family: 微软雅黑;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+svg.category-compare-bar .x.axis text {
+	font-family: 微软雅黑;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+/*******************************************************/
+svg.category-compare-pie{
+	position: absolute;
+}
+
+
+/*******************************************************/
+
+.category-compare-legend {
+	display: inline-block;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+
+.category-compare-legend  tr {
+	border-bottom: 1px solid grey;
+}
+
+.category-compare-legend  tr:first-child {
+	border-top: 1px solid grey;
+}
+
+.category-compare-legend tr td {
+	padding: 4px 5px;
+	vertical-align: bottom;
+}
+
+.category-compare-legend-freq,
+.category-compare-legend-unit,
+.category-compare-legend-perc {
+	align: right;
+}

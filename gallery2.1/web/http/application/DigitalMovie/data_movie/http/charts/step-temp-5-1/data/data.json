@@ -1,0 +1,171 @@
+{
+    "id": "6d65af46-a586-4e82-b06c-8dec82999a89",
+    "chartName": "2014年文化创意产业从业人员",
+    "chartMome": "2014年，软件网络及计算机服务、广告会展、设计服务及其他辅助服务领域的从业人员数分别为90.8万人、17.3万人、17.0万人、16.7万人，分别占文化创意产业九大领域的47.4%、9.0%、8.7%、8.9%",
+    "chartType": 0,
+    "chartParam": {
+        "style": {
+            "series": [
+                {
+                    "radius": [
+                        "40%",
+                        "70%"
+                    ],
+                    "itemStyle": {
+                        "normal": {
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                "textStyle": {
+                                    "fontSize": "23"
+                                }
+                            },
+                            "labelLine": {
+                               "show" : false
+                            }
+                        },
+						"emphasis" : {
+							"label" : {
+								"textStyle" : {
+									"fontSize" : "14",
+									"color": "#ffffff"
+								}
+							}
+						}
+                    }
+                }
+            ],
+            "legend": {
+                "show": false
+            },
+            "color": [
+				"#fefefe",
+				"#F2F9F2",
+				"#DEF0F0",
+				"#E5E6EB",
+				"#EDDFDC",
+				"#FCC5C0",
+				"#FA9FB5",
+				"#F768A1",
+				"#F56835"
+            ]
+        },
+        "container": {
+            "height": 400
+        }
+    },
+    "chartJson": {
+        "chartData": [
+			
+            {
+                "name": "九大领域",
+                "value": "2014年文化创意产业分领域增加值(亿元)"
+            },
+            {
+                "name": "艺术品交易",
+                "value": 56.2
+            },
+            {
+                "name": "旅游、休闲娱乐",
+                "value": 99.7
+            },
+            {
+                "name": "文化艺术",
+                "value": 115.6
+            },
+            {
+                "name": "设计服务",
+                "value": 127.7
+            },
+            {
+                "name": "其他辅助服务",
+                "value": 161.7
+            },
+            {
+                "name": "广播、电视、电影",
+                "value": 200.3
+            },
+            {
+                "name": "广告会展",
+                "value": 220.2
+            },
+            {
+                "name": "新闻出版",
+                "value": 239.7
+            },
+            {
+                "name": "软件、网络及计算机服务",
+                "value": 1605.2
+            }
+        ],
+        "excelData": [
+            {
+                "name": "九大领域",
+                "value": "2014年文化创意产业分领域增加值(亿元)"
+            },
+            {
+                "name": "软件、网络及计算机服务",
+                "value": 1605.2
+            },
+            {
+                "name": "新闻出版",
+                "value": 239.7
+            },
+            {
+                "name": "广告会展",
+                "value": 220.2
+            },
+            {
+                "name": "广播、电视、电影",
+                "value": 200.3
+            },
+            {
+                "name": "其他辅助服务",
+                "value": 161.7
+            },
+            {
+                "name": "设计服务",
+                "value": 127.7
+            },
+            {
+                "name": "文化艺术",
+                "value": 115.6
+            },
+            {
+                "name": "旅游、休闲娱乐",
+                "value": 99.7
+            },
+            {
+                "name": "艺术品交易",
+                "value": 56.2
+            }
+        ]
+    },
+    "chartImage": "",
+    "createTime": 1449800612627,
+    "modifyTime": 1449804210444,
+    "chartShareCount": 0,
+    "chartTypeChart": "echarts.pie.single",
+    "chartIsfromSgis": 0,
+    "tgalleryUser": {
+        "id": "3cbfa5a8-0692-4eae-9b4e-c4d4c7b4d897",
+        "userName": "北邮学生用户1",
+        "userLogin": "BUPT1",
+        "userPassword": "123456",
+        "userMome": "北邮学生用户备注",
+        "userType": 0,
+        "userStatus": 1,
+        "userAdmin": 0,
+        "createTime": 1446455030739,
+        "modifyTime": 1446455030739,
+        "lastestTime": 0
+    },
+    "tgalleryCatalog": {
+        "id": 4,
+        "catalogName": "私人图例",
+        "createTime": 1439882766003,
+        "modifyTime": 1439882766003,
+        "parentId": 0,
+        "catalogPrivate": 1
+    }
+}

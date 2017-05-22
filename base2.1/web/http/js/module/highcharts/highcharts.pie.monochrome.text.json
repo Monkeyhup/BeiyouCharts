@@ -1,0 +1,30 @@
+[
+  {
+    "name": "地表水质",
+    "value": "占比（百分数）"
+  },
+  {
+    "name": "I类",
+    "value": 2.8
+  },
+  {
+    "name": "II类",
+    "value": 31.4
+  },
+  {
+    "name": "III类",
+    "value": 30.3
+  },
+  {
+    "name": "IV类",
+    "value": 21.1
+  },
+  {
+    "name": "V类",
+    "value": 5.6
+  },
+  {
+    "name": "劣V类",
+    "value": 8.8
+  }
+]

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>工具制图-我的作品</title>
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="this is my page">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+	<link href="css/upload.css" rel="stylesheet">
+	<link href="css/chart.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/json2.js"></script>
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body>
+	<div id="top-alert-container" class="IEindecl" style="display:none;position: fixed;top:0px;z-index:100000;width: 100%;height: 50px;background: #FFC125;font-family: 微软雅黑;font-size: 1.3em;">
+		<div style="padding-top:15px;padding-left:10px;float:left;">
+		<p>
+			您正在使用的浏览器可能不能得到很好的体验，为了得到更好的体检，建议您安装
+				<a target="_blank" href="../browers/ChromeStandalone_V45.0.2454.101_Setup.1443151805.exe" style="text-decoration: none;">谷歌浏览器(Chrome)</a>
+				/ <a target="_blank" href="../browers/Firefox_V39.0.0.5659_setup.1435906049.exe" style="text-decoration: none;">火狐浏览器(FireFox)</a>
+				等主流浏览器
+		</p>
+		</div>
+		<div style="float:right;padding-top:15px;padding-right:20px;cursor: pointer;">
+			<a id="remove-top-btn" title="点击关闭" href="javascript:;">
+				<i id="remove_cion" class="remove icon" ></i>
+			</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!--顶部导航-->
+	<!--顶部导航-->
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation" style="background-color:#123c5f;height:60px;">
+	</nav>
+
+	<div class="container-fluid" style="padding-top: 60px;">
+		<div class="well well-sm">
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation">
+					<a href="chart.mine.thumbnail.html">缩略图</a>
+				</li>
+				<!--<li role="presentation">
+					<a href="chart.mine.water.flow.html">瀑布流</a>
+				</li>-->
+				<li role="presentation"class="active">
+					<a class="btn-lg"  href="chart.mine.table.html">表格视图<span class="badge">当前</span></a>
+				</li>
+			</ul>
+		</div>
+		<!-- 左右 -->
+		<div class="row">
+		  <div class="col-xs-12 col-md-12">
+			  <table id="my-gallery-table" class="ui celled  table">
+				  <thead id="my-gallery-thead">
+					  <tr>
+						  <th class="single line">
+							  <div class="ui ribbon label">我的作品列表</div>
+							  可视化图名称
+						  </th>
+						  <th style="width: 30%;">说明</th>
+						  <th><div class='text-center'>分类目录</div></th>
+						  <th><div class='text-center'>图片截图</div></th>
+						  <th><div class='text-center'>图类型</div></th>
+						  <th><div class='text-center'>来自成果保存</div></th>
+						  <th>创建时间</th>
+						  <th>修改时间</th>
+						  <th><div class='text-center'>分享次数</div></th>
+					  </tr>
+				  </thead>
+				  <tbody id="my-gallery-tbody"></tbody>
+				  <tbody class="hide" id="my-gallery-loading">
+					  <tr>
+						  <th colspan="10">
+							<div class="text-center text-muted">
+								<i class="icon loading"></i>数据加载中...
+							</div>
+						  </th>
+					  </tr>
+				  </tbody>
+				  <tfoot id="my-gallery-tfoot">
+					  <tr>
+						  <th colspan="10">
+							  <div class="ui right floated menu" id="my-gallery-paging"></div>
+						  </th>
+					  </tr>
+				  </tfoot>
+			  </table>
+		  </div><!-- .col-xs-12 -->
+		</div>
+	</div>
+
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="img-modal" tabindex="-1" role="dialog" data-backdrop="static"  aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						<i class="icon photo"></i>
+						<span>大图查看</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="img-modal-img" style="margin: 0 auto;">
+					</div>
+				</div><!--modal-body-->
+				<div class="modal-footer"></div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- end.模态框（Modal） -->
+
+</body>
+<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+<script type="text/javascript" src="js/user.info.js"></script>
+<script type="text/javascript" src="js/paging.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+<script type="text/javascript" src="/tool2.1/http/js/narBar.js"></script>
+<script type="text/javascript" src='/base2.1/http/lib/icon/iconfont.js'></script>
+<script>
+	seajs.config({
+		base : SGIS.Config.TOOL_MODULE_URL,			//基础路径
+		paths:{
+			base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+			tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+			gallery:SGIS.Config.GALLERY_MODULE_URL	//跨目录的gallery路径
+		},
+		map : [ [ '.json', '.json?t=' + new Date().getTime() ],
+//				[ '.js', '.js?t=' + new Date().getTime() ],
+//				[ '.tpl', '.tpl?t=' + new Date().getTime() ],
+				[ '.css', '.css?t=' + new Date().getTime() ] ]
+	});
+	seajs.use('js/chart.mine.table',function(obj){
+		obj.init(true);
+    });
+	seajs.use('/tool2.1/http/js/narBar',function(obj){
+		obj.into();
+	});
+</script>
+
+</html>

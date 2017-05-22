@@ -1,0 +1,9 @@
+
+
+result.service.start=服务器启动!
+
+
+
+result.execute.ok=执行成功!
+result.execute.fail=执行失败!
+result.execute.fail.isnomulti=执行失败！提交方式不对，不是Multi 提交方式！ 

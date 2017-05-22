@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn" class=" js no-touch"><head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>功能区集聚发展效应突出</title>
+
+	<link href="../../lib/semantic/css/semantic.css" rel="stylesheet">
+
+	<script type="text/javascript" src="../../lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../../lib/json2.js"></script>
+	<script type="text/javascript" src="../../lib/d3/d3.v3.min.js"></script>
+
+	<script type="text/javascript" src="../../lib/semantic/js/semantic.js"></script>
+
+	<script type="text/javascript" src="../../lib/d3/d3.v3.min.js"></script>
+	<script type="text/javascript" src="../../js/SGIS.Base.js"></script>
+	<style>
+		body,html{
+			margin: 0;
+			padding: 0;
+			background-color: transparent;
+			width: 1024px;
+			height: 720px;
+		}
+
+		.white-text{
+			color: #ffffff !important;
+		}
+		.black-text{
+			color: #000000 !important;
+		}
+
+		text{
+			stroke: #ffffff !important;
+			font-weight: normal !important;
+		}
+		
+		g.tick>text{
+			font-size:1.6em  !important;
+		}
+		g.enter text,g.exit text{
+			font-size:1.3em  !important;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container" style="max-width:1024px;">
+		<ul style="display:none;">
+			<li style="float:left;list-style-type: none;">
+				<i class="leaf icon white-text" style="font-size: 1.8em;margin: 5px 0px 0px -34px;"></i>
+			</li>
+			<li style="list-style-type: none;">
+				<h3 class="h3c white-text" id="iden-name" style="padding-top:7px;">功能区集聚发展效应突出</h3>
+			</li>
+			<li style="list-style-type: none;padding: 5px 0;">
+				<h4 class="h3c1 white-text" id="made-time" style="color:rgb(127, 127, 127);"></h4>
+			</li>
+		</ul>
+		<div class="explain" id="iden-info" style="display:none;">
+			<ul class="qupoint" id="imageintroduce">
+				<li id="interpretation" class="white-text" style="font-family: 微软雅黑;text-indent: 2em;list-style-type: none;">
+					2014年，全市20个文化创意产业功能区企业实现收入8158.8亿元，同比增长13.1%，占全市文化创意产业收入比重为69.1%，集聚效果进一步显现。
+				</li>
+			</ul>
+		</div><!-- #iden-info -->
+		
+		<a id="play_icon" href="javacript:;" style="display:none;margin-left:200px;color:#ffffff;font-family:微软雅黑;font-size:1.3em;text-decoration:none;" data-value="1">
+			下钻
+		</a>
+		<div id="show_icon" style="margin-top: 40px;">
+			<div id="content" style="width:970px;margin:auto;"></div>
+		</div><!-- #show_icon -->
+	</div>
+	<script type="text/javascript" src="../../lib/seajs/sea.js"></script>
+	<script type="text/javascript" src="../../lib/seajs/seajs-text.js"></script>
+	<script>
+		seajs.config({
+			base : SGIS.Util.getLocalPath()+"http/",
+			map : [
+				[ '.json', '.json?t=' + new Date().getTime() ],
+	//			[ '.js', '.js?t=' + new Date().getTime() ],
+				[ '.css', '.css?t=' + new Date().getTime() ]
+			]});
+		seajs.use('charts/step-7-1/index');
+	</script>
+	<script>
+		$(function(){
+			if(top.location !== location){
+				// Prevent default keydown action when one of supported key is pressed.
+				document.addEventListener("keydown", function ( event ) {
+					if ( event.keyCode === 9
+							|| ( event.keyCode >= 32 && event.keyCode <= 34 )
+							|| (event.keyCode >= 37 && event.keyCode <= 40)) {
+						event.preventDefault();
+					}
+				}, false);
+
+				// Trigger impress action (next or prev) on keyup.
+				document.addEventListener("keyup", function ( event ) {
+					if ( event.keyCode === 9
+							|| ( event.keyCode >= 32 && event.keyCode <= 34 )
+							|| (event.keyCode >= 37 && event.keyCode <= 40) ) {
+						switch( event.keyCode) {
+							case 33: // pg up
+							case 37: // left
+							case 38: // up
+								if(typeof top.impress == "function"){
+									top.impress().prev();
+								}
+								break;
+							case 9:  // tab
+							case 32: // space
+							case 34: // pg down
+							case 39: // right
+							case 40: // down
+								if(typeof top.impress == "function"){
+									top.impress().next();
+								}
+								break;
+						}
+						event.preventDefault();
+					}
+				}, false);
+			}
+		});
+	</script>
+</body></html>

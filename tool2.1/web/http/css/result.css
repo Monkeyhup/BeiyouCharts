@@ -1,0 +1,79 @@
+#TestCode {
+	width: 900px;
+	height: 200px;
+	border: 1px solid #c5c5c5;
+	font-size: 18px;
+	font-family: 微软雅黑;
+}
+
+#Test_demo {
+	width: 900px;
+	height: 200px;
+	border: 1px solid #c5c5c5;
+	font-size: 16px;
+	font-family: 微软雅黑;
+}
+
+.cont_p {
+	width: 260px;
+	position: absolute;
+}
+
+.body_up {
+	margin: auto;
+	width: 900px;
+}
+
+#all_contrue {
+	cursor: pointer;
+}
+
+#all_contrue:hover {
+	cursor: pointer;
+	background-color: #EEEEE0 !important;
+	border-radius: 5px;
+}
+
+.imageID {
+	border-style: solid;
+	border-color: rgb(195, 208, 208);
+	border: 2px solid #ddd;
+}
+
+.ADoc_table th {
+	border-bottom: 2px solid rgb(23, 53, 81);
+	background: rgb(199, 128, 128);
+	color: #fff;
+	text-align: center;
+	width: 100px;
+}
+
+.ADoc_table th,.ADoc_table td {
+	border: 1px solid rgb(23, 53, 81);
+	padding: 3px;
+	font-family: 微软雅黑;
+}
+
+.ADoc_table td {
+	color: rgb(9, 48, 131);
+}
+
+.ADoc_table {
+	border-collapse: collapse;
+	margin-bottom: 15px;
+}
+
+table {
+	max-width: 100%;
+	background-color: transparent;
+}
+
+.p-span span {
+	color: rgb(9, 48, 131);
+	font-weight: bold;
+}
+
+.container {
+	font-family: 'hiragino sans gb', 'Microsoft YaHei', Helvetica, '黑体',
+		'宋体', sans-serif;
+}

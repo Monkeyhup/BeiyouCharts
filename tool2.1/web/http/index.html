@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>图集选择工具</title>
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="this is my page">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+	<link href='/base2.1/http/lib/spectrum-master/spectrum.css' rel='stylesheet' />
+	<link href="css/index.css" rel="stylesheet">
+
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src='/base2.1/http/lib/spectrum-master/spectrum.js'></script>
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<style type="text/css">
+    img.bottom {vertical-align:text-bottom}
+    body{ text-align:center}
+	#divcss5{margin:0 auto;}
+	a{
+		color:black;
+	}
+	a:hover{
+		color: blue;
+	}
+</style>
+<body>
+<div id="top-alert-container" class="IEindecl" style="display:none;position: fixed;top:0px;z-index:1000;width: 100%;height: 60px;background: #FFC125;font-family: 微软雅黑;font-size: 1.3em;">
+	<div style="padding-top:15px;padding-left:10px;float:left;">
+		<p>
+			您正在使用的浏览器可能不能得到很好的体验，为了得到更好的体检，建议您安装
+			<a target="_blank" href="../browers/ChromeStandalone_V45.0.2454.101_Setup.1443151805.exe" style="text-decoration: none;">谷歌浏览器(Chrome)</a>
+			/ <a target="_blank" href="../browers/Firefox_V39.0.0.5659_setup.1435906049.exe" style="text-decoration: none;">火狐浏览器(FireFox)</a>
+			等主流浏览器
+		</p>
+	</div>
+	<div style="float:right;padding-top:15px;padding-right:20px;cursor: pointer;">
+		<a id="remove-top-btn" title="点击关闭" href="javascript:;">
+			<i id="remove_cion" class="remove icon" ></i>
+		</a>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<!--顶部导航-->
+<nav class="navbar navbar-inverse navbar-fixed-top"  id="navbar" role="navigation" style="background-color:#123c5f;height:60px;">
+</nav>
+
+<div class="container main" style="padding-top:60px;">
+	<!-- 上下 -->
+    <!--<i class="icon user"></i>-->
+	<div class="row">
+		<!-- 主图形 -->
+		<div id="divcss5" class="divcss5-abc">
+			<tr>
+				<td><img class="bottom"src="image/jichutuxing.png"></td>
+				<table style="display:inline-block;">
+					<tr>
+						<td style="padding:25px 5px 5px 15px"><a href="#mari_id2">柱形图</a></td>
+						<td style="padding:25px 35px 5px 5px"><a href="#mari_id3">条形图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 5px 5px 15px"><a href="#mari_id1">面积图</a></td>
+						<td style="padding:5px 35px 5px 25px"><a href="#mari_id4">饼(圆环)图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 5px 15px 15px"><a href="#mari_id0">折线图</a></td>
+						<td style="padding:5px 35px 15px 5px"><a href="#mari_id5">散点图</a></td>
+					</tr>
+				</table>
+				<td><img class="bottom" border="0" src="image/zuhetuxing.png"></td>
+				<table style="display:inline-block;">
+					<tr>
+						<td style="padding:25px 35px 5px 35px"><a href="#mari_id6">折线&柱形图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 35px 5px 15px"><a href="#mari_id6">面积图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 35px 15px 15px"><a href="#mari_id6">其他图</a></td>
+					</tr>
+				</table>
+
+				<td><img class="bottom" border="0" src="image/zhuantituxing.png"></td>
+				<table  style="display:inline-block;">
+					<tr>
+						<td style="padding:25px 5px 5px 15px"><a href="#mari_id7">漏斗图</a></td>
+						<td style="padding:25px 35px 5px 5px"><a href="#mari_id7">平行坐标图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 5px 5px 15px"><a href="#mari_id7">雷达图</a></td>
+					</tr>
+					<tr>
+						<td style="padding:5px 5px 15px 15px"><a href="#mari_id7">其他图</a></td>
+					</tr>
+				</table>
+			</tr>
+		</div>
+		<div class="main-container">
+			<div class="row-right">
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id2">柱形图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+						<li  class="echartsBarVerticalSingle">
+							<div class="im-name">单柱形图</div>
+							<img id="echarts.bar.vertical.single" src="image/echarts/echarts.bar.vertical.single.png" class="img-thumbnail">
+						</li>
+						<li class="echartsBarVerticalMulti">
+							<div class="im-name">对比柱形图</div>
+							<img id="echarts.bar.vertical.multi" src="image/echarts/echarts.bar.vertical.multi.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">单柱形图(标识最值)</div>
+							<img id="echarts.bar.vertical.single-1" src="image/echarts/echarts.bar.vertical.single-1.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">彩色单柱形图</div>
+							<img id="echarts.bar.vertical.single-2" src="image/echarts/echarts.bar.vertical.single-2.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">倒角单柱状图</div>
+							<img id="echarts.bar.vertical.single-3" src="image/echarts/echarts.bar.vertical.single-3.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">背景色单柱形图</div>
+							<img id="echarts.bar.vertical.single-4" src="image/echarts/echarts.bar.vertical.single-4.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比柱形图(标识最值)</div>
+							<img id="echarts.bar.vertical.multi-1" src="image/echarts/echarts.bar.vertical.multi-1.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比柱形图(标识平均值)</div>
+							<img id="echarts.bar.vertical.multi-2" src="image/echarts/echarts.bar.vertical.multi-2.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">倒角对比柱形图</div>
+							<img id="echarts.bar.vertical.multi-3" src="image/echarts/echarts.bar.vertical.multi-3.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">背景色对比柱形图</div>
+							<img id="echarts.bar.vertical.multi-4" src="image/echarts/echarts.bar.vertical.multi-4.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">堆叠图</div>
+							<img id="d3.bar.horizontal.stack" src="image/d3/d3.bar.horizontal.stack.png" class="img-thumbnail pull-left">
+						</li>
+						<li>
+							<div class="im-name">3D单柱形图</div>
+							<img id="highcharts.3dcolumn.single" src="image/highcharts/highcharts.3dcolumn.single.png" class="img-thumbnail pull-left">
+						</li>
+					</ul>
+
+					<div class="clearfix"></div>
+
+				</div><!--end.柱形图row-right-container-->
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id3">条形图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+						<li>
+							<div class="im-name">单条形图</div>
+							<img id="echarts.bar.horizontal.single" src="image/echarts/echarts.bar.horizontal.single.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">刻度可调条形图</div>
+							<img id="echarts.bar.horizontal.single-4" src="image/echarts/echarts.bar.horizontal.single-4.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">彩色条形图</div>
+							<img id="echarts.bar.horizontal.single-2" src="image/echarts/echarts.bar.horizontal.single-2.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">X轴网格条形图</div>
+							<img id="echarts.bar.horizontal.single-1" src="image/echarts/echarts.bar.horizontal.single-1.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">含负数条形图</div>
+							<img id="echarts.bar.horizontal.single-3" src="image/echarts/echarts.bar.horizontal.single-3.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比条形图</div>
+							<img id="echarts.bar.horizontal.multi" src="image/echarts/echarts.bar.horizontal.multi.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比条形图(标示最值)</div>
+							<img id="echarts.bar.horizontal.multi-1" src="image/echarts/echarts.bar.horizontal.multi-1.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比条形图(标示平均值)</div>
+							<img id="echarts.bar.horizontal.multi-2" src="image/echarts/echarts.bar.horizontal.multi-2.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">倒角对比条形图</div>
+							<img id="echarts.bar.horizontal.multi-3" src="image/echarts/echarts.bar.horizontal.multi-3.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">背景色对比条形图</div>
+							<img id="echarts.bar.horizontal.multi-4" src="image/echarts/echarts.bar.horizontal.multi-4.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">对比条形图-无Y轴间隔</div>
+							<img id="echarts.bar.horizontal.multi-6" src="image/echarts/echarts.bar.horizontal.multi-6.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">条形堆叠图</div>
+							<img id="echarts.bar.vertical.stack" src="image/echarts/echarts.bar.vertical.stack.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">清新色条形堆叠图</div>
+							<img id="echarts.bar.vertical.stack-1" src="image/echarts/echarts.bar.vertical.stack-1.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">渐变色条形堆叠图</div>
+							<img id="echarts.bar.vertical.stack-2" src="image/echarts/echarts.bar.vertical.stack-2.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">分组条形堆叠图</div>
+							<img id="echarts.bar.vertical.stack-3" src="image/echarts/echarts.bar.vertical.stack-3.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">背景色条形堆叠图</div>
+							<img id="echarts.bar.vertical.stack-4" src="image/echarts/echarts.bar.vertical.stack-4.png" class="img-thumbnail">
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div><!--end.条形图row-right-container-->
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id1">面积图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+                        <li>
+                            <div class="im-name">单面积图</div>
+                            <img id="echarts.area.single" src="image/echarts/echarts.area.single.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">Y轴刻度可变单面积图</div>
+                            <img id="echarts.area.single-1" src="image/echarts/echarts.area.single-1.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">多标识单面积图</div>
+                            <img id="echarts.area.single-2" src="image/echarts/echarts.area.single-2.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">背景色单面积图</div>
+                            <img id="echarts.area.single-4" src="image/echarts/echarts.area.single-4.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">分割线单面积图</div>
+                            <img id="echarts.area.single-3" src="image/echarts/echarts.area.single-3.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">对比面积图</div>
+                            <img id="echarts.area.multi" src="image/echarts/echarts.area.multi.png" class="img-thumbnail">
+                            <div class="clearfix"></div>
+                        </li>
+                        <li>
+                            <div class="im-name">分割线对比面积图</div>
+                            <img id="echarts.area.multi-3" src="image/echarts/echarts.area.multi-3.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">背景色对比面积图</div>
+                            <img id="echarts.area.multi-4" src="image/echarts/echarts.area.multi-4.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">多标识对比面积图</div>
+                            <img id="echarts.area.multi-2" src="image/echarts/echarts.area.multi-2.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">Y轴刻度可变对比面积图</div>
+                            <img id="echarts.area.multi-1" src="image/echarts/echarts.area.multi-1.png" class="img-thumbnail">
+                        </li>
+                    </ul>
+					<div class="clearfix"></div>
+				</div><!--end.面积图row-right-container-->
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id0">折线图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+                        <li class="echartsLineSingle">
+                            <div class="im-name">单折线图</div>
+                            <img id="echarts.line.single" src="image/echarts/echarts.line.single.png" class="img-thumbnail">
+                        </li>
+                        <li class="echartsLineSingle">
+                            <div class="im-name">单折线图-背景色</div>
+                            <img id="echarts.line.single-6" src="image/echarts/echarts.line.single-6.png" class="img-thumbnail">
+                        </li>
+                        <li class="echartsLineMulti">
+                            <div class="im-name">对比折线图</div>
+                            <img id="echarts.line.multi" src="image/echarts/echarts.line.multi.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">对比折线图-Y轴刻度可变</div>
+                            <img id="echarts.line.multi-2" src="image/echarts/echarts.line.multi-2.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">对比折线图-数据标识改变</div>
+                            <img id="echarts.line.multi-3" src="image/echarts/echarts.line.multi-3.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">对比折线图-最值标记</div>
+                            <img id="echarts.line.multi-4" src="image/echarts/echarts.line.multi-4.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">对比折线图-平滑曲线</div>
+                            <img id="echarts.line.multi-5" src="image/echarts/echarts.line.multi-5.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">单折线图-Y轴刻度可变</div>
+                            <img id="echarts.line.single-2" src="image/echarts/echarts.line.single-2.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">单折线图-无x轴分隔线</div>
+                            <img id="echarts.line.single-3" src="image/echarts/echarts.line.single-3.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">单折线图-最值标记</div>
+                            <img id="echarts.line.single-4" src="image/echarts/echarts.line.single-4.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">单折线图-平滑曲线</div>
+                            <img id="echarts.line.single-5" src="image/echarts/echarts.line.single-5.png" class="img-thumbnail">
+                        </li>
+                    </ul>
+					<div class="clearfix"></div>
+				</div><!--end.折线图row-right-container-->
+
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id4">饼（圆环）图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+                        <li>
+                            <div class="im-name">饼图</div>
+                            <img id="echarts.pie.single" src="image/echarts/index/echarts.pie.single.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">颜色渐变饼图</div>
+                            <img id="highcharts.gradient.pie.single" src="image/highcharts/index/highcharts.gradient.pie.single.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">3D饼图</div>
+                            <img id="highcharts.3dpie.single" src="image/highcharts/index/highcharts.3dpie.single.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">3D环形图</div>
+                            <img id="highcharts.3dpie.circle.single" src="image/highcharts/highcharts.3dpie.circle.single.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">旋转饼图</div>
+                            <img id="fusioncharts.pie.rotate" src="image/fusioncharts/fusioncharts.pie.rotate.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">嵌套饼图</div>
+                            <img id="echarts.pie.nesting" src="image/echarts/index/echarts.pie.nesting.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">玫瑰图</div>
+                            <img id="echarts.pie.rose" src="image/echarts/index/echarts.pie.rose.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">南丁格尔玫瑰图</div>
+                            <img id="echarts.pie.customized" src="image/echarts/index/echarts.pie.customized.png" class="img-thumbnail">
+                        </li>
+                        <li>
+                            <div class="im-name">单色调饼图</div>
+                            <img id="highcharts.pie.monochrome" src="image/highcharts/index/highcharts.pie.monochrome.png" class="img-thumbnail">
+                        </li>
+                    </ul>
+					<div class="clearfix"></div>
+				</div><!--end.饼图row-right-container-->
+
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id5">散点（气泡）图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+						<li>
+							<div class="im-name">散点图</div>
+							<img id="echarts.scatter" src="image/echarts/index/echarts.scatter.png" class="img-thumbnail">
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div><!--end.散点图row-right-container-->
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id6">组合图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+						<li>
+							<div class="im-name">三视图互动</div>
+							<img id="echarts.three.view" src="image/echarts/index/echarts.three.view.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">单柱折线图</div>
+							<img id="echarts.bar.line" src="image/echarts/index/echarts.bar.line.png" class="img-thumbnail">
+						</li>
+<li>
+                            <div class="im-name">堆叠柱形折线图</div>
+                            <img id="echarts.multibar.line" src="image/echarts/index/echarts.multibar.line.png" class="img-thumbnail">
+                        </li>
+						<li  class="echartsNbarsLine">
+							<div class="im-name">多柱折线图</div>
+							<img id="echarts.nbars.line" src="image/echarts/echarts.nabrs.line.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">组合饼图</div>
+							<img id="echarts.three.pie" src="image/echarts/index/echarts.three.pie.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">饼图柱图</div>
+							<img id="echarts.pie.bar" src="image/echarts/index/echarts.pie.bar.png" class="img-thumbnail">
+						</li>
+<li>
+                            <div class="im-name">柱饼混合动态图</div>
+                            <img id="echarts.pie.multibar" src="image/echarts/echarts.pie.multibar.png" class="img-thumbnail">
+                        </li>
+					</ul>
+					<div class="clearfix"></div>
+				</div><!--end.组合图row-right-container-->
+				<div class="row-right-container">
+					<div class="im-tittle" id="mari_id7">主题图</div>
+					<div class="im-line"></div>
+					<ul class="im-ul">
+						<li>
+							<div class="im-name">地图</div>
+							<img id="echarts.map" src="image/echarts/index/echarts.map.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">雷达图</div>
+							<img id="d3.chart.radar" src="image/d3/index/d3.chart.radar.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">排序柱状图</div>
+							<img id="d3.bar.order" src="image/d3/index/d3.bar.order.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">钻取条形图</div>
+							<img id="d3.bar.drill" src="image/d3/index/d3.bar.drill.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">冰柱图</div>
+							<img id="d3.bar.ice" src="image/d3/index/d3.bar.ice.png" class="img-thumbnail">
+						</li>
+						<li class="hide">
+							<div class="im-name">分组气泡图</div>
+							<img id="d3.bubble.group" src="image/d3/index/d3.bubble.group.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">分类对比图</div>
+							<img id="d3.category.compare" src="image/d3/index/d3.category.compare.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">板块图</div>
+							<img id="d3.rect" src="image/d3/index/d3.rect.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">轮盘图</div>
+							<img id="d3.pan" src="image/d3/index/d3.pan.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">仪表盘图</div>
+							<img id="echarts.panel" src="image/echarts/index/echarts.panel.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">单柱形单折线图</div>
+							<img id="highcharts.column.line.single" src="image/highcharts/highcharts.column.line.single.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">平行线坐标图</div>
+							<img id="echarts.parallel" src="image/echarts/index/echarts.parallel.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">漏斗图</div>
+							<img id="echarts.two.funnel" src="image/echarts/index/echarts.two.funnel.png" class="img-thumbnail">
+						</li>
+						<li>
+							<div class="im-name">水球图</div>
+							<img id="echarts.liquid" src="image/echarts/index/echarts.liquid.png" class="img-thumbnail">
+						</li>
+
+					</ul>
+					<div class="clearfix"></div>
+				</div><!--end.专题图row-right-container-->
+				<!--<div class="top-button">
+                    <button type="button" class="btn btn-default">回到顶部</button>
+                </div>-->
+			</div>
+		</div><!--end.col-sm-9.col-md-9-->
+
+
+	</div><!--end.row-->
+
+</div><!--end.container-fluid-->
+
+<div id="roll_top" class="toTop" title="点击返回顶部">
+	<i class="angle up icon"></i>返回顶部
+</div>
+<!-- 登陆模态框（Modal） -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-backdrop="static"  aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					<i class="icon user"></i>用户登录
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div style="margin: 0 auto;">
+					<form role="form" name="login_form" id="login_form">
+						<div class="ui form" style="padding-left: 100px;padding-right: 100px;">
+							<div class="inline fields">
+								<div class="field">
+									<label>用户名：</label>
+									<input type="text" name="user_login"  id="user_login" placeholder="请输入用户登录名">
+								</div>
+							</div>
+							<div class="inline fields">
+								<div class="field">
+									<label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+									<input type="password" name="user_password" id="user_password" placeholder="请输入用户密码">
+								</div>
+							</div>
+							<div class="inline fields">
+								<div class="field">
+									<label></label>
+									<input type="checkbox"> 记住用户名
+								</div>
+							</div>
+							<div class="inline fields">
+								<div class="field">
+									<p id="login-message" class="help-block"></p>
+								</div>
+							</div>
+							<div class="inline fields pull-right">
+								<div class="field">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+								</div>
+								<div class="field">
+									<button id="login_submit" type="button" class="btn btn-primary" data-loading-text="正在登录...">登录</button>
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+							<div class="inline fields">
+								<div class="field">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div><!--modal-body-->
+			<div class="modal-footer"></div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end.登陆模态框（Modal） -->
+
+</div>
+
+
+
+
+</body>
+
+<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+<script type="text/javascript" src='/base2.1/http/lib/icon/iconfont.js'></script>
+<script type="text/javascript" src="/tool2.1/http/js/narBar.js"></script>
+
+<script type="text/javascript" src="/tool2.1/http/js/cookie.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+
+<script>
+	seajs.config({
+		base : SGIS.Config.TOOL_MODULE_URL,		//基础路径
+		paths:{
+			base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+			tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+			gallery:SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
+			mapData:SGIS.Config.WEB_MODULE_URL  	//跨目录的web路径
+		},
+		map : [
+			[ '.json', '.json?t=' + new Date().getTime() ],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+			[ '.css', '.css?t=' + new Date().getTime() ]
+		]});
+	seajs.use('js/index');
+	seajs.use('/tool2.1/http/js/narBar',function(obj){
+		obj.into();
+	});
+</script>
+
+</html>

@@ -1,0 +1,90 @@
+/**
+create by lmy
+*/
+
+/********右侧可视化图样式***********/
+.pic .chart-part {
+    position:relative;
+    left:auto;
+    top:30px;
+}
+.pic .chart-part .dropdown .select-type {
+    width:75px;
+}
+.pic .chart-part #content {
+    position:absolute;
+    top:100px;
+}
+
+/**************头部样式**************/
+#head{
+    background-color: #113C5F;
+    color: #FFF;
+    height:60px;
+    padding-right:20px;
+}
+#head h3{
+    /* margin-top: 15px;*/
+    margin-left: 24px;
+    color: #FFF;
+    float: left;
+    /* text-align: center;*/
+}
+.chart-tool {
+    float:left;
+
+}
+.chart-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 18px/100% Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color:#FFF;
+    line-height:60px;
+    margin-left:30px;
+}
+.chart-button:hover{
+    text-decoration: none;
+    background:#89ae00;
+}
+.chart-button:active {
+    position: relative;
+    top: 1px;
+}
+/*****login****/
+#login-span a,#logout-span a{
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #FFFFFF;
+}
+#login-span a:hover,#logout-span a:hover{
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#login-message{
+    color: #ff0000;
+}
+
+/*****register****/
+#register-span a {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #FFFFFF;
+}
+#register-span a:hover{
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+/**
+ *
+ * d3的 堆叠图  样式
+ *
+ * Created by lmy on 2015/12/9
+ */
+
+svg.bar-horizontal-stack .axis path, .axis line{
+    fill:none;
+    stroke:black;
+    shape-reellowndering:crispEdges;
+}
+
+svg.bar-horizontal-stack .axis text{
+    font-family: sans-serif;
+    font-size: 11px;
+}

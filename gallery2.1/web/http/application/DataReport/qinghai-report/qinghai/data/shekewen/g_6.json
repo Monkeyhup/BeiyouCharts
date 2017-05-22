@@ -1,0 +1,146 @@
+{
+  "data1_title": "2011年各设区市企业创新规模指数及排名",
+  "data1_unit": "",
+  "data2_title": "2012年各设区市企业创新规模指数及排名",
+  "data2_unit": "",
+  "data3_title": "2013年各设区市企业创新规模指数及排名",
+  "data3_unit": "",
+  "data1_data": [
+    {
+      "frequency": 253.2,
+      "letter": "石家庄市"
+    },
+    {
+      "frequency": 243.3,
+      "letter": "唐山市"
+    },
+    {
+      "frequency": 83.8,
+      "letter": "秦皇岛市"
+    },
+    {
+      "frequency": 87.9,
+      "letter": "邯郸市"
+    },
+    {
+      "frequency": 47.6,
+      "letter": "邢台市"
+    },
+    {
+      "frequency": 197.9,
+      "letter": "保定市"
+    },
+    {
+      "frequency": 29.9,
+      "letter": "张家口市"
+    },
+    {
+      "frequency": 23.4,
+      "letter": "承德市"
+    },
+    {
+      "frequency": 65.5,
+      "letter": "沧州市"
+    },
+    {
+      "frequency": 39.6,
+      "letter": "廊坊市"
+    },
+    {
+      "frequency": 27.9,
+      "letter": "衡水市"
+    }
+  ],
+  "data2_data": [
+    {
+      "frequency": 329.5,
+      "letter": "石家庄市"
+    },
+    {
+      "frequency": 299.9,
+      "letter": "唐山市"
+    },
+    {
+      "frequency": 95.5,
+      "letter": "秦皇岛市"
+    },
+    {
+      "frequency": 101.4,
+      "letter": "邯郸市"
+    },
+    {
+      "frequency": 53.4,
+      "letter": "邢台市"
+    },
+    {
+      "frequency": 213.9,
+      "letter": "保定市"
+    },
+    {
+      "frequency": 33.5,
+      "letter": "张家口市"
+    },
+    {
+      "frequency": 27.9,
+      "letter": "承德市"
+    },
+    {
+      "frequency": 75.0,
+      "letter": "沧州市"
+    },
+    {
+      "frequency": 39.9,
+      "letter": "廊坊市"
+    },
+    {
+      "frequency": 50.7,
+      "letter": "衡水市"
+    }
+  ],
+  "data3_data": [
+    {
+      "frequency": 408.3,
+      "letter": "石家庄市"
+    },
+    {
+      "frequency": 329.2,
+      "letter": "唐山市"
+    },
+    {
+      "frequency": 81.7,
+      "letter": "秦皇岛市"
+    },
+    {
+      "frequency": 109.4,
+      "letter": "邯郸市"
+    },
+    {
+      "frequency": 64.4,
+      "letter": "邢台市"
+    },
+    {
+      "frequency": 276.9,
+      "letter": "保定市"
+    },
+    {
+      "frequency": 34.5,
+      "letter": "张家口市"
+    },
+    {
+      "frequency": 30.0,
+      "letter": "承德市"
+    },
+    {
+      "frequency": 90.9,
+      "letter": "沧州市"
+    },
+    {
+      "frequency": 50.6,
+      "letter": "廊坊市"
+    },
+    {
+      "frequency": 58.2,
+      "letter": "衡水市"
+    }
+  ]
+}

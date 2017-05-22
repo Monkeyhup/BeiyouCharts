@@ -1,0 +1,174 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>绝对定位相对定位</title>
+    <style type="text/css">
+
+        .fj1
+        {
+            position: absolute;
+            width: 870px;
+            height: 500px;
+            border: 1px solid #000;
+            background: #fef9ff;
+        }
+
+        .tl
+        {
+            position: absolute;
+            width: 840px;
+            height: 500px;
+            border: 1px solid #2f2e99;
+            background: #FFF;
+        }
+        .x1
+        {
+            position: relative;
+            width: 750px;
+            height: 0px;
+            top:500px;
+            border: 1px none #a0ff4f;
+            z-index: 1;
+            margin-left:9%;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="input-group">
+		    	<span class="input-group-addon" style="width:auto;">
+		        	图例高度
+		      	</span>
+		       	<span class="input-group-addon" style="width:auto;">
+		       		<input id="chart-xAxis-height-range" type="range" value="0" min="0" max="500">
+		       	</span>
+    <input id="chart-xAxis-height-text" type="text" class="form-control"  disabled="disabled" value="0" style="width:60px;" >
+		       	<span class="input-group-addon" style="width:auto;">
+		       		px
+		       	</span>
+
+    <input id="testButton" type="button" class="testButton" >
+</div><!-- /input-group -->
+<div class="fj1">
+    <div id="t1" class="tl"></div>
+    <div class="x1" id="x1">
+
+    </div>
+</div>
+
+<div id="chart-textxy-container" class="input-group" style="position: relative; margin-left: 900px;">
+    <span class="input-group-addon" style="width:auto;">x方向偏移</span>
+    <input type="number" class="form-controlx" style="width:80px;margin-right:20px;" value="0" />
+   <span class="input-group-addon" style="width:auto;">y方向偏移</span>
+    <input type="number" class="form-controly" style="width:80px;" value="0" />
+</div>
+
+</body>
+<script type="text/javascript" src="lib/Echarts/echarts-2.1.8/echarts-all.js"></script>
+<script type="text/javascript" src="lib/jquery-1.11.1.js"></script>
+<script language="JavaScript" >
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        height:200,
+        tooltip: {},
+        legend: {
+            data: ['销量']
+        },
+        xAxis: {
+            data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋高跟鞋高跟鞋高跟鞋高跟鞋高跟鞋", "袜子"],
+            axisLabel: {
+                show: true,
+                rotate:90
+
+            }
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            height:200,
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
+    for(var i=0;i<6;i++){
+        console.log(option.xAxis.data[i]);
+    }
+
+    var xheight=$(".x1").height();
+    var xwide=$("#x1").width();
+    for(var i=0;i<6;i++){
+        $("#x1").append("<div class='x1_"+i+"' id='x1_"+i+" ' style=' position:relative;border: 1px solid #a0ff4f;width: 112px;height: 0px;float:left;'></div>");
+
+    }
+    for(var i=0;i<6;i++) {
+        $(".x1_"+i).append("<span class='x1_text' id='x1_text' style='position:absolute;font-size: 20px;display: inline-block;-webkit-transform: rotate(90deg);overflow:hidden;height: 0px;width:0px;float:left'>" + option.xAxis.data[i] + "</span>")
+    }
+    $("#chart-xAxis-height-range").change(function(){
+        var xheight = $("#chart-xAxis-height-range").val();
+        if(xheight!=0){
+        //设置值
+        $("#chart-xAxis-height-text" ).val(xheight);
+       $(".x1").css("height",xheight);
+        $(".x1").css("top",450);
+            $(".x1_text").css("height",23);
+            $(".x1_text").css("width",xheight);
+
+            for(var i=0;i<6;i++){
+            $("#x1>.x1_"+i ).css("height",xheight);
+
+            }
+        option.xAxis.axisLabel.show=false;
+        testTL(option);
+
+
+       // $("text#x1_s").style("display","none");
+
+        }
+        if(xheight==0){
+
+            //设置值
+            $("#chart-xAxis-height-text" ).val(xheight);
+            $(".x1").css("height",xheight);
+            $(".x1").css("top",500);
+            for(var i=0;i<6;i++){
+                $("#x1>.x1_"+i ).css("height",0);}
+            option.xAxis.axisLabel.show=true;
+            $(".x1_text").css("height",0);
+            testTL(option);
+        }
+    });
+
+
+    testTL(option);
+    function testTL(option) {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('t1'));
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+
+    $(".form-controlx").change(function(){
+        var xmove=$(this).val();
+        $(".x1_text").css("margin-left",xmove);
+    })
+
+    $(".form-controly").change(function(){
+        var ymove=$(this).val();
+        $(".x1_text").css("margin-top",ymove);
+    })
+
+</script>
+
+
+
+
+</html>

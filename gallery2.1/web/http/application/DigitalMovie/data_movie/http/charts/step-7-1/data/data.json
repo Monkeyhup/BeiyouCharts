@@ -1,0 +1,255 @@
+{
+    "id": "34a6f496-902f-47bb-8015-70665338b716",
+    "chartName": "功能区集聚发展效应突出",
+    "chartMome": "2014年，全市20个文化创意产业功能区企业实现收入8158.8亿元，同比增长13.1%，占全市文化创意产业收入比重为69.1%，集聚效果进一步显现。",
+    "chartType": 1,
+    "chartParam": {
+        "style": {},
+        "container": {
+            "height": 620,
+            "width": 1105
+        }
+    },
+    "chartJson": {
+        "chartData": {
+            "data1_title": "2014年收入合计",
+            "data1_unit": "亿元",
+            "data1_data": {
+                "name": "2014年收入合计:合计(8158.8)",
+                "size": 8158.8,
+                "children": [
+                    {
+                        "name": "功能区(8158.8)",
+                        "size": 8158.8,
+                        "children": [
+                            {
+                                "name": "文化科技融合示范功能区(4288.0)",
+                                "size": 4288
+                            },
+                            {
+                                "name": "动漫网游及数字内容功能区(560.4)",
+                                "size": 560.4
+                            },
+                            {
+                                "name": "文化金融融合功能区(514.0)",
+                                "size": 514
+                            },
+                            {
+                                "name": "天坛-天桥核心演艺功能区(51.5)",
+                                "size": 51.5
+                            },
+                            {
+                                "name": "戏曲文化艺术功能区(2.8)",
+                                "size": 2.8
+                            },
+                            {
+                                "name": "798时尚创意功能区(98.3)",
+                                "size": 98.3
+                            },
+                            {
+                                "name": "音乐产业功能区(3.3)",
+                                "size": 3.3
+                            },
+                            {
+                                "name": "CBD-定福庄国际传媒产业走廊功能区(999.1)",
+                                "size": 999.1
+                            },
+                            {
+                                "name": "影视产业功能区(119.8)",
+                                "size": 119.8
+                            },
+                            {
+                                "name": "新媒体产业功能区(129.8)",
+                                "size": 129.8
+                            },
+                            {
+                                "name": "出版发行功能区(300.7)",
+                                "size": 300.7
+                            },
+                            {
+                                "name": "创意设计服务功能区(425.9)",
+                                "size": 425.9
+                            },
+                            {
+                                "name": "文化艺术品交易功能区(82.4)",
+                                "size": 82.4
+                            },
+                            {
+                                "name": "会展服务功能区(19.3)",
+                                "size": 19.3
+                            },
+                            {
+                                "name": "奥林匹克公园文化体育融合功能区(335.6)",
+                                "size": 335.6
+                            },
+                            {
+                                "name": "北京老字号品牌文化推广功能区(203.3)",
+                                "size": 203.3
+                            },
+                            {
+                                "name": "未来文化城功能区(0.4)",
+                                "size": 0.4
+                            },
+                            {
+                                "name": "主题公园功能区(3.8)",
+                                "size": 3.8
+                            },
+                            {
+                                "name": "历史文化和生态旅游功能区(20.5)",
+                                "size": 20.5
+                            },
+                            {
+                                "name": "天竺文化保税功能区(0.0)",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "excelData": [
+            [
+                "指标名称",
+                "2014年收入合计（亿元）",
+                "分类等级"
+            ],
+            [
+                "合计",
+                "8158.8",
+                "1"
+            ],
+            [
+                "功能区",
+                "8158.8",
+                "2"
+            ],
+            [
+                "文化科技融合示范功能区",
+                "4288.0 ",
+                "3"
+            ],
+            [
+                "动漫网游及数字内容功能区",
+                "560.4 ",
+                "3"
+            ],
+            [
+                "文化金融融合功能区",
+                "514.0 ",
+                "3"
+            ],
+            [
+                "天坛-天桥核心演艺功能区",
+                "51.5 ",
+                "3"
+            ],
+            [
+                "戏曲文化艺术功能区",
+                "2.8 ",
+                "3"
+            ],
+            [
+                "798时尚创意功能区",
+                "98.3 ",
+                "3"
+            ],
+            [
+                "音乐产业功能区",
+                "3.3 ",
+                "3"
+            ],
+            [
+                "CBD-定福庄国际传媒产业走廊功能区",
+                "999.1 ",
+                "3"
+            ],
+            [
+                "影视产业功能区",
+                "119.8 ",
+                "3"
+            ],
+            [
+                "新媒体产业功能区",
+                "129.8 ",
+                "3"
+            ],
+            [
+                "出版发行功能区",
+                "300.7 ",
+                "3"
+            ],
+            [
+                "创意设计服务功能区",
+                "425.9 ",
+                "3"
+            ],
+            [
+                "文化艺术品交易功能区",
+                "82.4 ",
+                "3"
+            ],
+            [
+                "会展服务功能区",
+                "19.3 ",
+                "3"
+            ],
+            [
+                "奥林匹克公园文化体育融合功能区",
+                "335.6 ",
+                "3"
+            ],
+            [
+                "北京老字号品牌文化推广功能区",
+                "203.3 ",
+                "3"
+            ],
+            [
+                "未来文化城功能区",
+                "0.4 ",
+                "3"
+            ],
+            [
+                "主题公园功能区",
+                "3.8 ",
+                "3"
+            ],
+            [
+                "历史文化和生态旅游功能区",
+                "20.5 ",
+                "3"
+            ],
+            [
+                "天竺文化保税功能区",
+                "0",
+                "3"
+            ]
+        ]
+    },
+    "chartImage": "data:image/png;base64,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",
+    "createTime": 1449923186197,
+    "modifyTime": 1449923211093,
+    "chartShareCount": 0,
+    "chartTypeChart": "d3.bar.drill",
+    "chartIsfromSgis": 0,
+    "tgalleryUser": {
+        "id": "3cbfa5a8-0692-4eae-9b4e-c4d4c7b4d897",
+        "userName": "北邮学生用户1",
+        "userLogin": "BUPT1",
+        "userPassword": "123456",
+        "userMome": "北邮学生用户备注",
+        "userType": 0,
+        "userStatus": 1,
+        "userAdmin": 0,
+        "createTime": 1446455030739,
+        "modifyTime": 1446455030739,
+        "lastestTime": 0
+    },
+    "tgalleryCatalog": {
+        "id": 4,
+        "catalogName": "私人图例",
+        "createTime": 1439882766003,
+        "modifyTime": 1439882766003,
+        "parentId": 0,
+        "catalogPrivate": 1
+    }
+}

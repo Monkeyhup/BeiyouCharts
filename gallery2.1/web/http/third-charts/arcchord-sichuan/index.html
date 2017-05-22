@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title> 四川省各市州财政收入支出情况</title>
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+
+	<link href="../../css/style.css" rel="stylesheet">
+	<link href="lib/arccgord.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/semantic/js/semantic.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/imageEffects/modernizr.custom.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/json2.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/d3/d3.v3.min.js"></script>
+
+	<script type="text/javascript" src="lib/d3/math/trigonometry.js"></script>
+	<script type="text/javascript" src="lib/d3/svg/arc.js"></script>
+
+	<script type="text/javascript" src="lib/d3/core/functor.js"></script>
+	<script type="text/javascript" src="lib/d3/core/source.js"></script>
+	<script type="text/javascript" src="lib/d3/core/target.js"></script>
+
+	<script type="text/javascript" src="lib/d3/layout/arc-chord.js"></script>
+	<script type="text/javascript" src="lib/d3/svg/arc-chord.js"></script>
+
+	<script type="text/javascript" src="lib/brightpoint/gradients.js"></script>
+
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body style="padding-top:0px;position: relative;">
+	<div id="toolTip" class="tooltip" style="opacity:0; width:200px; height:90px; position:absolute;">
+		<div id="header1" class="header3"></div>
+		<div class="header-rule"></div>
+		<div id="head" class="header-area"></div>
+		<div class="header-rule"></div>
+		<div id="header2" class="header2"></div>
+		<div class="clearfix"></div>
+		<div class="tooltipTail"></div>
+	</div>
+	<div class="IEindecl" style="display:none;">
+		<p style="padding-top:5px;padding-left:10px;float:left;">
+			您正在使用的浏览器版本较低，本页部分动态内容不能正常显示，建议您安装 <a
+				href="http://rj.baidu.com/soft/detail/14744.html?ald"
+				style="text-decoration: none;">谷歌浏览器(Chrome)</a> / <a
+				href="http://ie.sogou.com/" style="text-decoration: none;">搜狗浏览器</a>
+			/ <a href="http://se.360.cn/" style="text-decoration: none;">IE9(for
+				win7)</a>版本。
+		</p>
+		<i id="remove_cion" class="remove icon" style="float:right;padding-top:3px;cursor: pointer;"></i>
+	</div>
+	<div class="container" style="max-width:1024px;">
+		<div style='float:right!important'>
+			<i id='home' class="large demo home circular link icon" style="color:#2E1B1B;font-size:2em;padding-top:10px;cursor: pointer;" data-html="<div>返回首页</div>"></i>
+		</div><!-- div -->
+		<ul>
+			<li style="float:left;list-style-type: none;">
+				<i class="leaf icon" style="font-size: 1.8em;margin: 10px 0px 0px -34px;"></i>
+			</li>
+			<li style="list-style-type: none;">
+				<h3 class="h3c" id="iden-name" style="padding-top:7px;">
+					四川省各市州财政收入支出情况
+
+				</h3>
+			</li>
+			<li style="list-style-type: none;padding: 5px 0;">
+				<h4 class="h3c1" id="made-time" style="color:rgb(127, 127, 127);"></h4>
+			</li>
+		</ul>
+		<div class="explain" id="iden-info">
+			<ul class="qupoint" id="imageintroduce">
+				<li id="interpretation" style="text-indent: 2em;">
+
+				</li>
+			</ul>
+		</div><!-- #iden-info -->
+		
+		<div id="show_icon">
+			<i id="left_icon" class="arrow left icon"></i> 
+			<i id="right_icon" class="arrow right icon"></i>
+			
+			<div class="pull-right" id="btn" style='display:none;'></div>
+			<div class="clearfix" style="border:0;background:0;"></div>
+			
+			<div id="content" style="width:970px;margin:auto;">
+				<div class="position:relative">
+					<div id="imgDiv" style="position:absolute; top:50px;left:-200px;">
+						<a id="playPause" href="javascript:;" style="text-decoration:none;font-size:2em;color:#000000;width: 24px;height: 24px;">
+							<i class="icon pause"></i>
+						</a>
+					</div>
+					<div id="contant" style="margin:auto;">
+						<div id="svgDiv"></div>
+					</div><!--end#contant-->
+				</div>
+			</div><!--end#content-->
+			<!-- 删除 -->
+			<div class="ui small modal" style="margin-top: -110px;width:500px;height:200px;margin-left:-200px;">
+				<i class="close icon"></i>
+				<div class="header">删除之后，本图片将不存在！</div>
+				<div class="content-modal">
+					<h3>是否删除？</h3>
+					<div style='float:right!important;'>
+						<button id='cancel' type="button" class="btn btn-primary">取消</button>
+						<button id='sure' type="button" class="btn btn-primary">确定</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- #show_icon -->
+
+		<ul style="padding-top:20px;">
+			<li style="list-style-type: none;float:left;"><i
+				class="table icon"
+				style="font-size: 1.3em;margin: 0px 0px 0px -34px;"></i></li>
+			<li style="list-style-type: none;display:none;"><a href="#"
+				style="font-family:微软雅黑;font-size:13px;font-weight:bold;color:#333;">数据来源：</a>
+			</li>
+		</ul><!-- ul -->
+		<div class="case">
+			<p style="font-family:微软雅黑;font-size:17px;font-weight:bold;color:#333;">最近浏览</p>
+
+			<div class="a-container" style="min-height:235px;">
+				<div id="history"></div>
+			</div>
+		</div><!-- .case -->
+	</div>
+	<div class="ui purple inverted menu"
+		style="width:1024px;height:30px;margin:0 auto;background-color:#095C83;border-radius:0px;">
+		<div style="height:30px;width:500px;margin: auto;text-align:center;">
+			<p class="Copyright-p2">Copyright @2015 北京超图软件股份有限公司</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="lib/app/globals.js"></script>
+<script type="text/javascript" src="lib/app/initialize.js"></script>
+<script type="text/javascript" src="lib/app/events.js"></script>
+<script type="text/javascript" src="lib/app/data.js"></script>
+<script type="text/javascript" src="lib/app/_buildChords.js"></script>
+<script type="text/javascript" src="lib/app/update.js"></script>
+<script type="text/javascript">
+	function run() {
+		if (year < countriesGrouped.length){
+			update(year);
+			year++;
+		}
+
+	}
+
+	$(function(){
+		initialize();            //初始化
+		fetchData();            //加载数据
+	});
+</script>
+
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+<script>
+	seajs.config({
+		base : SGIS.Config.GALLERY_MODULE_URL,		//基础路径
+		paths:{
+			base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+			tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+			gallery:SGIS.Config.GALLERY_MODULE_URL	//跨目录的gallery路径
+		},
+		map : [
+			[ '.json', '.json?t=' + new Date().getTime() ],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+			[ '.css', '.css?t=' + new Date().getTime() ]
+		]});
+	seajs.use('third-charts/js/index');
+</script>
+</html>

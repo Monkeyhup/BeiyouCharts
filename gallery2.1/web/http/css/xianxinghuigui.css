@@ -1,0 +1,8 @@
+body {
+    z-index: 1;
+    width: 100% !important;
+}
+
+#page{
+    margin-top: 60px;
+}

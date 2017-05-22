@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>数据图库</title>
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/dhtmlx/dhtmlxtree.css" type="text/css" rel="stylesheet" >
+
+	<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+	<link href="css/component.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/semantic/js/semantic.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+
+	
+	<script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxtree.js"></script>
+
+	<script type="text/javascript" src="/base2.1/http/lib/Sortable/Sortable.min.js"></script>
+	
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body style="padding-top:50px;">
+	<nav class="navbar navbar-inverse navbar-fixed-top"  id="navbar" role="navigation" style="background-color:#123c5f;height:60px;">
+</nav>
+	<div class="content ui segment" id="contant">
+		<!-- 左侧开始 -->
+		<div class="cn_left">
+			<div class="my-fixed">
+				<ul>
+					<li class="classification">
+						<a class="classification-a" href="index.html" style='color:#FFFFFF'>专题</a>
+					</li>
+				</ul>
+				<div id="catalog-list" class="ranking"></div>
+				<div id="catalog-manger" class="ranking"></div>
+			</div><!--end.my-fixed-->
+		</div><!--end.cn_left-->
+		<!-- 右侧开始 -->
+		<div class="cn_right">
+			<div class="my-fixed">
+				<!--检索表单-->
+				<div class="navbar-form navbar-form-container">
+					<div class="navbar-form navbar-left">
+						<div style="display:inline-block;margin-left:10px;">视图:</div>
+						<div id="icon-change" class="ui selection dropdown" style='margin-left:10px;'>
+							<input type="hidden" name="gender">
+							<div class="text">大图标</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div id=bigger class="item active" data-value="0">大图标</div>
+								<div id="small" class="item" data-value="1">小图标</div>
+								<div id="list-title" class="item" data-value="2">标题列表</div>
+								<div id="list-detail" class="item" data-value="3">详细列表</div>
+							</div>
+						</div>
+						<div id="sortable-title" class="hide" style="display:inline-block;margin-left:10px;">拖动排序:</div>
+						<div id="sortable-switch" class="hide ui toggle checkbox checked" style="margin:3px 0 0 5px;">
+							<input type="radio" name="sortable-switch-input">
+							<label data-open="开" data-close="关"><b>关</b></label>
+						</div>
+					</div>
+					<div class="navbar-form navbar-right navbar-tool">
+						<a id="goto-tool-btn" href="javascript:;">制作图集</a>
+					</div>
+					<div class="navbar-form navbar-right navbar-search">
+						<div class="form-group">
+							<label class="sr-only" for="searchText"></label>
+							<input id="searchText" type="text" class="form-control" placeholder="图集搜索...">
+						</div>
+						<button id="searchBtn" type="button" class="btn btn-info">搜索</button>
+					</div>
+					<div class="clearfix"></div>
+				</div><!--end.navbar-form-->
+			</div><!--end.my-fixed-->
+			<div class="clear-my-fixed"></div>
+			<div class="right_lay">
+				<!--列表内容-->
+				<div id='my-gallery' class="ui segment right_down">
+				  	<div id="my-gallery-container">
+				  		<div id="tj_title" class="tj_title">
+				  			<p></p>
+				  			<div class='ui purple inverted menu'></div>
+				  		</div><!--end#tj_title-->
+						<div id="tj_container" class="tj_container">
+							<div id="tj_wrapper" class="tj_wrapper">
+								<ul id="chart-list" class="tj_gallery"></ul>
+							</div>
+							<div id="chart-message" class='ignored info ui message hide'>无图集！</div>
+						</div>
+				  	</div><!--end#tj_container-->
+					<div id="my-gallery-loading" class="well well-sm hide">
+						<div id="load-data" class="text-center text-muted">
+							<i class="icon loading"></i>数据加载中...
+						</div>
+						<div id="no-data" class="text-center text-muted hide">
+							<i class="icon info"></i>没有更多数据
+						</div>
+					</div><!--end#my-gallery-loading-->
+				</div>
+			</div><!--end.right_lay-->
+		</div><!--end.cn_right-->
+
+		<!--加载数据-->
+		<div id="loading" class="ui inverted dimmer">
+			<div class="ui text loader" data-loading="加载">加载</div>
+		</div><!--end#loading-->
+
+		<div class="clearfix"></div>
+		<div id="roll_top" class="toTop" title="点击返回顶部">
+			<i class="angle up icon"></i>返回顶部
+		</div>
+
+		<div class="ui purple inverted menu"
+			style="width:1024px;height:30px;margin:0 auto;background-color:#095C83;border-radius:0px;">
+			<div style="height:30px;width:500px;margin: auto;text-align:center;">
+				<p class="Copyright-p2">Copyright @2016 BeiYouCharts</p>
+			</div>
+		</div>
+	</div><!--end#contant-->
+
+	<!--图集管理-->
+	<div class="ui modal self-modal" id="chart-manager-modal">
+		<div class="header">
+			图集管理
+			<i class="close icon right" data-value="0"></i>
+		</div>
+		<div class="content">
+			<div class="row" style="padding: 10px;">
+				<div class="col-sm-6 col-md-6">
+					<h4>当前分类树-<small>选择节点进行操作</small></h4>
+					<div id="chart-catalog-manager-loading" class="hide">
+						<i class="icon loading"></i>数据加载中...
+					</div>
+					<div id="chart-catalog-manager-tree"></div>
+				</div>
+				<div class="col-sm-6 col-md-6">
+					<div id="chart-manager-add-panel" class="hide">
+						<h4>新增分类目录</h4>
+						<form name="chart-manager-add-form" id="chart-manager-add-form">
+							<div class="ui form">
+								<div class="inline fields">
+									<div class="twelve wide field">
+										<label>父节点名称：</label>
+										<input type="hidden" name="parentId" value="">
+										<input type="text" name="parentIdText" value="" disabled="disabled">
+									</div>
+								</div>
+								<div class="inline fields">
+									<div class="twelve wide field">
+										<label>分类名称：&nbsp;&nbsp;&nbsp;</label>
+										<input type="text" name="catalogName" placeholder="分类目录名称" value="">
+									</div>
+								</div>
+								<div class="inline fields">
+									<button name="cancel" class="ui button" type="button" style="margin-left: 80px;">取消</button>
+									<button name="submit" class="ui button blue" type="button">提交</button>
+								</div>
+							</div>
+						</form>
+					</div><!--end#chart-manager-add-panel-->
+					<div id="chart-manager-edit-panel" class="hide">
+						<h4>编辑分类目录</h4>
+						<form name="chart-manager-edit-form" id="chart-manager-edit-form">
+							<div class="ui form">
+								<div class="inline fields">
+									<div class="twelve wide field">
+										<label>分类名称：&nbsp;&nbsp;&nbsp;</label>
+										<input type="text" name="catalogName" placeholder="分类目录名称" value="">
+									</div>
+								</div>
+								<div class="inline fields">
+									<button name="cancel" class="ui button" type="button" style="margin-left: 80px;">取消</button>
+									<button name="submit" class="ui button blue" type="button">提交</button>
+								</div>
+							</div>
+						</form>
+					</div><!--end#chart-manager-add-panel-->
+					<div id="chart-manager-move-panel" class="hide">
+						<h4>移动分类<span class="old-item"></span>到-<small>点击选择要移动到的父节点</small></h4>
+						<div id="chart-catalog-manager-move-loading" class="hide">
+							<i class="icon loading"></i>数据加载中...
+						</div>
+						<div id="chart-catalog-manager-move-tree"></div>
+						<br/>
+						<form name="chart-manager-move-form" id="chart-manager-move-form">
+							<div class="ui form">
+								<div class="inline fields">
+									<button name="cancel" class="ui button" type="button">取消</button>
+									<button name="submit" class="ui button blue" type="button">提交</button>
+								</div>
+							</div>
+						</form>
+					</div><!--end#chart-manager-add-panel-->
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="actions hide">
+			<a id="chart-manager-add-btn" href="javascript:;" class="btn btn-success">新增</a>
+			<a id="chart-manager-edit-btn" href="javascript:;" class="btn btn-warning">编辑</a>
+			<a id="chart-manager-move-btn" href="javascript:;" class="btn btn-primary">移动</a>
+			<a id="chart-manager-delete-btn" href="javascript:;" class="btn btn-danger">删除</a>
+			<p class="move-msg"></p>
+			<div class="clearfix"></div>
+		</div>
+	</div><!--end#chart-move-modal-->
+
+	<!--图集移动-->
+	<div class="ui modal self-modal" id="chart-move-modal">
+	  <div class="header">
+	  	图集移动
+	    <i class="close icon right"></i>
+	  </div>
+	  <div class="content">
+		  <div id="chart-catalog-move-loading" class="hide">
+			  <i class="icon loading"></i>数据加载中...
+		  </div>
+		  <div id="chart-catalog-move-tree"></div>
+	  </div>
+	  <div class="actions">
+	    <a id="chart-move-btn" href="javascript:;" class="btn btn-success" data-loading-text="正在移动...">移动</a>
+	  	<p class="move-msg"></p>
+	  	<div class="clearfix"></div>
+	  </div>
+	</div><!--end#chart-move-modal-->
+	<!-- 登陆模态框（Modal） -->
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-backdrop="static"  aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						<i class="icon user"></i>用户登录
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div style="margin: 0 auto;">
+						<form role="form" name="login_form" id="login_form">
+							<div class="ui form" style="padding-left: 100px;padding-right: 100px;">
+								<div class="inline fields">
+									<div class="field">
+										<label>用户名：</label>
+										<input type="text" name="user_login"  id="user_login" placeholder="请输入用户登录名">
+									</div>
+								</div>
+								<div class="inline fields">
+									<div class="field">
+										<label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+										<input type="password" name="user_password" id="user_password" placeholder="请输入用户密码">
+									</div>
+								</div>
+								<div class="inline fields">
+									<div class="field">
+										<label></label>
+										<input type="checkbox"> 记住用户名
+									</div>
+								</div>
+								<div class="inline fields">
+									<div class="field">
+										<p id="login-message" class="help-block"></p>
+									</div>
+								</div>
+								<div class="inline fields pull-right">
+									<div class="field">
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+									</div>
+									<div class="field">
+										<button id="login_submit" type="button" class="btn btn-primary" data-loading-text="正在登录...">登录</button>
+									</div>
+								</div>
+								<div class="clear-fix"></div>
+								<div class="inline fields">
+									<div class="field">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div><!--modal-body-->
+				<div class="modal-footer"></div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- end.登陆模态框（Modal） -->
+</body>
+
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+
+<script type="text/javascript" src="/tool2.1/http/js/cookie.js"></script>
+<script type="text/javascript" src='/base2.1/http/lib/icon/iconfont.js'></script>
+<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+<script>
+	seajs.config({
+		base : SGIS.Config.GALLERY_MODULE_URL,		//基础路径
+		paths:{
+			base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+			tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+			gallery:SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
+			mapData:SGIS.Config.WEB_MODULE_URL  //跨目录的web路径
+		},
+		map : [
+			[ '.json', '.json?t=' + new Date().getTime() ],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+			[ '.css', '.css?t=' + new Date().getTime() ]
+		]});
+	seajs.use('js/index');
+	seajs.use('/tool2.1/http/js/narBar',function(obj){
+		obj.into();
+	});
+</script>
+</html>

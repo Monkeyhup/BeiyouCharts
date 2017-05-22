@@ -1,0 +1,29 @@
+/**
+ *
+ * d3的 柱状图 可排序
+ *
+ * Created by Linhao on 2014/12/22.
+ */
+
+svg.bar-order .axis text {
+    font: 10px sans-serif;
+}
+
+svg.bar-order .axis path,.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+svg.bar-order .bar {
+    fill-opacity: .9;
+}
+
+svg.bar-order .x.axis path {
+    display: none;
+}
+
+svg.bar-order text {
+    font-family: '微软雅黑';
+    font-size: 11px;
+}

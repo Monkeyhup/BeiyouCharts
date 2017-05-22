@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>二次回归</title>
+    <link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/dhtmlx/dhtmlxtree.css" type="text/css" rel="stylesheet">
+
+    <link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/huigui2.css">
+    <link href="css/component.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/semantic/js/semantic.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxcommon.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxtree.js"></script>
+
+    <script type="text/javascript" src="/base2.1/http/lib/Sortable/Sortable.min.js"></script>
+
+    <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body style="padding-top:0;">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation"
+     style="background-color:#123c5f;height:60px;">
+</nav>
+
+<div class="row">
+    <div class="col-md-4" id="tableContent">
+        <div id="infont_inmput" class="ui primary button">
+            <input type="file" name="xlfile" id="xlf">
+        </div>
+        <table id="dynatable" class="table table-bordered">
+            <tr id="0">
+                <td id="0/0">8</td>
+                <td id="0/1">6.95</td>
+            </tr>
+            <tr id="1">
+                <td id="1/0">13</td>
+                <td id="1/1">7.58</td>
+            </tr>
+            <tr id="2">
+                <td id="2/0">9</td>
+                <td id="2/1">8.81</td>
+            </tr>
+            <tr id="3">
+                <td id="3/0">11</td>
+                <td id="3/1">8.33</td>
+            </tr>
+            <tr id="4">
+                <td id="4/0">14</td>
+                <td id="4/1">9.96</td>
+            </tr>
+            <tr id="5">
+                <td id="5/0">6</td>
+                <td id="5/1">7.24</td>
+            </tr>
+            <tr id="6">
+                <td id="6/0">4</td>
+                <td id="6/1">4.26</td>
+            </tr>
+            <tr id="7">
+                <td id="7/0">12</td>
+                <td id="7/1">10.84</td>
+            </tr>
+            <tr id="8">
+                <td id="8/0">7</td>
+                <td id="8/1">4.82</td>
+            </tr>
+            <tr id="9">
+                <td id="9/0">5</td>
+                <td id="9/1">5.68</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-8" id="contant">
+        <div id="huiguichart"></div>
+    </div><!--end#contant-->
+
+    <div id="roll_top" class="toTop" title="点击返回顶部">
+        <i class="angle up icon"></i>返回顶部
+    </div>
+
+    <div class="ui purple inverted menu"
+         style="width:1024px;height:30px;margin:0 auto;background-color:#095C83;border-radius:0px;clear: both">
+        <div style="height:30px;width:500px;margin: auto;text-align:center;">
+            <p class="Copyright-p2">Copyright @2016 BeiYouCharts</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- 登陆模态框（Modal） -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <i class="icon user"></i>用户登录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="margin: 0 auto;">
+                    <form role="form" name="login_form" id="login_form">
+                        <div class="ui form" style="padding-left: 100px;padding-right: 100px;">
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label>用户名：</label>
+                                    <input type="text" name="user_login" id="user_login" placeholder="请输入用户登录名">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                    <input type="password" name="user_password" id="user_password"
+                                           placeholder="请输入用户密码">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label></label>
+                                    <input type="checkbox"> 记住用户名
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <p id="login-message" class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="inline fields pull-right">
+                                <div class="field">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                                <div class="field">
+                                    <button id="login_submit" type="button" class="btn btn-primary"
+                                            data-loading-text="正在登录...">登录
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="clear-fix"></div>
+                            <div class="inline fields">
+                                <div class="field">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!--modal-body-->
+            <div class="modal-footer"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end.登陆模态框（Modal） -->
+</body>
+
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+
+<script type="text/javascript" src="/tool2.1/http/js/cookie.js"></script>
+<script type="text/javascript" src='/base2.1/http/lib/icon/iconfont.js'></script>
+<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+<script src="lib/jquery-3.1.1.js"></script>
+<script src="lib/shim.js"></script>
+<script src="lib/xls.js"></script>
+<script src="lib/echarts.js"></script>
+<script src="js/huigui2.js"></script>
+<script>
+    seajs.config({
+        base: SGIS.Config.GALLERY_MODULE_URL,		//基础路径
+        paths: {
+            base: SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+            tool: SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+            gallery: SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
+            mapData: SGIS.Config.WEB_MODULE_URL  //跨目录的web路径
+        },
+        map: [
+            ['.json', '.json?t=' + new Date().getTime()],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+            ['.css', '.css?t=' + new Date().getTime()]
+        ]
+    });
+    seajs.use('js/index');
+    seajs.use('/tool2.1/http/js/narBar', function (obj) {
+        obj.into();
+    });
+</script>
+</html>

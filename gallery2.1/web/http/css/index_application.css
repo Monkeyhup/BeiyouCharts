@@ -1,0 +1,111 @@
+body,html{
+    margin:0px;
+    background-color:#F2F2F2;
+    height:100%;
+    position:relative;
+
+}
+.container {
+    background-color:#fff;
+    width:80%;
+    min-width:940px;
+
+}
+
+
+    .main {
+
+    }
+
+    .main .ApplicationModule{
+        position:relative;
+        margin-left:30px;
+        margin-top:50px;
+        max-height:550px;
+        min-height:100px;
+        height:380px;
+        width:45%;
+        float:left;
+        background-color:#F2F2F2;
+        border-radius:25px 25px 25px 25px;
+    }
+
+    .main .ApplicationModule .ApplicationLogo {
+        width:30%;
+        height:100%;
+        float:left;
+    }
+    .main .ApplicationModule .ApplicationLogo .LogoImg {
+        position: absolute;
+        top:20%;
+        left:2%;
+        width:150px;
+        margin:0 auto;
+    }
+    .main .ApplicationModule .ApplicationLogo .LogoNameImg {
+        width:100%;
+        height:150px;
+        text-align: center;
+    }
+    .main .ApplicationModule .ApplicationLogo .LogoName {
+        width:100%;
+        height:34px;
+        text-align: center;
+    }
+    .main .ApplicationModule .ApplicationLogo .ApplicationIntro {
+        margin-top:10px;
+        width:70%;
+        text-align:center;
+    }
+
+    .main .ApplicationModule .ApplicationIn {
+        margin-top:5%;
+        border-radius:15px 15px 15px 15px;
+        height:100%;
+        width:70%;
+        float:left;
+    }
+    .main .ApplicationModule .ApplicationIn .ApplicationText {
+        font-family:"微软雅黑";
+    }
+    .main .ApplicationModule .ApplicationIn .ApplicationText .ApplicationText-Book {
+        font-size:30px;
+        font-weight: bold;
+    }
+    .main .ApplicationModule .ApplicationIn .ApplicationText .ApplicationText-Intro {
+        font-size:16px;
+    }
+    .main .ApplicationModule .ApplicationIn .ApplicationImg {
+        margin-top:20px;
+        width:100%;
+        height:50%;
+
+
+    }
+    .main .ApplicationModule .ApplicationIn .ApplicationImg img {
+        width:40%;
+        height:100%;
+        border-radius:15px 15px 15px 15px;
+        margin-left:10px;
+    }
+
+
+
+.ui.purple.inverted.menu{
+    left:0;
+    width:100%;
+    height:30px;
+    background-color:#123C5F;
+    margin:0;
+}
+
+.Copyright-p2 {
+    margin: 0 auto;
+    font-size: 18px;
+    padding-top: 3px;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+
+

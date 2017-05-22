@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BEIYOUCHARTS</title>
+    <link rel="stylesheet" type="text/css" href="./ECharts_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./ECharts_files/main.css">
+    <script type="text/javascript" src="./ECharts_files/jquery.min.js"></script>
+    <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+    <style>
+        table{
+            position:fixed;
+            bottom: 30px;
+            height: 30%;
+            width:66%;
+            margin-left:17%;
+            margin-right:17%;
+
+        }
+
+        td{
+            height: 30px;
+            width:20%;
+            /*border:1px solid #b7c4d4;*/
+            text-align: center;
+        }
+
+        .pic td{
+            height: 90%;
+        }
+
+        td img{
+            width:70%;
+            -webkit-border-radius:150px;
+            border-radius:650px;
+            border:1px solid #b7c4d4;
+            -webkit-transition:all 0.2s ease-out;
+            transition:all 0.2s ease-out
+        }
+
+        td .cur-item {
+            width:80%;
+            margin:0 6px;
+            -webkit-border-radius:200px;
+            border-radius:700px;
+            border-color:#7fccf2;
+            -webkit-box-shadow:0 0 10px #b7c4d4;
+            box-shadow:0 0 10px #b7c4d4
+        }
+
+        label{
+            font-family: '微软雅黑';
+            font-size: 18px;
+            color: #203670;
+            margin-top: 2px;
+        }
+
+        .modulename td{
+            height: 10%;
+        }
+
+        .p{
+            margin: 0 auto;
+            height: 250px;
+            width: 70%;
+            border: 1px solid red;
+        }
+        p{
+            position:relative;
+            text-align: center;
+            z-index:2;
+            font-family: "Perspective Sans Black";
+            font-size: 120px;
+            top: 40%;
+            bottom: 50%;
+            color: white;
+           /* border:1px solid white;*/
+            transform:scaleX(1.2);
+
+        }
+        @font-face{
+            font-family: "Perspective Sans Black";
+            src:url('./ECharts_files/persansb.ttf');
+        }
+    </style>
+</head>
+<body>
+<td style="position:relative;">
+    <img src="./ECharts_files/background.png" style="position:absolute; z-index:1;width: 100%">
+    <!--<img src="./ECharts_files/back_logo_word.png" style="position:absolute;  z-index:2;width: 100%">-->
+    <img src="./ECharts_files/logo_white.png" style="position:absolute;  z-index:2;width: 10%;top: 20%; bottom: 70%;left: 45%;right: 45%;">
+    <img src="./ECharts_files/star.png" style="position:absolute;  z-index:2;width: 100%">
+    <p><strong> BeiYouCharts</strong></p>
+</td>
+
+<table>
+    <tr class="pic">
+        <td>
+            <img src="./ECharts_files/datamap.png" data-index="1" class="" id="go-map-btn">
+        </td>
+        <td><img src="./ECharts_files/tool.png" data-index="2" class="" id="go-tool-btn"></td>
+        <td><img src="./ECharts_files/analisys.png" data-index="3" class="" id="go-data-analysis-btn"></td>
+        <td><img src="./ECharts_files/application.png" data-index="4" class="" id="go-third-btn"></td>
+        <td><img src="./ECharts_files/artifact.png" data-index="6" class="" id="go-gallery-btn"></td>
+    </tr>
+    <tr class="modulename">
+        <td><label>数据地图</label></td>
+        <td><label>图集工具</label></td>
+        <td><label>数据分析</label></td>
+        <td><label>专业定制</label></td>
+        <td><label>个人作品</label></td>
+    </tr>
+</table>
+
+
+<script type="text/javascript">
+    (function() {
+
+        $('td').on('mouseenter', 'img',function(){
+            var target = $(this);
+            if (target.hasClass('cur-item')) {
+                return;
+            }
+            /*$('td').find('.cur-item').removeClass('cur-item');*/
+            target.addClass('cur-item');
+        });
+
+        $('td').on('mouseleave', 'img', function(){
+            $('td').find('.cur-item').removeClass('cur-item');
+        });
+
+    })();
+</script>
+
+<script type="text/javascript" src="http/js/narBar.js"></script>
+</body>
+</html>

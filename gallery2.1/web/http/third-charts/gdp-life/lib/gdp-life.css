@@ -1,0 +1,77 @@
+
+#chart {
+	width: 999.5px;
+	height: 506px;
+	border:0px solid;
+	margin-left: 20px;
+}
+
+text {
+	font: 10px sans-serif;
+}
+
+.dot {
+	stroke: #000;
+}
+
+.axis path,.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.label {
+	fill: #777;
+}
+
+.year.label {
+	font: 160px "Helvetica Neue";
+	fill: #999999;
+}
+
+.year.label.active {
+	fill: #aaa;
+}
+
+.overlay {
+	fill: none;
+	/* pointer-events: all; */
+	cursor: ew-resize;
+}
+
+.rightbroud {
+	right: 0px;
+	top: 30%;
+	position: fixed;
+	height: 330px;
+	overflow: hidden;
+	width: 20px;
+}
+
+.outpadding {
+	width: 500px;
+	height: 30px;
+	padding-top: 1%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.paddsser {
+	width: 80px;
+	height: 30px;
+	float: left;
+}
+
+.floats {
+	float: left;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.floats-div {
+	float: left;
+	padding: 3px 3px 3px 3px;
+}
+

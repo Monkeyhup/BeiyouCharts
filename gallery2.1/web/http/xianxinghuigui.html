@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>线性回归</title>
+    <link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/semantic/css/semantic.css" rel="stylesheet">
+    <link href="/base2.1/http/lib/dhtmlx/dhtmlxtree.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/5grid/core.css"/>
+    <link rel="stylesheet" href="css/5grid/core-desktop.css"/>
+    <link rel="stylesheet" href="css/5grid/core-1200px.css"/>
+    <link rel="stylesheet" href="css/5grid/core-noscript.css"/>
+    <link rel="stylesheet" href="css/style-desktop.css"/>
+
+
+    <link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/huigui.css">
+    <link href="css/component.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/xianxinghuigui.css">
+
+    <script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/semantic/js/semantic.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxcommon.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/dhtmlx/dhtmlxtree.js"></script>
+
+    <script type="text/javascript" src="/base2.1/http/lib/Sortable/Sortable.min.js"></script>
+
+    <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body style="padding-top:0;">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation"
+     style="background-color:#123c5f;height:60px;">
+</nav>
+<div class="row" >
+    <div id="page-wrapper">
+        <div class="12u">
+            <div id="page" class="5grid-layout">
+                <div class="row" style="margin:30px">
+                    <div class="9u">
+                        <section>
+                            <h2>线性拟合 线性回归</h2>
+                            <p>&nbsp;</p>
+                            <p>1. 线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y =
+                                w'x+e，e为误差服从均值为0的正态分布。中文名 线性回归 外文名 linear regression</p>
+                            <p>&nbsp;</p>
+                            <p>2. 在统计学中，线性回归(Linear Regression)是利用称为线性回归方程的最小平方函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。 </p>
+                            <p>&nbsp;</p>
+                            <p>3. 在线性回归中，数据使用线性预测函数来建模，并且未知的模型参数也是通过数据来估计。这些模型被叫做线性模型。最常用的线性回归建模是给定X值的y的条件均值是X的仿射函数。</p>
+                            <p>&nbsp;</p>
+                            <p>4.
+                                线性回归是回归分析中第一种经过严格研究并在实际应用中广泛使用的类型。这是因为线性依赖于其未知参数的模型比非线性依赖于其位置参数的模型更容易拟合，而且产生的估计的统计特性也更容易确定。</p>
+                            <p>&nbsp;</p>
+                            <p>5. 一般来说，线性回归都可以通过最小二乘法求出其方程，可以计算出对于y=bx+a的直线。</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="feature-wrapper">
+        <div class="12u">
+            <div id="feature-content" class="5grid-layout">
+                <div class="row">
+                    <div class="line">
+                        <section>
+                            <p><a href="http://localhost:8080/gallery2.1/http/huigui.html"><img src="images/pics02.jpg" alt=""></a></p>
+                            <h2>一维线性回归</h2>
+                            <p>简介</p>
+                        </section>
+                    </div>
+                    <div class="line">
+                        <section>
+                            <p><a href="http://localhost:8080/gallery2.1/http/huigui2.html"><img src="images/pics03.jpg" alt=""></a></p>
+                            <h2>二维线性回归</h2>
+                            <p>简介</p>
+                        </section>
+                    </div>
+                    <!--<div class="3u">-->
+                    <!--<section>-->
+                    <!--<p><a href="#"><img src="images/pics04.jpg" alt=""></a></p>-->
+                    <!--<h2>Mauris vulputate</h2>-->
+                    <!--<p>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante.-->
+                    <!--Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla.-->
+                    <!--Sed ac leo.</p>-->
+                    <!--</section>-->
+                    <!--</div>-->
+                    <!--<div class="3u">-->
+                    <!--<section>-->
+                    <!--<p><a href="#"><img src="images/pics05.jpg" alt=""></a></p>-->
+                    <!--<h2>Mauris vulputate</h2>-->
+                    <!--<p>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante.-->
+                    <!--Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla.-->
+                    <!--Sed ac leo.</p>-->
+                    <!--</section>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui purple inverted menu"
+         style="width:1024px;height:30px;margin:0 auto;background-color:#095C83;border-radius:0px;clear: both">
+        <div style="height:30px;width:500px;margin: auto;text-align:center;">
+            <p class="Copyright-p2">Copyright @2016 BeiYouCharts</p>
+        </div>
+    </div>
+</div>
+
+<!-- 登陆模态框（Modal） -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <i class="icon user"></i>用户登录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="margin: 0 auto;">
+                    <form role="form" name="login_form" id="login_form">
+                        <div class="ui form" style="padding-left: 100px;padding-right: 100px;">
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label>用户名：</label>
+                                    <input type="text" name="user_login" id="user_login" placeholder="请输入用户登录名">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                    <input type="password" name="user_password" id="user_password"
+                                           placeholder="请输入用户密码">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <label></label>
+                                    <input type="checkbox"> 记住用户名
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <p id="login-message" class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="inline fields pull-right">
+                                <div class="field">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                                <div class="field">
+                                    <button id="login_submit" type="button" class="btn btn-primary"
+                                            data-loading-text="正在登录...">登录
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="clear-fix"></div>
+                            <div class="inline fields">
+                                <div class="field">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!--modal-body-->
+            <div class="modal-footer"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- end.登陆模态框（Modal） -->
+</body>
+
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+
+<script type="text/javascript" src="/tool2.1/http/js/cookie.js"></script>
+<script type="text/javascript" src='/base2.1/http/lib/icon/iconfont.js'></script>
+<link href="/tool2.1/http/css/navBar.css" rel="stylesheet">
+<script src="lib/jquery-3.1.1.js"></script>
+<script src="lib/shim.js"></script>
+<script src="lib/xls.js"></script>
+<script>
+    seajs.config({
+        base: SGIS.Config.GALLERY_MODULE_URL,		//基础路径
+        paths: {
+            base: SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+            tool: SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+            gallery: SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
+            mapData: SGIS.Config.WEB_MODULE_URL  //跨目录的web路径
+        },
+        map: [
+            ['.json', '.json?t=' + new Date().getTime()],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+            ['.css', '.css?t=' + new Date().getTime()]
+        ]
+    });
+    seajs.use('js/index');
+    seajs.use('/tool2.1/http/js/narBar', function (obj) {
+        obj.into();
+    });
+</script>
+</html>

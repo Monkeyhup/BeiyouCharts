@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>图集&图库数据库一键升级</title>
+    <link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+    <style>
+        textarea{
+            width: 100%;
+            height: 450px;
+            font-family: '微软雅黑';
+            resize: none;
+        }
+        textarea.read-only{
+            cursor: text;
+        }
+    </style>
+</head>
+<body style="padding-top:50px;">
+    <header id="top" class="navbar navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">数据图库</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../http" class="navbar-brand" title="点击回到数据图库">
+                    <h2>数据图库<small>数据库一键维护系统</small></h2>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>
+                            数据库检测
+                            <small>
+                                旧版本的数据库可能不存在catalogWeight字段，系统框架会通过
+                                （hibernate.hbm2ddl.auto=update）自动更新catalogWeight字段
+                                到数据库，但是值都为null，为了方便一键升级数据库，故扩展出以下接口用于快速初始化null值。
+                            </small>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <textarea id="message" class="read-only" disabled="disabled" placeholder="消息提示..." readonly="readonly"></textarea>
+                        <div class="btn-group btn-group-lg pull-right" role="group" aria-label="Large button group">
+                            <button id="check-db-btn" type="button" class="btn btn-default disabled" data-loading-text="正在检测中...">检测数据库</button>
+                            <button id="upgrade-db-btn" type="button" class="btn btn-primary disabled" data-loading-text="正在升级...">一键升级</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var $checkDbBtn = $("#check-db-btn").removeClass("disabled");
+        var $upgradeDbBtn = $("#upgrade-db-btn").removeClass("disabled");
+        var $message = $("textarea[id='message']").html("初始化完成...\r\n");
+
+        //绑定检测按钮
+        $checkDbBtn.click(function(){
+            var $this = $(this);
+            $this.button("loading");
+            SGIS.API.get("database/check/weight").json(function(re){
+                $this.button("reset");
+                $message.html($message.html()+re.message+"\r\n");
+            });
+        });
+        //绑定升级按钮
+        $upgradeDbBtn.click(function(){
+            var $this = $(this);
+            $this.button("loading");
+            SGIS.API.get("database/reset/weight").json(function(re){
+                $this.button("reset");
+                $message.html($message.html()+re.message+"\r\n");
+            });
+        });
+    });
+</script>
+</html>

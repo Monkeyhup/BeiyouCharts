@@ -1,0 +1,318 @@
+{
+    "id": "b80198a1-54ec-4018-adc9-449f3f0266d6",
+    "chartName": "文化创意单位的地理分布",
+    "chartMome": "从文化创意单位的地理分布来看，区域发展更加均衡。城市发展新区的文化创意产业收入增速明显快于城市功能拓展区和首都功能核心区。2014年，城市发展新区规模以上文化创意产业单位收入增速为48.9%，高于全市文化创意产业收入增速39.4个百分点。各郊区县注重结合自身特色开发产业项目，带动了文化创意产业相关领域的较快发展。",
+    "chartType": 0,
+    "chartParam": {
+        "style": {
+            "mapOption": {
+                "dataRange": {
+                    "color": [
+                        "#1F610A",
+                        "#97B58D"
+                    ]
+                },
+				"series":[
+					{
+						"itemStyle" : {
+							"normal" : {
+								"label" : {
+									"textStyle" : {
+										"color":"#3F3F3F"
+									}
+								}
+							}
+						},
+						"textFixed":{
+							"西城区":[3,8],
+							"东城区":[3,-5],
+							"朝阳区":[7,-10],
+							"石景山区":[-5,-3]
+						}
+					}
+				]
+            },
+            "pieOption": {
+                "series": [
+                    {
+                        "radius": [
+                            "39%",
+                            "68%"
+                        ],
+						"itemStyle" : {
+							"normal" : {
+								"label" : {
+									"formatter" : "{b}:({d}%)",
+									"textStyle": {
+										"fontSize": "18"
+									}
+								}
+							}
+						}
+                    }
+                ]
+            },
+			"barOption":{
+				"legend":{
+					"show":false
+				},
+				"series": [
+					{
+						"itemStyle": {
+							"normal": {
+								"barBorderRadius": [7,7,0,0],
+								"barBorderColor": "#f5f5f5",
+								"label": {
+									"textStyle": {
+										"fontSize": "16"
+									}
+								}
+							}
+						}
+					}
+				],
+				"xAxis": [
+					{
+						"axisLabel": {
+							"rotate": 15,
+							"textStyle": {
+								"fontSize": "16"
+							}
+						},
+						"nameTextStyle": {
+							"fontSize": "16"
+						}
+					}
+				],
+				"yAxis": [
+					{
+						"axisLabel": {
+							"textStyle": {
+							}
+						},
+						"nameTextStyle": {
+							"fontSize": "16"
+						}
+					}
+				]
+			}
+        },
+        "container": {
+            "height": 400,
+            "map": {
+                "type": "BJ",
+                "url": "../../js/module/map/map.geo.beijing.config.json"
+            },
+            "theme": "green"
+        }
+    },
+    "chartJson": {
+        "chartData": [
+            {
+                "name": "按区域",
+                "value": "收入合计(亿元)"
+            },
+            {
+                "name": "功能核心区",
+                "value": "2532.3(亿元)"
+            },
+            {
+                "name": "东城区",
+                "value": 1729.4
+            },
+            {
+                "name": "西城区",
+                "value": 802.9
+            },
+            {
+                "name": "功能拓展区",
+                "value": "8026.3(亿元)"
+            },
+            {
+                "name": "朝阳区",
+                "value": 2541.1
+            },
+            {
+                "name": "丰台区",
+                "value": 356.7
+            },
+            {
+                "name": "石景山区",
+                "value": 333.5
+            },
+            {
+                "name": "海淀区",
+                "value": 4795
+            },
+            {
+                "name": "城市发展新区",
+                "value": "1084.1(亿元)"
+            },
+            {
+                "name": "房山区",
+                "value": 29.5
+            },
+            {
+                "name": "通州区",
+                "value": 114.7
+            },
+            {
+                "name": "顺义区",
+                "value": 115.7
+            },
+            {
+                "name": "昌平区",
+                "value": 137.3
+            },
+            {
+                "name": "大兴区",
+                "value": 91.2
+            },
+            {
+                "name": "开发区",
+                "value": 595.8
+            },
+            {
+                "name": "生态涵养区",
+                "value": "159.3(亿元)"
+            },
+            {
+                "name": "门头沟区",
+                "value": 15.4
+            },
+            {
+                "name": "怀柔区",
+                "value": 70.1
+            },
+            {
+                "name": "平谷区",
+                "value": 40.3
+            },
+            {
+                "name": "密云区",
+                "value": 23.7
+            },
+            {
+                "name": "延庆区",
+                "value": 9.9
+            }
+        ],
+        "excelData": [
+            {
+                "name": "按区域",
+                "value": "收入合计(亿元)"
+            },
+            {
+                "name": "功能核心区",
+                "value": "2532.3(亿元)"
+            },
+            {
+                "name": "东城区",
+                "value": 1729.4
+            },
+            {
+                "name": "西城区",
+                "value": 802.9
+            },
+            {
+                "name": "功能拓展区",
+                "value": "8026.3(亿元)"
+            },
+            {
+                "name": "朝阳区",
+                "value": 2541.1
+            },
+            {
+                "name": "丰台区",
+                "value": 356.7
+            },
+            {
+                "name": "石景山区",
+                "value": 333.5
+            },
+            {
+                "name": "海淀区",
+                "value": 4795
+            },
+            {
+                "name": "城市发展新区",
+                "value": "1084.1(亿元)"
+            },
+            {
+                "name": "房山区",
+                "value": 29.5
+            },
+            {
+                "name": "通州区",
+                "value": 114.7
+            },
+            {
+                "name": "顺义区",
+                "value": 115.7
+            },
+            {
+                "name": "昌平区",
+                "value": 137.3
+            },
+            {
+                "name": "大兴区",
+                "value": 91.2
+            },
+            {
+                "name": "开发区",
+                "value": 595.8
+            },
+            {
+                "name": "生态涵养区",
+                "value": "159.3(亿元)"
+            },
+            {
+                "name": "门头沟区",
+                "value": 15.4
+            },
+            {
+                "name": "怀柔区",
+                "value": 70.1
+            },
+            {
+                "name": "平谷区",
+                "value": 40.3
+            },
+            {
+                "name": "密云区",
+                "value": 23.7
+            },
+            {
+                "name": "延庆区",
+                "value": 9.9
+            }
+        ]
+    },
+    "chartImage": "",
+    "createTime": 1449929169254,
+    "modifyTime": 1449929242076,
+    "chartShareCount": 0,
+    "chartTypeChart": "echarts.three.view",
+    "chartIsfromSgis": 0,
+    "tgalleryUser": {
+        "id": "3cbfa5a8-0692-4eae-9b4e-c4d4c7b4d897",
+        "userName": "北邮学生用户1",
+        "userLogin": "BUPT1",
+        "userPassword": "123456",
+        "userMome": "北邮学生用户备注",
+        "userType": 0,
+        "userStatus": 1,
+        "userAdmin": 0,
+        "createTime": 1446455030739,
+        "modifyTime": 1446455030739,
+        "lastestTime": 0
+    },
+    "tgalleryCatalog": {
+        "id": 4,
+        "catalogName": "私人图例",
+        "createTime": 1439882766003,
+        "modifyTime": 1439882766003,
+        "parentId": 0,
+        "catalogPrivate": 1
+    }
+}

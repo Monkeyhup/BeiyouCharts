@@ -1,0 +1,1 @@
+FROM TGalleryCatalog t

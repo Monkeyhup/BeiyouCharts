@@ -1,0 +1,173 @@
+{
+	"data1_title" : "法人单位从业人员（人）",
+	"data1_unit" : "人",
+	"data2_title" : "个体经营户从业人员（人）",
+	"data2_unit" : "人",
+	"data3_title" : "有证照个体经营户（人）",
+	"data3_unit" : "人",
+	"data1_data" : [{
+				"frequency" : 61365,
+				"letter" : "采矿业"
+			}, {
+				"frequency" : 221019,
+				"letter" : "制造业"
+			}, {
+				"frequency" : 26663,
+				"letter" : "电力、热力、燃气及水生产和供应业"
+			}, {
+				"frequency" : 126598,
+				"letter" : "建筑业"
+			}, {
+				"frequency" : 78365,
+				"letter" : "批发和零售业"
+			}, {
+				"frequency" : 55745,
+				"letter" : "交通运输、仓储和邮政业"
+			}, {
+				"frequency" : 23799,
+				"letter" : "住宿和餐饮业"
+			}, {
+				"frequency" : 14864,
+				"letter" : "信息传输、软件和信息技术服务业"
+			}, {
+				"frequency" : 24313,
+				"letter" : "金融业"
+			}, {
+				"frequency" : 32815,
+				"letter" : "房地产业"
+			}, {
+				"frequency" : 35822,
+				"letter" : "租赁和商务服务业"
+			}, {
+				"frequency" : 31797,
+				"letter" : "科学研究和技术服务业"
+			}, {
+				"frequency" : 10979,
+				"letter" : "水利、环境和公共设施管理业"
+			}, {
+				"frequency" : 7295,
+				"letter" : "居民服务、修理和其他服务业"
+			}, {
+				"frequency" : 78694,
+				"letter" : "教育"
+			}, {
+				"frequency" : 42040,
+				"letter" : "卫生和社会工作"
+			}, {
+				"frequency" : 15786,
+				"letter" : "文化、体育和娱乐业"
+			}, {
+				"frequency" : 240869,
+				"letter" : "公共管理、社会保障和社会组织"
+			}],
+	"data2_data" : [{
+				"frequency" : 1130,
+				"letter" : "采矿业"
+			}, {
+				"frequency" : 29491,
+				"letter" : "制造业"
+			}, {
+				"frequency" : 2,
+				"letter" : "电力、热力、燃气及水生产和供应业"
+			}, {
+				"frequency" : 11917,
+				"letter" : "建筑业"
+			}, {
+				"frequency" : 179361,
+				"letter" : "批发和零售业"
+			}, {
+				"frequency" : 87449,
+				"letter" : "交通运输、仓储和邮政业"
+			}, {
+				"frequency" : 87260,
+				"letter" : "住宿和餐饮业"
+			}, {
+				"frequency" : 610,
+				"letter" : "信息传输、软件和信息技术服务业"
+			}, {
+				"frequency" : 0,
+				"letter" : "金融业"
+			}, {
+				"frequency" : 279,
+				"letter" : "房地产业"
+			}, {
+				"frequency" : 3455,
+				"letter" : "租赁和商务服务业"
+			}, {
+				"frequency" : 996,
+				"letter" : "科学研究和技术服务业"
+			}, {
+				"frequency" : 93,
+				"letter" : "水利、环境和公共设施管理业"
+			}, {
+				"frequency" : 33256,
+				"letter" : "居民服务、修理和其他服务业"
+			}, {
+				"frequency" : 787,
+				"letter" : "教育"
+			}, {
+				"frequency" : 2428,
+				"letter" : "卫生和社会工作"
+			}, {
+				"frequency" : 4902,
+				"letter" : "文化、体育和娱乐业"
+			}, {
+				"frequency" : 0,
+				"letter" : "公共管理、社会保障和社会组织"
+			}],
+	"data3_data" : [{
+				"frequency" : 603,
+				"letter" : "采矿业"
+			}, {
+				"frequency" : 16376,
+				"letter" : "制造业"
+			}, {
+				"frequency" : 2,
+				"letter" : "电力、热力、燃气及水生产和供应业"
+			}, {
+				"frequency" : 465,
+				"letter" : "建筑业"
+			}, {
+				"frequency" : 132207,
+				"letter" : "批发和零售业"
+			}, {
+				"frequency" : 86952,
+				"letter" : "交通运输、仓储和邮政业"
+			}, {
+				"frequency" : 65569,
+				"letter" : "住宿和餐饮业"
+			}, {
+				"frequency" : 486,
+				"letter" : "信息传输、软件和信息技术服务业"
+			}, {
+				"frequency" : 0,
+				"letter" : "金融业"
+			}, {
+				"frequency" : 147,
+				"letter" : "房地产业"
+			}, {
+				"frequency" : 2500,
+				"letter" : "租赁和商务服务业"
+			}, {
+				"frequency" : 832,
+				"letter" : "科学研究和技术服务业"
+			}, {
+				"frequency" : 6,
+				"letter" : "水利、环境和公共设施管理业"
+			}, {
+				"frequency" : 23215,
+				"letter" : "居民服务、修理和其他服务业"
+			}, {
+				"frequency" : 454,
+				"letter" : "教育"
+			}, {
+				"frequency" : 2037,
+				"letter" : "卫生和社会工作"
+			}, {
+				"frequency" : 2590,
+				"letter" : "文化、体育和娱乐业"
+			}, {
+				"frequency" : 0,
+				"letter" : "公共管理、社会保障和社会组织"
+			}]
+}

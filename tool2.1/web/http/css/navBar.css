@@ -1,0 +1,84 @@
+/****nav*****/
+#bs-navbar >ul:first-child a.btn{
+    color: #eeeeee !important;
+    line-height:20px;
+}
+#bs-navbar >ul:first-child li:hover{
+    /*line-height:20px;*/
+    /*background-color: #89ae00;*/
+    /*background-image: url("background.png");*/
+}
+#bs-navbar >ul:first-child a.btn:hover{
+    color: #4169E1 !important;
+}
+/*#bs-navbar ul {*/
+    /*margin-left:17%;*/
+/*}*/
+/*#navbar {*/
+     /*background-image: url("background1.png");*/
+     /*background-size:cover;*/
+ /*}*/
+.navbar-brand {
+   /* color: aliceblue;*/
+}
+.navbar-brand:hover {
+    color: aliceblue;
+}
+#go-cover-btn {
+    cursor: pointer;
+}
+.navbar-header .icon{
+    width: 1.5em; height: 1.5em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.bupt-logo {
+    margin-left:2px;
+    font-size:30px;
+}
+/*****login****/
+#login-span a,#logout-span a{
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #FFFFFF;
+}
+#login-span a:hover,#logout-span a:hover{
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#login-message{
+    /*color: #ff0000;*/
+}
+
+/*��¼����ʽ*/
+.modal-header {
+    cursor: move;
+}
+.modal-content {
+    top:auto;
+    left:auto;
+}
+
+/*****register****/
+#register-span a {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #FFFFFF;
+}
+#register-span a:hover{
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#login-logout-span a {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,495 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+	margin: 0;
+	padding: 0;
+	background-color: #000000;
+	background-repeat: repeat;
+	background-image: url('../images/bg-black.png');
+}
+body {
+	margin: 0;
+	padding: 0;
+/*
+	-webkit-transform:scale(1.3);
+	-o-transform:scale(1.3);
+	-ms-transform:scale(1.3);
+	-moz-transform:scale(1.3);
+	-khtml-transform:scale(1.3);
+*/
+}
+
+.hight-light{
+	opacity: 1 !important;
+}
+
+#div_impress_container{
+	position:absolute;
+	width:100%;
+	height: 100%;
+	background-color: #000000;
+	background-repeat: repeat;
+	background-color:#000000;
+}
+#div_impress_container.bg{
+    background-image: url('../images/bg-0_thum.png');
+}
+#div_impress_container.bg1{
+    background-image: url('../images/bg-1.png');
+}
+#div_impress_container.bg2{
+    background-image: url('../images/bg-2.png');
+}
+#div_impress_container.bg0{
+	background-image: url('../images/bg-0.png');
+}
+#div_impress_container.bg1{
+	background-image: url('../images/bg-1.png');
+}
+#div_impress_container.bg2{
+	background-image: url('../images/bg-2.png');
+}
+/*************************************.step***************************************************/
+div.step.solar{
+	background-color: transparent;
+	background-image: url("../images/solar0.png");
+	background-repeat: no-repeat;
+	width: 856px;
+	height: 755px;
+}
+
+div.step.star{
+	background-color: transparent;
+	background-image: url("../images/star0.png");
+	background-repeat: no-repeat;
+	width: 820px;
+	height:820px;
+}
+
+div.step.star-no {
+	background-color: transparent;
+	width: 820px;
+	height:820px;
+}
+
+/*************************************.circle***************************************************/
+.step>.circle {
+	width: 780px;
+	height: 780px;
+	margin: 6px 6px 20px;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	line-height: 1.2;
+	color: #ffffff;
+}
+.step>.circle canvas {
+	vertical-align: top;
+}
+.step>.circle>strong{
+	position: absolute;
+	width: 100%;
+	height: 75px;
+	left: 0;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 40px;
+	top: 100px;
+	font-family: 微软雅黑;
+}
+.step>.circle>p{
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+
+.step>.circle>strong.first-1 {
+	color: #F7EDBA;
+	top: 240px;
+}
+.step>.circle>strong.first-2 {
+	color: #F7EDBA;
+	top: 320px;
+}
+.step>.circle>strong.first-3 {
+	font-size: 0.6em;
+	color: #ffffff;
+	top: 120px;
+}
+.step>.circle>strong.first-11 {
+	font-size: 1em;
+	color: #FFF808;
+	top: 100px;
+}
+.step>.circle>strong.first-12 {
+	font-size: 1em;
+	color: #FFF808;
+	top: 180px;
+}
+
+.step>.circle>.circle[id^='go-step-next-']>strong{
+	position: absolute;
+	width: 100%;
+	height: 75px;
+	left: 0;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 40px;
+	top: 60px;
+	font-family: 微软雅黑;
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-11{
+	font-size: 0.3em;
+	color: #B3F3FF;
+	top: 60px;
+	transform:rotate(15deg);
+	-ms-transform:rotate(15deg); 	/* IE 9 */
+	-moz-transform:rotate(15deg); 	/* Firefox */
+	-webkit-transform:rotate(15deg); /* Safari 和 Chrome */
+	-o-transform:rotate(15deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-12{
+	font-size: 0.3em;
+	color: #B3F3FF;
+	top: 90px;
+	transform:rotate(15deg);
+	-ms-transform:rotate(15deg); 	/* IE 9 */
+	-moz-transform:rotate(15deg); 	/* Firefox */
+	-webkit-transform:rotate(15deg); /* Safari 和 Chrome */
+	-o-transform:rotate(15deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-13{
+	font-size: 0.3em;
+	color: #FFFFFF;
+	top: 20px;
+	transform:rotate(335deg);
+	-ms-transform:rotate(335deg); 	/* IE 9 */
+	-moz-transform:rotate(335deg); 	/* Firefox */
+	-webkit-transform:rotate(335deg); /* Safari 和 Chrome */
+	-o-transform:rotate(335deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-13{
+	font-size: 0.3em;
+	color: #FFFFFF;
+	top: 50px;
+	transform:rotate(345deg);
+	-ms-transform:rotate(345deg); 	/* IE 9 */
+	-moz-transform:rotate(345deg); 	/* Firefox */
+	-webkit-transform:rotate(345deg); /* Safari 和 Chrome */
+	-o-transform:rotate(345deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-14{
+	font-size: 0.25em;
+	color: #FFFFFF;
+	top: 40px;
+	transform:rotate(8deg);
+	-ms-transform:rotate(8deg); 	/* IE 9 */
+	-moz-transform:rotate(8deg); 	/* Firefox */
+	-webkit-transform:rotate(8deg); /* Safari 和 Chrome */
+	-o-transform:rotate(8deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-15{
+	font-size: 0.1em;
+	color: #FFFFFF;
+	top: 20px;
+	transform:rotate(350deg);
+	-ms-transform:rotate(350deg); 	/* IE 9 */
+	-moz-transform:rotate(350deg); 	/* Firefox */
+	-webkit-transform:rotate(350deg); /* Safari 和 Chrome */
+	-o-transform:rotate(350deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-16{
+	font-size: 0.1em;
+	color: #FFFFFF;
+	top: 40px;
+	transform:rotate(350deg);
+	-ms-transform:rotate(350deg); 	/* IE 9 */
+	-moz-transform:rotate(350deg); 	/* Firefox */
+	-webkit-transform:rotate(350deg); /* Safari 和 Chrome */
+	-o-transform:rotate(350deg); 		/* Opera */
+}
+.step>.circle>.circle[id^='go-step-next-']>strong.first-17{
+	font-size: 0.1em;
+	color: #FFF808;
+	top: 20px;
+	transform:rotate(5deg);
+	-ms-transform:rotate(5deg); 	/* IE 9 */
+	-moz-transform:rotate(5deg); 	/* Firefox */
+	-webkit-transform:rotate(5deg); /* Safari 和 Chrome */
+	-o-transform:rotate(5deg); 		/* Opera */
+}
+.step>.circle>.coms>strong.coms-1{
+	position: absolute;
+	color: #FFF808;
+	top: 40%;
+	left:40%;
+	margin-top: -10px;
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 		/* Opera */
+}
+.step>.circle>.coms>strong.coms-1.coms-end{
+	color:#ffffff;
+	font-size: 1.5em;
+	left:10%;
+}
+.step>.circle>.coms>iframe{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	left: 0;
+	top: 0;
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 		/* Opera */
+}
+
+.step>.circle>.marker{
+	position: absolute;
+	width: 100px;
+	height: 133px;
+}
+
+.step>.circle>.img00{
+	top:6%;
+	left:-5%;
+	width: 780px;
+	height: 680px;
+	background-image: url("../images/coms.png");
+	transform:rotate(25deg) scale(0.8);
+	-ms-transform:rotate(25deg) scale(0.8); 	/* IE 9 */
+	-moz-transform:rotate(25deg) scale(0.8); 	/* Firefox */
+	-webkit-transform:rotate(25deg) scale(0.75); /* Safari 和 Chrome */
+	-o-transform:rotate(25deg) scale(0.8); 		/* Opera */
+	margin-top:40px;
+	margin-left:20px;
+}
+
+.step>.circle>.img01{
+	top: 305px;
+	left:26%;
+	background-image: url("../images/marker01.png");
+	transform:rotate(45deg) scale(1);
+	-ms-transform:rotate(45deg) scale(1); 	/* IE 9 */
+	-moz-transform:rotate(45deg) scale(1); 	/* Firefox */
+	-webkit-transform:rotate(45deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(45deg) scale(1); 		/* Opera */
+}
+
+.step>.circle>.img02{
+	top: 305px;
+	left:62%;
+	background-image: url("../images/marker02.png");
+	transform:rotate(315deg) scale(1);
+	-ms-transform:rotate(315deg) scale(1); 	/* IE 9 */
+	-moz-transform:rotate(315deg) scale(1); 	/* Firefox */
+	-webkit-transform:rotate(315deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(315deg) scale(1); 		/* Opera */
+}
+
+.step>.circle>.img03{
+	top: 370px;
+	left:50%;
+	background-image: url("../images/marker03.png");
+	margin-left: -50px;
+	transform:rotate(0deg) scale(1);
+	-ms-transform:rotate(0deg) scale(1); 	/* IE 9 */
+	-moz-transform:rotate(0deg) scale(1); 	/* Firefox */
+	-webkit-transform:rotate(0deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg) scale(1); 		/* Opera */
+}
+
+.step>.circle>.img04{
+	top: 358px;
+	left:50%;
+	width: 200px;
+	height: 133px;
+	margin-left: -150px;
+	background-image: url("../images/linehead_200.png");
+	transform:rotate(45deg) scale(2);
+	-ms-transform:rotate(45deg) scale(2); 		/* IE 9 */
+	-moz-transform:rotate(45deg) scale(2); 		/* Firefox */
+	-webkit-transform:rotate(45deg) scale(2); 	/* Safari 和 Chrome */
+	-o-transform:rotate(45deg) scale(2); 		/* Opera */
+}
+
+.step>.circle>.img05{
+	top: 180px;
+	left:36%;
+	width: 120px;
+	height: 133px;
+	margin-left: -80px;
+	background-image: url("../images/line_200.png");
+	transform:rotate(70deg) scale(0.7);
+	-ms-transform:rotate(70deg) scale(0.7); 	/* IE 9 */
+	-moz-transform:rotate(70deg) scale(0.7); 	/* Firefox */
+	-webkit-transform:rotate(70deg) scale(0.7); /* Safari 和 Chrome */
+	-o-transform:rotate(70deg) scale(0.7); 		/* Opera */
+}
+.step>.circle>.img06{
+	top: 205px;
+	left:62%;
+	width: 200px;
+	height: 133px;
+	margin-left: -100px;
+	background-image: url("../images/line_200.png");
+	transform:rotate(165deg) scale(0.7);
+	-ms-transform:rotate(165deg) scale(0.7); 	/* IE 9 */
+	-moz-transform:rotate(165deg) scale(0.7); 	/* Firefox */
+	-webkit-transform:rotate(165deg) scale(0.7); /* Safari 和 Chrome */
+	-o-transform:rotate(165deg) scale(0.7); 		/* Opera */
+}
+.step>.circle>.img07{
+	top: 415px;
+	left:36%;
+	width: 200px;
+	height: 133px;
+	margin-left: -100px;
+	background-image: url("../images/line_200.png");
+	transform:rotate(165deg) scale(0.7);
+	-ms-transform:rotate(165deg) scale(0.7); 	/* IE 9 */
+	-moz-transform:rotate(165deg) scale(0.7); 	/* Firefox */
+	-webkit-transform:rotate(165deg) scale(0.7); /* Safari 和 Chrome */
+	-o-transform:rotate(165deg) scale(0.7); 		/* Opera */
+}
+.step>.circle>.img08{
+	top: 435px;
+	left:64%;
+	width: 100px;
+	height: 133px;
+	margin-left: -20px;
+	background-image: url("../images/line_200.png");
+	transform:rotate(70deg) scale(0.7);
+	-ms-transform:rotate(70deg) scale(0.7); 	/* IE 9 */
+	-moz-transform:rotate(70deg) scale(0.7); 	/* Firefox */
+	-webkit-transform:rotate(70deg) scale(0.7); /* Safari 和 Chrome */
+	-o-transform:rotate(70deg) scale(0.7); 		/* Opera */
+}
+.step>.circle>.img09{
+	left: 120px;
+	top:400px;
+	width: 400px;
+	height: 133px;
+	margin-left: -100px;
+	background-image: url("../images/line_400.png");
+	transform:rotate(80deg) scale(1);
+	-ms-transform:rotate(80deg) scale(1); 	/* IE 9 */
+	-moz-transform:rotate(80deg) scale(1); 	/* Firefox */
+	-webkit-transform:rotate(80deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(80deg) scale(1); 		/* Opera */
+}
+.step>.circle>.img10{
+	left: 440px;
+	top:400px;
+	width: 400px;
+	height: 133px;
+	margin-left: -100px;
+	background-image: url("../images/line_400.png");
+	transform:rotate(-65deg) scale(1);
+	-ms-transform:rotate(-65deg) scale(1); 	/* IE 9 */
+	-moz-transform:rotate(-65deg) scale(1); 	/* Firefox */
+	-webkit-transform:rotate(-65deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(-65deg) scale(1); 		/* Opera */
+}
+.step>.circle>.img11{
+	left: 400px;
+	top:580px;
+	width: 200px;
+	height: 133px;
+	margin-left: -100px;
+	background-image: url("../images/line_200.png");
+	transform:rotate(70deg) scale(0.7);
+	-ms-transform:rotate(70deg) scale(0.7); 	/* IE 9 */
+	-moz-transform:rotate(70deg) scale(0.7); 	/* Firefox */
+	-webkit-transform:rotate(25deg) scale(1); /* Safari 和 Chrome */
+	-o-transform:rotate(70deg) scale(0.7); 		/* Opera */
+}
+
+
+.step>.circle>.circle{
+	position: absolute;
+	color: #F7EDBA;
+	margin-left: -75px;
+}
+
+.iframe-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left:0%;
+	background-color: transparent;
+}
+.iframe-container iframe{
+	background-color: transparent;
+}
+
+.clear{
+	clear: both;
+}
+
+body{
+	margin: 0;
+	overflow: hidden;
+	background: #fff;
+}
+#div_impress_container{
+	position: relative !important;
+	height: 753px;
+}
+#tool{
+	position: fixed !important;
+    width: 210px;
+    left: 40px;
+    bottom: 0;
+    height: 55px;
+    z-index: 999999999;
+}
+
+#tool .refresh{
+	position: fixed !important;
+	width: 49px;
+	height: 50px;
+	bottom: 0;
+	left: 60px;
+	cursor: pointer;
+	background: url("../images/refresh_out.png") no-repeat;
+}
+#tool .refresh:hover{
+	background: url("../images/refresh_active.png") no-repeat;
+}
+#tool .pre{
+	position: fixed !important;
+	width: 49px;
+	height: 50px;
+	bottom: 0;
+	left: 120px;
+	cursor: pointer;
+	background: url("../images/pre_out.png") no-repeat;
+}
+#tool .pre:hover{
+	background: url("../images/pre_active.png") no-repeat;
+}
+#tool .next{
+	position: fixed !important;
+	width: 49px;
+	height: 50px;
+	bottom: 0;
+	left: 180px;
+	cursor: pointer;
+	background: url("../images/next_out.png") no-repeat;
+}
+#tool .next:hover{
+	background: url("../images/next_active.png") no-repeat;
+}
+
+
+
+
+
+

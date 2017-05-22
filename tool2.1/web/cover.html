@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BEIYOUCHARTS</title>
+    <link rel="stylesheet" type="text/css" href="./ECharts_files/bootstrap.min.css">
+    <script type="text/javascript" src="./ECharts_files/jquery.min.js"></script>
+    <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            min-height: 600px;
+        }
+        table{
+            /*position:fixed;*/
+            /*bottom: 30px;*/
+            height: 30%;
+            min-height: 170px;
+            min-width: 500px;
+            width:66%;
+            margin: 3% 17% 0% 17%;/*top right bottom left*/
+        }
+
+        td{
+            width:20%;
+            /*border:1px solid #b7c4d4;*/
+            text-align: center;
+        }
+
+        .pic td{
+            height: 70%;
+        }
+
+        td img{
+            width:60%;
+            -webkit-border-radius:150px;
+            border-radius:650px;
+            border:1px solid #b7c4d4;
+            -webkit-transition:all 0.2s ease-out;
+            transition:all 0.2s ease-out
+        }
+
+        td .cur-item {
+            width:75%;
+            margin:0 6px;
+            -webkit-border-radius:200px;
+            border-radius:700px;
+            border-color:#7fccf2;
+            -webkit-box-shadow:0 0 10px #b7c4d4;
+            box-shadow:0 0 10px #b7c4d4
+        }
+
+        label{
+            font-family: '微软雅黑';
+            font-size: 18px;
+            color: #203670;
+            margin-bottom: 45px;
+            font-weight:500;
+        }
+
+        .modulename td{
+            height: 25%;
+        }
+
+        .p{
+            margin: 0 auto;
+            height: 250px;
+            width: 70%;
+            border: 1px solid red;
+        }
+        p{
+            position:relative;
+            text-align: center;
+            z-index:2;
+            font-family: "Perspective Sans Black";
+            font-size: 120px;
+            top: 40%;
+            bottom: 50%;
+            color: white;
+            /* border:1px solid white;*/
+            transform:scaleX(1.2);
+
+        }
+        @font-face{
+            font-family: "Perspective Sans Black";
+            src:url('./ECharts_files/persansb.ttf');
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" style="width:100% ;min-width: 1024px;height:60%;min-height: 300px; border:1px solid #d3d3d3;background-color: lightblue;"></canvas>
+
+
+<table>
+    <tr class="pic">
+        <td>
+            <img src="./ECharts_files/datamap.png" data-index="1" class="" id="go-map-btn">
+        </td>
+        <td><img src="./ECharts_files/tool.png" data-index="2" class="" id="go-tool-btn"></td>
+        <td><img src="./ECharts_files/analisys.png" data-index="3" class="" id="go-data-analysis-btn"></td>
+        <td><img src="./ECharts_files/application.png" data-index="4" class="" id="go-third-btn"></td>
+        <td><img src="./ECharts_files/artifact.png" data-index="6" class="" id="go-gallery-btn"></td>
+    </tr>
+    <tr class="modulename">
+        <td><label>数据地图</label></td>
+        <td><label>图集工具</label></td>
+        <td><label>数据分析</label></td>
+        <td><label>专业定制</label></td>
+        <td><label>个人作品</label></td>
+    </tr>
+</table>
+<!--<input type="text" id="t" style="width: 400px">-->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+        var canvas = document.getElementById('canvas'),
+                ctx = canvas.getContext('2d'),
+                w = canvas.width = 1260,//window.innerWidth*9/13,
+                h = canvas.height = 387,//window.innerHeight*2/5,
+
+                hue = 217,
+                stars = [],
+                count = 0,
+                distance = 150,
+                maxStars = 50;
+/*$("#t").val(w +"   ,   "+h);*/
+        var canvas2 = document.createElement('canvas'),
+                ctx2 = canvas2.getContext('2d');
+        canvas2.width = 100;
+        canvas2.height = 100;
+        var half = canvas2.width / 2,
+                gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+        gradient2.addColorStop(0.025, '#fff');
+        gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+        gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+        gradient2.addColorStop(1, 'transparent');
+
+        ctx2.fillStyle = gradient2;
+        ctx2.beginPath();
+        ctx2.arc(half, half, half, 0, Math.PI * 2);
+        ctx2.fill();
+
+
+        function random(min, max) {
+            if (arguments.length < 2) {
+                max = min;
+                min = 0;
+            }
+
+            if (min > max) {
+                var hold = max;
+                max = min;
+                min = hold;
+            }
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        var Star = function(xx,yy) {
+            //this.x = Math.random()* w;
+            //this.y = Math.random()* h;
+            this.x = xx;
+            this.y = yy;
+            this.alpha = random(2, 10) / 10;//透明度
+            //this.radius = Math.random*50;
+            count++;
+            stars[count] = this;
+        }
+
+        Star.prototype.draw = function() {
+            ctx.drawImage(canvas2, this.x, this.y, 50, 50);//img x y width height
+            var twinkle = random(10);
+
+            if (twinkle === 1 && this.alpha > 0) {
+                this.alpha -= 0.05;
+            } else if (twinkle === 2 && this.alpha < 1) {
+                this.alpha += 0.05;
+            }
+            ctx.globalAlpha = this.alpha;
+        }
+
+//for (var i = 0; i < maxStars; i++) {
+        function initiateStar() {
+            var x =0;
+            new Star(40, 0);
+            new Star(55, 30);
+            new Star(20, 130);
+            new Star(30, 160);
+            new Star(40, 260);
+            new Star(50, 330);
+            new Star(170, 290);
+            new Star(140, 190);
+            new Star(120, 130);
+            new Star(160, 80);
+            new Star(180, 5);
+            new Star(0, 60);
+            new Star(0, 238);
+
+            new Star(420+x, 0);
+            new Star(390+x, 120);
+            new Star(470+x, 30);
+            new Star(500+x, 100);
+            new Star(558+x, 13);
+            new Star(625+x, 0);
+            new Star(610+x, 68);
+            new Star(650+x, 75);
+            new Star(750+x, 0);
+
+            new Star(815+x, 18);
+            new Star(900+x, 0);
+            new Star(1020+x, 30);
+            new Star(900+x, 150);
+            new Star(800+x, 180);
+            new Star(990+x, 110);
+            new Star(1205+x, 105);
+            new Star(1100+x, 105);
+            new Star(1118+x, 200);
+            new Star(1180+x, 290);
+
+            //new Star(1150+x, 50);
+            new Star(1118+x, -30);
+            new Star(1180+x, -25);
+            new Star(1280+x, 100);
+            new Star(1280+x, 60);
+            new Star(1280+x, 200);
+            new Star(1280+x, 150);
+            new Star(1245+x, 150);
+            new Star(1000+x, -30);
+            new Star(800+x, -30);
+            new Star(600+x, -30);
+            new Star(700+x, -30);
+        }
+        initiateStar();
+//}
+        var i_star;
+        var j_star;
+        function connectStars() {
+            for(var i = 1; i <= count; i++){
+                for(var j = 1; j <= count; j++){
+                    i_star = stars[i];
+                    j_star = stars[j];
+                    if((i_star.x - j_star.x) < distance && (i_star.y - j_star.y) < distance && (i_star.x - j_star.x) > - distance && (i_star.y - j_star.y) > - distance){
+                        ctx.beginPath();
+                        //var my_gradient=ctx.createLinearGradient(i_star.x,i_star.y,j_star.x,j_star.y);
+                        //my_gradient.addColorStop(0.025, '#fff');
+                        //my_gradient.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+                        ctx.strokeStyle = "#151B26";
+                        ctx.lineWidth = 0.2;
+                        ctx.moveTo(i_star.x+25, i_star.y+25);
+                        ctx.lineTo(j_star.x+25, j_star.y+25);
+                        ctx.stroke();
+                        ctx.closePath();
+                        //break;
+                    }
+                }
+            }
+        }
+        var img=new Image();
+        img.src="./ECharts_files/logo_white.png";
+        ctx.font="75px Perspective Sans Black";
+
+        var grd=ctx.createLinearGradient(0,0,0,h);
+        function animation() {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 0.8;
+            grd.addColorStop(0,"#020507");
+            grd.addColorStop(1,"#33477D");
+
+            ctx.fillStyle=grd;
+            ctx.fillRect(0, 0, w, h);
+            ctx.fillStyle="white";
+            ctx.globalCompositeOperation = 'lighter';
+            ctx.drawImage(img,560,110,120,120);
+            ctx.fillText("BeiYou",360,310,300);
+            ctx.fillStyle="blue";
+            ctx.fillText("•",620,310,23);
+            ctx.fillStyle="white";
+            ctx.fillText("Charts",650,310,300);
+            connectStars();
+
+            for (var j = 1; j < stars.length; j++) {
+                stars[j].draw();
+            }
+
+            window.requestAnimationFrame(animation);
+        }
+        animation();
+    })();
+</script>
+<script type="text/javascript">
+    (function() {
+
+        $('td').on('mouseenter', 'img',function(){
+            var target = $(this);
+            if (target.hasClass('cur-item')) {
+                return;
+            }
+            /*$('td').find('.cur-item').removeClass('cur-item');*/
+            target.addClass('cur-item');
+        });
+
+        $('td').on('mouseleave', 'img', function(){
+            $('td').find('.cur-item').removeClass('cur-item');
+        });
+
+    })();
+</script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
+<script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
+<script>
+    seajs.config({
+        base : SGIS.Config.TOOL_MODULE_URL,		//基础路径
+        paths:{
+            base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
+            tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
+            gallery:SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
+            mapData:SGIS.Config.WEB_MODULE_URL  	//跨目录的web路径
+        },
+        map : [
+            [ '.json', '.json?t=' + new Date().getTime() ],
+//			[ '.js', '.js?t=' + new Date().getTime() ],
+            [ '.css', '.css?t=' + new Date().getTime() ]
+        ]});
+    seajs.use('/tool2.1/http/js/narBar',function(obj){
+        obj.into();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>在线制图工具-用户注册</title>
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/base2.1/http/lib/bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+	<link href="css/register.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/base2.1/http/lib/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/base2.1/http/lib/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
+</head>
+<body>
+<div class="box">
+	<div class="login-box">
+		<div class="login-title text-center">
+			<h1><small>用户注册</small></h1>
+		</div>
+		<div class="login-content ">
+			<div class="form">
+				<form name="register-form" id="register-form">
+					<div class="form-group">
+						<div class="col-xs-12  ">
+							<div class="input-group">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="userName" name="userName" class="form-control" placeholder="用户名，登陆后显示的名称...">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12  ">
+							<div class="input-group">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-off"></span></span>
+								<input type="text" id="userLogin" name="userLogin" class="form-control" placeholder="用户登录名，登录时所用...">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12  ">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-lock"></span>
+								</span>
+								<input type="password" id="password" name="password" class="form-control" placeholder="用户密码，登录时所用...">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12  ">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-lock"></span>
+								</span>
+								<input type="password" id="repeatPassword" name="repeatPassword" class="form-control" placeholder="重复密码">
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-actions">
+						<div class="col-xs-6 col-xs-offset-6 ">
+							<button id="reset-btn" type="reset" class="btn btn-sm btn-default">
+								<span class="glyphicon glyphicon-refresh"></span> 重置
+							</button>
+							<button id="submit-btn" type="button" class="btn btn-sm btn-info" data-loading-text="注册中...">
+								<span class="glyphicon glyphicon-off"></span> 注册
+							</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-6 link">
+							<p id="register-msg" class="remove-margin">
+							</p>
+						</div>
+						<div class="col-xs-6 link">
+							<p class="text-center remove-margin"><small>已有账号?</small>
+								<a href="index.html" ><small>登录</small></a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/register.js"></script>
+</html>

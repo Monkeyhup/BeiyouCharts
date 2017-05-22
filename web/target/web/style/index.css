@@ -1,0 +1,32 @@
+/*标题样式
+Created by xiaomin chenpeng on 2016/10/18.*/
+/*地图高度宽度*/
+#MapShow{
+    width: 58vw;
+    height: 80vh;
+    margin-right: -15px;
+    margin-left: 3px;
+    /*  background-color: #2aabd2;*/
+    /*   border: 1px solid red;*/
+    margin-top: 10px;
+}
+
+/*选项卡边距*/
+#navTable{
+    margin-top:1px;
+}
+#navTable a:hover{
+    color: blue;
+}
+/*tab选项卡大小*/
+#navTable ul li{
+    margin-top: 2px;
+    width:50%;
+    /* background-color: #113C5F;*/
+}
+
+#variousOption {
+    margin-top: 8px;
+}
+
+

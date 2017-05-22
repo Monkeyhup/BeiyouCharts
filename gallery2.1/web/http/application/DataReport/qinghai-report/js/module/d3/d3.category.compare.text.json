@@ -1,0 +1,98 @@
+{
+    "data1_title": "R&D经费支出（亿元）",
+    "data1_unit": "亿元",
+    "data2_title": "R&D 经费投入强度（%）",
+    "data2_unit": "%",
+    "data1_compare1_title": "有证照",
+    "data1_compare2_title": "无证照",
+    "data2_compare1_title": "有证照",
+    "data2_compare2_title": "无证照",
+    "data1_data": [
+        {
+            "State": "  煤炭开采和洗选业",
+            "freq": {
+                "compare1": 156.6,
+                "compare2": 0.48
+            }
+        },
+        {
+            "State": "  石油和天然气开采业",
+            "freq": {
+                "compare1": 80.7,
+                "compare2": 0.7
+            }
+        },
+        {
+            "State": "  黑色金属矿采选业",
+            "freq": {
+                "compare1": 7.7,
+                "compare2": 0.08
+            }
+        },
+        {
+            "State": "  有色金属矿采选业",
+            "freq": {
+                "compare1": 21.8,
+                "compare2": 0.35
+            }
+        },
+        {
+            "State": "  非金属矿采选业",
+            "freq": {
+                "compare1": 7.2,
+                "compare2": 0.15
+            }
+        },
+        {
+            "State": "  开采辅助活动",
+            "freq": {
+                "compare1": 18.7,
+                "compare2": 0.92
+            }
+        }
+    ],
+    "data2_data": [
+        {
+            "State": "  煤炭开采和洗选业",
+            "freq": {
+                "compare1": 22.1,
+                "compare2": 0.27
+            }
+        },
+        {
+            "State": "  石油和天然气开采业",
+            "freq": {
+                "compare1": 158.5,
+                "compare2": 0.44
+            }
+        },
+        {
+            "State": "  黑色金属矿采选业",
+            "freq": {
+                "compare1": 69.3,
+                "compare2": 0.36
+            }
+        },
+        {
+            "State": "  有色金属矿采选业",
+            "freq": {
+                "compare1": 33.9,
+                "compare2": 0.27
+            }
+        },
+        {
+            "State": "  非金属矿采选业",
+            "freq": {
+                "compare1": 27.2,
+                "compare2": 0.23
+            }
+        },
+        {
+            "State": "  开采辅助活动",
+            "freq": {
+                "compare1": 22.5,
+                "compare2": 0.34
+            }
+        }
+    ]
+}

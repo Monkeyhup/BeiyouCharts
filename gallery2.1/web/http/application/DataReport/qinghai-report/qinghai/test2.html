@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文字旋转</title>
+    <style type="text/css">
+        .div1{
+            height:20px;
+
+        }
+        .rotation1{
+            position:absolute;
+            width: 30px;
+
+
+        }
+        .rotation2{
+            position:absolute; -webkit-transform: rotate(90deg); height:20px;
+            width: 30px;
+            /*overflow: hidden;*/
+        }
+        .rotation3{
+            position:absolute;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(-90deg);
+            height:20px;
+            width: 30px;
+          /*  overflow: hidden;*/
+        }
+    </style>
+<BODY>
+<div class="div1">
+<span class="rotation1" style=" -webkit-transform: rotate(90deg);overflow: hidden;"><h2 style="color:#ccddff;">A234</h2></span>
+
+</div>
+</BODY>
+<script type="text/javascript" src="lib/Echarts/echarts-2.1.8/echarts-all.js"></script>
+<script type="text/javascript" src="lib/jquery-1.11.1.js"></script>
+</html>

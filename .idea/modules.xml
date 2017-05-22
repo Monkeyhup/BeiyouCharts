@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base2.1/base2.1.iml" filepath="$PROJECT_DIR$/base2.1/base2.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gallery2.1/gallery2.1.iml" filepath="$PROJECT_DIR$/gallery2.1/gallery2.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lanzhou.iml" filepath="$PROJECT_DIR$/lanzhou.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tool2.1/tool2.1.iml" filepath="$PROJECT_DIR$/tool2.1/tool2.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+    </modules>
+  </component>
+</project>
