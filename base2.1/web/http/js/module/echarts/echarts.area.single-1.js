@@ -13,7 +13,7 @@ define(function(require, exports, module) {
      */
     var EChartAreaSingle = function(){
         this.option = {
-            color:['#206a9d'],
+            color:['#bdc2e8'],
             tooltip: {
                 show: true,
                 "trigger": "axis",
@@ -72,7 +72,10 @@ define(function(require, exports, module) {
                         "show":true
                     },
                     "splitLine": {
-                        "show": false
+                        "show": true,
+                        "lineStyle":{
+                            "type": "dashed"
+                        }
                     },
                     "axisLine": {
                         "lineStyle": {
@@ -107,7 +110,10 @@ define(function(require, exports, module) {
                     //"min":
                     //"max":dataMax,
                     "splitLine": {
-                        "show": false
+                        "show": true,
+                        "lineStyle":{
+                            "type": "dashed"
+                        }
                     },
                     /* "axisLine": {
                      "lineStyle": {
@@ -185,10 +191,7 @@ define(function(require, exports, module) {
                         "min": getYaxisDataMin(re.seriesData),
                         //"min":120,
                         //"max":700,
-                        "max":getYaxisDataMax(re.seriesData),
-                        "splitLine": {
-                            "show": false
-                        }
+                        "max":getYaxisDataMax(re.seriesData)
                     });
                     that.option.series = [
                         {

@@ -40,7 +40,7 @@ define(function(require, exports, module) {
                 "textStyle": {
                     "fontSize": 12,
                     "fontFamily": "微软雅黑",
-                    "color": "#26C0C0",
+                    "color": "#000000",
                     "fontWeight": "bold"
                 },
                 "selectedMode": true,
@@ -57,16 +57,19 @@ define(function(require, exports, module) {
                         "textStyle": {
                             "fontSize": 12,
                             "fontFamily": "微软雅黑",
-                            "color": "#26C0C0",
+                            "color": "#000000",
                             "fontWeight": "bold"
                         }
                     },
                     "splitLine": {
-                        "show": false
+                        "show": true,
+                        "lineStyle":{
+                            "type":'dashed'
+                        }
                     },
                     "axisLine": {
                         "lineStyle": {
-                            "color": "#26C0C0"
+                            "color": "#000000"
                         }
                     },
                     //positionOffset:{
@@ -84,7 +87,7 @@ define(function(require, exports, module) {
                         "textStyle": {
                             "fontSize": 12,
                             "fontFamily": "微软雅黑",
-                            "color": "#26C0C0",
+                            "color": "#000000",
                             "fontWeight": "bold"
                         },
                         "formatter": "{value}"
@@ -92,7 +95,7 @@ define(function(require, exports, module) {
                     "nameTextStyle": {
                         "fontSize": 12,
                         "fontFamily": "微软雅黑",
-                        "color": "#26C0C0",
+                        "color": "#000000",
                         "fontWeight": "bold"
                     },
                     "splitLine": {
@@ -100,7 +103,7 @@ define(function(require, exports, module) {
                     },
                     "axisLine": {
                         "lineStyle": {
-                            "color": "#26C0C0"
+                            "color": "#000000"
                         }
                     },
                     name:""     //数据

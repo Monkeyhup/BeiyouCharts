@@ -33,7 +33,7 @@
 		    	<span class="input-group-addon" style="width:auto;">
 		        	面积颜色
 		      	</span>
-		      	<input id="chart-area-color-select" type="color" class="form-control" style="width:45px;" value="#ffb895" />
+		      	<input id="chart-area-color-select" type="color" class="form-control" style="width:45px;" value="#c49c67" />
 		    </div><!-- /input-group -->
 		    <br/>
 			<div class="input-group">

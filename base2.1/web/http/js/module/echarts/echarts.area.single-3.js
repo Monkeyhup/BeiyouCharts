@@ -13,7 +13,7 @@ define(function(require, exports, module) {
      */
     var EChartAreaSingle = function(){
         this.option = {
-            color:['#ffb895'],
+            color:['#c49c67'],
             tooltip: {
                 show: true,
                 "trigger": "axis",

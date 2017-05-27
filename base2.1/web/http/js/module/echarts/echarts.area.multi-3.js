@@ -13,7 +13,7 @@ define(function(require, exports, module) {
      */
     var EChartAreaMulti = function(){
         this.option = {
-            color:['#7B868A','#21759B'],
+            color:['#ed6ea0','#495aff'],
             tooltip: {
                 show: true,
                 "trigger": "axis",
@@ -40,7 +40,7 @@ define(function(require, exports, module) {
                 "textStyle": {
                     "fontSize": 12,
                     "fontFamily": "微软雅黑",
-                    "color": "#26C0C0",
+                    "color": "#000000",
                     "fontWeight": "bold"
                 },
                 "selectedMode": true,
@@ -65,13 +65,13 @@ define(function(require, exports, module) {
                         "textStyle": {
                             "fontSize": 12,
                             "fontFamily": "微软雅黑",
-                            "color": "#26C0C0",
+                            "color": "#000000",
                             "fontWeight": "bold"
                         }
                     },
                     "axisLine": {
                         "lineStyle": {
-                            "color": "#26C0C0"
+                            "color": "#000000"
                         }
                     },
                     //positionOffset:{
@@ -96,7 +96,7 @@ define(function(require, exports, module) {
                         "textStyle": {
                             "fontSize": 12,
                             "fontFamily": "微软雅黑",
-                            "color": "#26C0C0",
+                            "color": "#000000",
                             "fontWeight": "bold"
                         },
                         "formatter": "{value}"
@@ -104,12 +104,12 @@ define(function(require, exports, module) {
                     "nameTextStyle": {
                         "fontSize": 12,
                         "fontFamily": "微软雅黑",
-                        "color": "#26C0C0",
+                        "color": "#000000",
                         "fontWeight": "bold"
                     },
                     "axisLine": {
                         "lineStyle": {
-                            "color": "#26C0C0"
+                            "color": "#000000"
                         }
                     },
                     name:""     //数据

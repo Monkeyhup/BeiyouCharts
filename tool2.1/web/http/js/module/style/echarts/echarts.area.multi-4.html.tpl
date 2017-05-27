@@ -50,7 +50,7 @@
 		    	<span class="input-group-addon" style="width:auto;">
 		        	面积1颜色
 		      	</span>
-		      	<input id="chart1-area-color-select" type="color" class="form-control" style="width:45px;" value="#2f7d9d" />
+		      	<input id="chart1-area-color-select" type="color" class="form-control" style="width:45px;" value="#7bacdd" />
 		    </div><!-- /input-group -->
 		    <br/>
 		    <div class="input-group">
@@ -71,7 +71,7 @@
 		    	<span class="input-group-addon" style="width:auto;">
 		        	面积2颜色
 		      	</span>
-		      	<input id="chart2-area-color-select" type="color" class="form-control" style="width:45px;" value="#f0a31a" />
+		      	<input id="chart2-area-color-select" type="color" class="form-control" style="width:45px;" value="#b07347" />
 		    </div><!-- /input-group -->
 		    <br/>
 		    <div class="input-group">
