@@ -1,8 +1,24 @@
+
 body {
 	height: 100%;
 	background: #EEEEEE;
 	padding-top: 0px;
 	padding-bottom: 0px;
+}
+
+.PicTool{
+	display:inline-block;
+	padding: 5%;
+}
+.TopTable{
+	float: right;
+	padding-top: 5%;
+
+}
+.TopTable td,th{
+	padding-left: 1em;
+	float: left;
+
 }
 .a {
 	color: rgb(27, 88, 87);
@@ -59,17 +75,20 @@ body {
 }
 .main-container {
 	margin:auto;
+	width:100%;
+
 }
+
 
 
 .row-right {
 	width: 100%;
-	min-width:850px;
+
 
 }
 
 .row-right .row-right-container {
-
+	width:100%;
 
 }
 
@@ -97,6 +116,8 @@ body {
 	overflow: hidden;
 	/*border:1px solid #ddd;*/
 	margin-top:20px;
+	width:100%;
+
 }
 .row-right .row-right-container .im-ul>li{
 	float: left;
@@ -204,6 +225,7 @@ body {
 }
 
 .row .row-right-container {
+	width: 100%;
 
 
 }
@@ -232,6 +254,7 @@ body {
 	overflow: hidden;
 	/*border:1px solid #ddd;*/
 	margin-top:20px;
+	width:100%;
 }
 .row .row-right-container .im-ul>li{
 	float: left;

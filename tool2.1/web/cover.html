@@ -4,133 +4,62 @@
     <meta charset="UTF-8">
     <title>BEIYOUCHARTS</title>
     <link rel="stylesheet" type="text/css" href="./ECharts_files/bootstrap.min.css">
+    <link href="cover.css" rel="stylesheet">
     <script type="text/javascript" src="./ECharts_files/jquery.min.js"></script>
     <script type="text/javascript" src="/base2.1/http/js/common/SGIS.Base.js"></script>
-    <style>
-        html,body{
-            height: 100%;
-            min-height: 600px;
-        }
-        table{
-            /*position:fixed;*/
-            /*bottom: 30px;*/
-            height: 30%;
-            min-height: 170px;
-            min-width: 500px;
-            width:66%;
-            margin: 3% 17% 0% 17%;/*top right bottom left*/
-        }
 
-        td{
-            width:20%;
-            /*border:1px solid #b7c4d4;*/
-            text-align: center;
-        }
-
-        .pic td{
-            height: 70%;
-        }
-
-        td img{
-            width:60%;
-            -webkit-border-radius:150px;
-            border-radius:650px;
-            border:1px solid #b7c4d4;
-            -webkit-transition:all 0.2s ease-out;
-            transition:all 0.2s ease-out
-        }
-
-        td .cur-item {
-            width:75%;
-            margin:0 6px;
-            -webkit-border-radius:200px;
-            border-radius:700px;
-            border-color:#7fccf2;
-            -webkit-box-shadow:0 0 10px #b7c4d4;
-            box-shadow:0 0 10px #b7c4d4
-        }
-
-        label{
-            font-family: '微软雅黑';
-            font-size: 18px;
-            color: #203670;
-            margin-bottom: 45px;
-            font-weight:500;
-        }
-
-        .modulename td{
-            height: 25%;
-        }
-
-        .p{
-            margin: 0 auto;
-            height: 250px;
-            width: 70%;
-            border: 1px solid red;
-        }
-        p{
-            position:relative;
-            text-align: center;
-            z-index:2;
-            font-family: "Perspective Sans Black";
-            font-size: 120px;
-            top: 40%;
-            bottom: 50%;
-            color: white;
-            /* border:1px solid white;*/
-            transform:scaleX(1.2);
-
-        }
-        @font-face{
-            font-family: "Perspective Sans Black";
-            src:url('./ECharts_files/persansb.ttf');
-        }
-    </style>
 </head>
-<body>
+<body >
 
-<canvas id="canvas" style="width:100% ;min-width: 1024px;height:60%;min-height: 300px; border:1px solid #d3d3d3;background-color: lightblue;"></canvas>
+<canvas id="canvas" style="width:100% ;height:60%; border:1px solid #d3d3d3;background-color: lightblue;"></canvas>
 
 
-<table>
-    <tr class="pic">
-        <td>
-            <img src="./ECharts_files/datamap.png" data-index="1" class="" id="go-map-btn">
-        </td>
-        <td><img src="./ECharts_files/tool.png" data-index="2" class="" id="go-tool-btn"></td>
-        <td><img src="./ECharts_files/analisys.png" data-index="3" class="" id="go-data-analysis-btn"></td>
-        <td><img src="./ECharts_files/application.png" data-index="4" class="" id="go-third-btn"></td>
-        <td><img src="./ECharts_files/artifact.png" data-index="6" class="" id="go-gallery-btn"></td>
-    </tr>
-    <tr class="modulename">
-        <td><label>数据地图</label></td>
-        <td><label>图集工具</label></td>
-        <td><label>数据分析</label></td>
-        <td><label>专业定制</label></td>
-        <td><label>个人作品</label></td>
-    </tr>
-</table>
+
+<div class="pic">
+    <div class="picbox">
+        <img src="./ECharts_files/datamap.png" data-index="1" class="" id="go-map-btn">
+        <p class="nametext">数据地图</p>
+    </div>
+    <div class="picbox">
+        <img src="./ECharts_files/tool.png" data-index="2" class="" id="go-tool-btn">
+        <p class="nametext">图集工具</p>
+    </div>
+    <div class="picbox">
+        <img src="./ECharts_files/analisys.png" data-index="3" class="" id="go-data-analysis-btn">
+        <p class="nametext">数据分析</p>
+    </div>
+    <div class="picbox">
+        <img src="./ECharts_files/application.png" data-index="4" class="" id="go-third-btn">
+        <p class="nametext">专业定制</p>
+    </div>
+    <div class="picbox">
+        <img src="./ECharts_files/artifact.png" data-index="6" class="" id="go-gallery-btn">
+        <p class="nametext">个人作品</p>
+    </div>
+</div>
+
+
 <!--<input type="text" id="t" style="width: 400px">-->
 <script type="text/javascript">
     (function() {
         "use strict";
         var canvas = document.getElementById('canvas'),
-                ctx = canvas.getContext('2d'),
-                w = canvas.width = 1260,//window.innerWidth*9/13,
-                h = canvas.height = 387,//window.innerHeight*2/5,
+            ctx = canvas.getContext('2d'),
+            w = canvas.width = 1260,//window.innerWidth*9/13,
+            h = canvas.height = 387,//window.innerHeight*2/5,
 
-                hue = 217,
-                stars = [],
-                count = 0,
-                distance = 150,
-                maxStars = 50;
-/*$("#t").val(w +"   ,   "+h);*/
+            hue = 217,
+            stars = [],
+            count = 0,
+            distance = 150,
+            maxStars = 50;
+        /*$("#t").val(w +"   ,   "+h);*/
         var canvas2 = document.createElement('canvas'),
-                ctx2 = canvas2.getContext('2d');
+            ctx2 = canvas2.getContext('2d');
         canvas2.width = 100;
         canvas2.height = 100;
         var half = canvas2.width / 2,
-                gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+            gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
         gradient2.addColorStop(0.025, '#fff');
         gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
         gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
