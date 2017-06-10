@@ -29,6 +29,13 @@
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/excelTemplate/echarts/echarts.liquid.xlsx" charset="GBK" />
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/excelTemplate/highcharts/highcharts.column.line.single.template.xlsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.multi-1.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.multi-2.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.multi-3.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.multi-4.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.multi.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.single-1.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.area.single-3.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.liquid.excel.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.liquid.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/tool2.1/web/http/image/echarts/echarts.nabrs.line.png" charset="GBK" />
