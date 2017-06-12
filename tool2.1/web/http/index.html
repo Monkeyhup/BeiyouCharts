@@ -27,6 +27,18 @@
 	a:hover{
 		color: blue;
 	}
+	@media (max-width: 600px){
+		#divcss5{
+			text-align: left;
+			margin:0 20%;
+		}
+		.row-right .row-right-container .im-ul>li{
+			float: left;
+			list-style-type: none;
+			margin:10px 1%;
+			width: 40%;
+		}
+	}
 </style>
 <body>
 <div id="top-alert-container" class="IEindecl" style="display:none;position: fixed;top:0px;z-index:1000;width: 100%;height: 60px;background: #FFC125;font-family: 微软雅黑;font-size: 1.3em;">
@@ -49,55 +61,62 @@
 <nav class="navbar navbar-inverse navbar-fixed-top"  id="navbar" role="navigation" style="background-color:#123c5f;height:60px;">
 </nav>
 
-<div class="container main" style="padding-top:60px;">
+<div class="container main" style="padding-top:60px;width: 80%;">
 	<!-- 上下 -->
     <!--<i class="icon user"></i>-->
 	<div class="row">
 		<!-- 主图形 -->
 		<div id="divcss5" class="divcss5-abc">
-			<tr>
-				<td><img class="bottom"src="image/jichutuxing.png"></td>
-				<table style="display:inline-block;">
-					<tr>
-						<td style="padding:25px 5px 5px 15px"><a href="#mari_id2">柱形图</a></td>
-						<td style="padding:25px 35px 5px 5px"><a href="#mari_id3">条形图</a></td>
-					</tr>
-					<tr>
-						<td style="padding:5px 5px 5px 15px"><a href="#mari_id1">面积图</a></td>
-						<td style="padding:5px 35px 5px 25px"><a href="#mari_id4">饼(圆环)图</a></td>
-					</tr>
-					<tr>
-						<td style="padding:5px 5px 15px 15px"><a href="#mari_id0">折线图</a></td>
-						<td style="padding:5px 35px 15px 5px"><a href="#mari_id5">散点图</a></td>
-					</tr>
-				</table>
-				<td><img class="bottom" border="0" src="image/zuhetuxing.png"></td>
-				<table style="display:inline-block;">
-					<tr>
-						<td style="padding:25px 35px 5px 35px"><a href="#mari_id6">折线&柱形图</a></td>
-					</tr>
-					<tr>
-						<td style="padding:5px 35px 5px 15px"><a href="#mari_id6">面积图</a></td>
-					</tr>
-					<tr>
-						<td style="padding:5px 35px 15px 15px"><a href="#mari_id6">其他图</a></td>
-					</tr>
-				</table>
+			<div id="BasicPic" class="PicTool">
 
-				<td><img class="bottom" border="0" src="image/zhuantituxing.png"></td>
-				<table  style="display:inline-block;">
+				<img class="bottom"src="image/jichutuxing.png">
+				<table class="TopTable" style="display:inline-block;">
 					<tr>
-						<td style="padding:25px 5px 5px 15px"><a href="#mari_id7">漏斗图</a></td>
-						<td style="padding:25px 35px 5px 5px"><a href="#mari_id7">平行坐标图</a></td>
+						<td><a href="#mari_id2">柱形图</a></td>
+						<td><a href="#mari_id3">条形图</a></td>
 					</tr>
 					<tr>
-						<td style="padding:5px 5px 5px 15px"><a href="#mari_id7">雷达图</a></td>
+						<td><a href="#mari_id1">面积图</a></td>
+						<td><a href="#mari_id4">饼(圆环)图</a></td>
 					</tr>
 					<tr>
-						<td style="padding:5px 5px 15px 15px"><a href="#mari_id7">其他图</a></td>
+						<td><a href="#mari_id0">折线图</a></td>
+						<td><a href="#mari_id5">散点图</a></td>
 					</tr>
 				</table>
-			</tr>
+			</div>
+			<div id="CombinePic" class="PicTool">
+
+				<img class="bottom" border="0" src="image/zuhetuxing.png">
+				<table  class="TopTable" style="display:inline-block;">
+					<tr>
+						<td><a href="#mari_id6">折线&柱形图</a></td>
+					</tr>
+					<tr>
+						<td><a href="#mari_id6">面积图</a></td>
+					</tr>
+					<tr>
+						<td><a href="#mari_id6">其他图</a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="SpecialPic" class="PicTool">
+
+				<img class="bottom" border="0" src="image/zhuantituxing.png">
+				<table  class="TopTable" style="display:inline-block;">
+					<tr>
+						<td><a href="#mari_id7">漏斗图</a></td>
+						<td><a href="#mari_id7">平行坐标图</a></td>
+					</tr>
+					<tr>
+						<td><a href="#mari_id7">雷达图</a></td>
+					</tr>
+					<tr>
+						<td><a href="#mari_id7">其他图</a></td>
+					</tr>
+				</table>
+			</div>
 		</div>
 		<div class="main-container">
 			<div class="row-right">

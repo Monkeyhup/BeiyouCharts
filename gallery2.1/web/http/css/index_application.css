@@ -9,12 +9,13 @@ body,html{
     background-color:#fff;
     width:80%;
     min-width:940px;
+    height:100%;
 
 }
 
 
     .main {
-
+        height:100%;
     }
 
     .main .ApplicationModule{
@@ -36,10 +37,7 @@ body,html{
         float:left;
     }
     .main .ApplicationModule .ApplicationLogo .LogoImg {
-        position: absolute;
-        top:20%;
-        left:2%;
-        width:150px;
+        width:100%;
         margin:0 auto;
     }
     .main .ApplicationModule .ApplicationLogo .LogoNameImg {
@@ -59,7 +57,8 @@ body,html{
     }
 
     .main .ApplicationModule .ApplicationIn {
-        margin-top:5%;
+        padding-top:2%;
+        padding-left:5%;
         border-radius:15px 15px 15px 15px;
         height:100%;
         width:70%;
@@ -73,18 +72,18 @@ body,html{
         font-weight: bold;
     }
     .main .ApplicationModule .ApplicationIn .ApplicationText .ApplicationText-Intro {
-        font-size:16px;
+        font-size:1rem;
     }
     .main .ApplicationModule .ApplicationIn .ApplicationImg {
-        margin-top:20px;
         width:100%;
         height:50%;
+        padding-left: 5%;
 
 
     }
     .main .ApplicationModule .ApplicationIn .ApplicationImg img {
         width:40%;
-        height:100%;
+        height:90%;
         border-radius:15px 15px 15px 15px;
         margin-left:10px;
     }

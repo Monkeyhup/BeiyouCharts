@@ -1,0 +1,65 @@
+html,body{
+    height: 100%;
+    min-height: 600px;
+}
+
+.pic {
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.picbox {
+    width: 12%;
+    min-width: 10rem;
+}
+
+img{
+    width: 100%;
+    min-width: 10rem;
+    -webkit-border-radius:150px;
+    border-radius:650px;
+    border:1px solid #b7c4d4;
+    -webkit-transition:all 0.2s ease-out;
+    transition:all 0.2s ease-out
+}
+
+.cur-item {
+    width:75%;
+    margin:0 6px;
+    -webkit-border-radius:200px;
+    border-radius:700px;
+    border-color:#7fccf2;
+    -webkit-box-shadow:0 0 10px #b7c4d4;
+    box-shadow:0 0 10px #b7c4d4
+}
+
+
+
+
+
+.p{
+    margin: 0 auto;
+    height: 250px;
+    width: 70%;
+    border: 1px solid red;
+}
+p{
+    position:relative;
+    text-align: center;
+    z-index:2;
+    font-family: "Perspective Sans Black";
+    font-size: 1.5rem;
+    top:0;
+    bottom: 50%;
+    color: black;
+    /* border:1px solid white;*/
+    transform:scaleX(1.2);
+
+}
+@font-face{
+    font-family: "Perspective Sans Black";
+    src:url('./ECharts_files/persansb.ttf');
+}
