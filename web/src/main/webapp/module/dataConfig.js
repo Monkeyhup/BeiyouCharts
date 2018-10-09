@@ -4,6 +4,7 @@
 var __CurrRegion = "";
 function dataConfig() {
     this.idens = "";
+    this.flag = false;
     this.setIdens = setIdens;
     this.getIdens = getIdens;
     this.data = {};

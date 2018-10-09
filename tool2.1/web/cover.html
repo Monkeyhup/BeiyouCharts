@@ -95,7 +95,7 @@
             //this.radius = Math.random*50;
             count++;
             stars[count] = this;
-        }
+        };
 
         Star.prototype.draw = function() {
             ctx.drawImage(canvas2, this.x, this.y, 50, 50);//img x y width height
@@ -107,7 +107,7 @@
                 this.alpha += 0.05;
             }
             ctx.globalAlpha = this.alpha;
-        }
+        };
 
 //for (var i = 0; i < maxStars; i++) {
         function initiateStar() {
@@ -217,7 +217,7 @@
         animation();
     })();
 </script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     (function() {
 
         $('td').on('mouseenter', 'img',function(){
@@ -234,7 +234,7 @@
         });
 
     })();
-</script>
+</script>-->
 <script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
 <script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
 <script>

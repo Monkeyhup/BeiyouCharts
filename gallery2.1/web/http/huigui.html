@@ -35,6 +35,48 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation"
      style="background-color:#123c5f;height:60px;">
 </nav>
+<div class="row" style="margin-top: 80px">
+    <h5 id="equation"></h5>
+    <h4 style="text-align: center">描述统计</h4>
+    <table class="table table-bordered">
+        <tr>
+            <td></td>
+            <td>平均值</td>
+            <td>标准偏差</td>
+            <td>个案数</td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td id="avgx"></td>
+            <td id="standard_dev_x"></td>
+            <td id="lenx"></td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td id="avgy"></td>
+            <td id="standard_dev_y"></td>
+            <td id="leny"></td>
+        </tr>
+    </table>
+    <h4 style="text-align: center">相关性</h4>
+    <table class="table table-bordered">
+        <tr>
+            <td>皮尔逊相关性</td>
+            <td>Y</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td>1</td>
+            <td id="pearsonx"></td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td id="pearsony"></td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>
 <div class="row">
     <div class="col-md-4" id="tableContent">
         <div id="infont_inmput" class="ui primary button">

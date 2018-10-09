@@ -100,7 +100,6 @@
         <select class="form-control" id="second">
             <option value="0">--请选择指标2--</option>
 
-
         </select>
     </div>
 </div>
@@ -313,7 +312,7 @@
 <script src="page/base.js"></script>
 
 <script>
-    var baseurl = SGIS.BASE_URL + "/module";
+    //var baseurl = SGIS.BASE_URL + "/module";
     seajs.config({
         base: "./module",
         map: [
@@ -347,21 +346,3 @@
 <script type="text/javascript" src="/base2.1/http/lib/seajs/sea.js"></script>
 <script type="text/javascript" src="/base2.1/http/lib/seajs/seajs-text.js"></script>
 <script type="text/javascript" src="/tool2.1/http/js/cookie.js"></script>
-<script>
-    seajs.config({
-        base : SGIS.Config.TOOL_MODULE_URL,		//基础路径
-        paths:{
-            base:SGIS.Config.BASE_MODULE_URL,		//跨目录的base路径
-            tool:SGIS.Config.TOOL_MODULE_URL,		//跨目录的tool路径
-            gallery:SGIS.Config.GALLERY_MODULE_URL,	//跨目录的gallery路径
-            mapData:SGIS.Config.WEB_MODULE_URL  	//跨目录的web路径
-        },
-        map : [
-            [ '.json', '.json?t=' + new Date().getTime() ],
-//			[ '.js', '.js?t=' + new Date().getTime() ],
-            [ '.css', '.css?t=' + new Date().getTime() ]
-        ]});
-    seajs.use('/tool2.1/http/js/narBar',function(obj){
-        obj.into();
-    });
-</script>

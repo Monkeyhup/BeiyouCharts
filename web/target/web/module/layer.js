@@ -8,14 +8,24 @@ define(function (require, exprots, module) {
     var spatial = require("spatial.query.js");
     var container = "map-container";          //整个画布？
     var map, layer,boundaryLayer,boundarySel,labelLayer,hlblayer;//边界图层、标签图层、高亮边界图层
-    var myDataConfig=new dataConfig
+
 
     var shenRegion;
     var currRegion;
+    var mapLevel;
     var rtnBtn = $('#rtn-map');
+
+    myDataConfig = new dataConfig();
+    ruturnMap = function (regionCode, regionName, regionLevel) {
+        this.regionCode = regionCode;
+        this.regionName = regionName;
+        this.regionLevel = regionLevel
+    };
+
 
     var selCallbacks = {
         dblclick: function (_fea) {
+            myDataConfig.flag = false;
             //console.log(_fea);
             //双击下钻
             var data = _fea.data;
@@ -36,6 +46,7 @@ define(function (require, exprots, module) {
             }
 
             rtnBtn.removeClass('hidden');
+            $('#chartTable').addClass('hidden');
 
         }
         ,click: function (_fea) {    //???
@@ -51,15 +62,97 @@ define(function (require, exprots, module) {
 
     //返回上级按钮事件 （返回上级的）点击事件 ==> action（双击下钻回全国）
     rtnBtn.click(function () {
+        var regionset = require("regionset");
+        var Idens = require("idens");
+        var regions = regionset.getRegions();
+        Idens.clearAllThematic();
+        $('#chartTable').addClass('hidden');
         if (currRegion.getLevel() == 2){
             //跳回全国 ==> 双击下钻到全国 人为构造
             events.trigger("region.dbclick",new SGIS.Region('##0000000000',shenRegion.getName()));
             rtnBtn.addClass('hidden');
+            var queryParm = {
+                "catalog": "1",
+                "indicatorCodes": [],
+                "matmids": [myDataConfig.getMatId()],
+                "parid": "",
+                "regionLevel": "2",
+                "regions":[new SGIS.Region('##0000000000',"全国","2")],
+                "reportType": "1",
+                "sort": null,
+                "timeRank": null
+            };
+
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:8080/data/macro/Data/Query/hasRanks",
+                data: JSON.stringify(queryParm),
+                contentType: 'application/json',
+                success: function (re) {
+                    queryParm.timeRank = re;
+                    $.ajax({
+                        method: "POST",
+                        url: "http://localhost:8080/data/macro/data/queryext",
+                        data: JSON.stringify(queryParm),
+                        contentType: 'application/json',
+                        success: function (re) {
+                            console.log(re);
+                            allData = re;
+                            console.log(allData);
+                            Idens.drawThematic(re);
+                            myDataConfig.setData(re);
+                            console.log(re);
+                        }
+                    });
+                }
+            });
         } else{
+            myDataConfig.flag = true;
             events.trigger("region.dbclick",shenRegion);
-            currRegion = shenRegion;
+            ruturnMap=shenRegion;
+            console.log(shenRegion,"1");
+            console.log(ruturnMap,"2");
+            ruturnMap["regionLevel"]=shenRegion["regionLevel"]+1;
+            ruturnMap["regionCode"]=shenRegion["regionCode"].substr(0,2)+"##00000000";
+            console.log(ruturnMap,"2");
+            var queryParm = {
+                "catalog": "1",
+                "indicatorCodes": [],
+                "matmids": [myDataConfig.getMatId()],
+                "parid": "",
+                "regionLevel": ruturnMap.getLevel(),
+                "regions":[ruturnMap],
+                "reportType": "1",
+                "sort": null,
+                "timeRank": null
+            };
+
+            console.log(queryParm)
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:8080/data/macro/Data/Query/hasRanks",
+                data: JSON.stringify(queryParm),
+                contentType: 'application/json',
+                success: function (re) {
+                    queryParm.timeRank = re;
+                    $.ajax({
+                        method: "POST",
+                        url: "http://localhost:8080/data/macro/data/queryext",
+                        data: JSON.stringify(queryParm),
+                        contentType: 'application/json',
+                        success: function (re) {
+                            console.log(re);
+                            allData = re;
+                            console.log(allData);
+                            Idens.drawThematic(re);
+                            myDataConfig.setData(re);
+                            console.log(re+"666");
+                        }
+                    });
+                }
+            });
         }
-    });    //???
+    });
 
     var initMap = function (config,callback) {
         var mapfile = config.mapfile;        //无省级划分的中国地图

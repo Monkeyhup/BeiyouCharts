@@ -23,7 +23,6 @@ function setSecond() {
     var fir = document.getElementById("first");
     var sec = document.getElementById("second");
     var secondContent = selSecond[fir.selectedIndex - 1];
-    console.log(sec)
     sec.length = 1;
     for (var i = 0; i < secondContent.length; i++) {
         sec.options[i+1] = new Option(secondContent[i], secondContent[i]);

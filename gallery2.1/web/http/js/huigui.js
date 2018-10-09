@@ -255,11 +255,21 @@ draw = function () {
     var data = jsonData;
     var x = [];
     var y = [];
+    var sumx = 0;
+    var sumy = 0;
+    var sumx2 = 0;
+    var sumy2 = 0;
+    var sumxy = 0;
     var max = 0;
     var min = data[0][0];
     for (var i = 0; i < data.length; i++) {
         max = Math.max(data[i][0], max);
         min = Math.min(data[i][0], min);
+        sumx += data[i][0];
+        sumy += data[i][1];
+        sumx2 += data[i][0] * data[i][0];
+        sumy2 += data[i][1] * data[i][1];
+        sumxy += data[i][0] * data[i][1];
         x.push(data[i][0]);
         y.push(data[i][1]);
     }
@@ -291,6 +301,32 @@ draw = function () {
     }
 
     var lr = linearRegression(y, x);
+
+//个案数
+    var len = data.length;
+    $('#lenx').text(len);
+    $('#leny').text(len);
+//方程
+    var equation = 'y = ' + lr.slope + '* x + ' + lr.intercept;
+    $('#equation').text("拟合方程：" + equation);
+//平均值
+    var avgx = sumx / data.length;
+    var avgy = sumy / data.length;
+    $('#avgx').text(avgx);
+    $('#avgy').text(avgy);
+//方差
+    var variance_x = sumx2 / len - avgx * avgx;
+    var variance_y = sumy2 / len - avgy * avgy;
+
+//标准差
+    var standard_dev_x = Math.sqrt(variance_x);
+    var standard_dev_y = Math.sqrt(variance_y);
+    $('#standard_dev_x').text(standard_dev_x);
+    $('#standard_dev_y').text(standard_dev_y);
+//相关性
+    var pearson = (sumxy / len - avgx * avgy) / (standard_dev_x * standard_dev_y);
+    $('#pearsonx').text(pearson);
+    $('#pearsony').text(pearson);
 
     var markLineOpt = {
         animation: false,

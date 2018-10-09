@@ -31,7 +31,6 @@ define(function (require, exports, module) {
                 catalogid = config.catalogid;                             //1
                 currRegions = config.defaultRegion;                       //出的地图
                 currLevel = currRegions[0].getLevel();                    //获得其层级？
-                console.log(currLevel);
 
                 //deep = true 保证temp中的值不被覆盖
                 var temp = $.extend(true,{},re.defaultRegion);

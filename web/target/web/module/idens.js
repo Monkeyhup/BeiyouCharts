@@ -60,81 +60,68 @@ define(function (require, exports, module) {
         });
 
         events.on("region.switch", function (regions) {
-            PreIdens = ListItem.getCurrentIden();  //在触发下钻前,记录前一次查询的指标
+            console.log(!myDataConfig.flag);
+            if (!myDataConfig.flag){
+                PreIdens = ListItem.getCurrentIden();  //在触发下钻前,记录前一次查询的指标
 
-            var level = currentLevel;
-            //regions点击下钻地区 需要注意,trigger方法传入的参数被转化成数组
-            if (regions && regions.length > 0) {
-                level = regions[0].getLevel();
-                if (level != currentLevel) {  //级别改变了  重新刷新指标
+                var level = currentLevel;
+                //regions点击下钻地区 需要注意,trigger方法传入的参数被转化成数组
+                if (regions && regions.length > 0) {
+                    level = regions[0].getLevel();
+                    if (level != currentLevel) {  //级别改变了  重新刷新指标
 
-                    currentLevel = level;
-                    currentType = $("#switcher-report a.item.active").attr("data-value");
-                    //ListItem初始化,需要传入当前被激活的指标选择项和当前行政区划级别
-                    ListItem.init(currentType, currentLevel);
+                        currentLevel = level;
+                        currentType = $("#switcher-report a.item.active").attr("data-value");
+                        //ListItem初始化,需要传入当前被激活的指标选择项和当前行政区划级别
+                        ListItem.init(currentType, currentLevel);
 
-                    //清除
-                    clearAllThematic();
-                    console.log(regions+"log");
-                    console.log(myDataConfig.getIdens());
-                    var queryParm = {
-                        "catalog": "1",
-                        "indicatorCodes": [],
-                        "matmids": [myDataConfig.getMatId()],
-                        "parid": "",
-                        "regionLevel": level,
-                        "regions":regions,
-                        "reportType": "1",
-                        "sort": null,
-                        "timeRank": null
-                    };
-                    console.log(queryParm);
-
-                    $.ajax({
-                        method: "POST",
-                        url: "http://localhost:8080/data/macro/Data/Query/hasRanks",
-                        data: JSON.stringify(queryParm),
-                        contentType: 'application/json',
-                        success: function (re) {
-                            queryParm.timeRank = re;
-                            $.ajax({
-                                method: "POST",
-                                url: "http://localhost:8080/data/macro/data/queryext",
-                                data: JSON.stringify(queryParm),
-                                contentType: 'application/json',
-                                success: function (re) {
-                                    console.log(re);
-                                    allData = re;
-                                    console.log(allData);
-                                    drawThematic(re);
-                                    myDataConfig.setData(re);
-                                    console.log(re);
-                                    $("#tool-cg").trigger('click')
-                                }
-                            });
+                        //清除
+                        clearAllThematic();
+                        var queryParm = {
+                            "catalog": "1",
+                            "indicatorCodes": [],
+                            "matmids": [myDataConfig.getMatId()],
+                            "parid": "",
+                            "regionLevel": level,
+                            "regions":regions,
+                            "reportType": "1",
+                            "sort": null,
+                            "timeRank": null
+                        };
+                        $.ajax({
+                            method: "POST",
+                            url: "http://localhost:8080/data/macro/Data/Query/hasRanks",
+                            data: JSON.stringify(queryParm),
+                            contentType: 'application/json',
+                            success: function (re) {
+                                queryParm.timeRank = re;
+                                $.ajax({
+                                    method: "POST",
+                                    url: "http://localhost:8080/data/macro/data/queryext",
+                                    data: JSON.stringify(queryParm),
+                                    contentType: 'application/json',
+                                    success: function (re) {
+                                        allData = re;
+                                        drawThematic(re);
+                                        myDataConfig.setData(re);
+                                    }
+                                });
+                            }
+                        });
+                        if (!PreIdens.keys || PreIdens.keys().length < 1) {
+                            return;
                         }
-                    });
-                    // seajs.use(['grid', 'chart'], function (g, c) {
-                    //     $("#chart-control").attr("hasdata", "no");
-                    //     $("#chart-control").addClass("hide");
-                    //
-                    //     g.clearAll();
-                    //     c.clearAll();
-                    // });
-
-
-                    if (!PreIdens.keys || PreIdens.keys().length < 1) {
-                        return;
+                        //获取选中指标
+                        var codes = [];
+                        var idens = PreIdens.toArray();
+                        for (var i = 0, len = idens.length; i < len; i++) {
+                            codes.push(idens[i].idenCode);
+                        }
+                        ListItem.getAppoitItem(codes, doQuery);
                     }
-                    //获取选中指标
-                    var codes = [];
-                    var idens = PreIdens.toArray();
-                    for (var i = 0, len = idens.length; i < len; i++) {
-                        codes.push(idens[i].idenCode);
-                    }
-                    ListItem.getAppoitItem(codes, doQuery);
                 }
             }
+
         });
 
         //绑定"指标检索"按钮
@@ -326,7 +313,6 @@ define(function (require, exports, module) {
         } else {
             currRegions = regions;
         }
-        console.log(regions);
 
         //所选指标ID
         var matmidArr = [];
@@ -677,10 +663,7 @@ define(function (require, exports, module) {
             } else {
                 console.log("【config.js】文件source项配置有误");
             }
-
         };
-
-
         /**
          * 显示列表元素
          *

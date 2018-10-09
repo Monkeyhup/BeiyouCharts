@@ -471,7 +471,7 @@ define(function(require, exports, module) {
 
             //专业应用
             $("#go-third-btn").click(function(){
-                var url=SGIS.API.getGalleryURL("")+"http/";
+                var url=SGIS.API.getGalleryURL("")+"http/index_application.html";
                 window.location=url;
             });
 

@@ -12,7 +12,8 @@ define(function (require, exports, module) {
     var query = require("query");
     var allData = [];
 
-     myDataConfig = new dataConfig();
+    myDataConfig = new dataConfig();
+    console.log(myDataConfig.flag);
     var data;
     var map = Layer.getMap();
     var rightChart;
@@ -36,8 +37,6 @@ define(function (require, exports, module) {
     };
     +function () {
         getConfig(function (re) {
-            console.log(re);
-
             SGIS.UI.addLoadingBar("正在加载数据...", "#map-container");
 
             Layer.init(re, function () {
@@ -134,6 +133,7 @@ define(function (require, exports, module) {
             });
         });
 
+        $("#rtnBtn").click()
 
         $("#clo-iden").bind("click", function () {
             $("#indi-panel").addClass("hide");
@@ -237,7 +237,7 @@ define(function (require, exports, module) {
                     xAxis: {
                         type: 'category',
                         axisLabel: {
-                            'interval': 1,
+                            'interval': 0,
                             'rotate': 60,
                             textStyle: {
                                 color: 'white'
@@ -425,7 +425,10 @@ define(function (require, exports, module) {
                             var option = {
                                 title: {
                                     text: myDataConfig.getIdens(),
-                                    left: 'center'
+                                    left: 'center',
+                                    textStyle:{
+                                        color:'white'
+                                    }
                                 },
                                 tooltip: {
                                     trigger: 'axis'
@@ -444,14 +447,22 @@ define(function (require, exports, module) {
                                 xAxis: {
                                     type: 'category',
                                     axisLabel: {
-                                        'interval': 1,
-                                        'rotate': 60
+                                        'interval': 0,
+                                        'rotate': 60,
+                                        textStyle: {
+                                            color: 'white'
+                                        }
                                     },
                                     boundaryGap: true,
-                                    data: area
+                                    data: area,
                                 },
                                 yAxis: {
-                                    type: 'value'
+                                    type: 'value',
+                                    axisLabel: {
+                                        textStyle: {
+                                            color: 'white'
+                                        }
+                                    }
                                 },
                                 series: [
                                     {

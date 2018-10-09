@@ -231,6 +231,7 @@ var Index = (function() {
 				window.location = "addfusioncharts?chart-type-chart=" + imgID;
 			}
 			else {
+				console.log("addecharts?chart-type-chart=" + imgID);
 				window.location = "addecharts?chart-type-chart=" + imgID
 			}
 		});
@@ -241,7 +242,8 @@ var Index = (function() {
 
 		$(".row-right .row-right-container .im-ul>li").mouseover(function(){
 			var liId=$(this).attr("class");
-			$(".row-right .row-right-container  #"+liId).css("display","block");
+			console.log(liId);
+			//$(".row-right .row-right-container  #"+liId).css("display","block");
 			/*$(".row-right").css("opacity","0.2");*/
 		});
 
@@ -264,7 +266,7 @@ var Index = (function() {
 			var d_width =  $(this).width();
 
 			if(wx < d_left  || wx > d_left + d_width || wy_1 < 50){
-				console.log("进入");
+				console.log("离开");
 				$(".row-right .row-right-container  #"+liId).css("display","none");
 				/*$(".row-right").css("opacity","1");*/
 			}
